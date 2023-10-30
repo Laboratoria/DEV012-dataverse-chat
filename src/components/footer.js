@@ -1,0 +1,1 @@
+//se pone el componente por ejemplo del footer.
