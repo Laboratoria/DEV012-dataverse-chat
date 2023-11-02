@@ -1,15 +1,23 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 
-/*
-import Example from './views/Example.js';
-
-Ejemplo de definición de rutas:
+import { onURLChange, setRootElement, setRoutes } from "./router.js";
+import {home} from "./views/home.js"
+import {error} from "./views/error.js"
 
 const routes = {
-    "/": Example,
-    ...
-}
-*/
+  "/": home,
+  "/error": error,
+};
+
+//enlace con el root del HMTL
+const viewContainer = document.getElementById("root");
+
+setRoutes(routes);
+setRootElement(viewContainer);
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  onURLChange(event.target.location.pathname);
+});
 
 /*
 TODO:
