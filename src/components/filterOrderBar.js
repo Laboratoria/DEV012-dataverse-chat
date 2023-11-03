@@ -57,4 +57,5 @@ export const filterOrderBar = () => {
           <button id="facts" class="button">Facts</button>
         </div>
       </nav>`;
+  return section;
 };
