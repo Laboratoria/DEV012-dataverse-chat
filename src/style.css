@@ -1,6 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Mono+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+
+body {
+  height: 100vh
+}
+
+#root, .viewComponent {
+  height: 100%;
+  display: initial;
+}
+
+
 * {
   padding: 0px;
   margin: 0px;
