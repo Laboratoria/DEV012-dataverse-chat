@@ -2,7 +2,7 @@
 import { onURLChange, setRootElement, setRoutes } from "./router.js";
 import { home } from "./views/home.js"
 import { error } from "./views/error.js"
-// import { facts } from "./views/facts.js";
+import { facts } from "./views/facts.js";
 
 
 
@@ -15,7 +15,7 @@ const viewContainer = document.getElementById("root");
 const routes = {
   "/": home,
   "/error": error,
-  // "/facts": facts,
+  "/facts": facts,
 };
 
 

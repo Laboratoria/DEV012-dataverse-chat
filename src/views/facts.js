@@ -16,4 +16,5 @@ export const facts = () => {
   factsView.appendChild(headerComponent);
   factsView.appendChild(renderStatsComponent);
   factsView.appendChild(footerComponent);
+  return factsView;
 };
