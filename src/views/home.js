@@ -12,10 +12,10 @@ export const home = () => {
 
   //renderizado original del componente home
 
-  const headerComponent = header();
+  const headerComponent = header(); 
   const filterOrderBarComponent = filterOrderBar();
-  const footerComponent = footer();
   const renderCardsComponent = renderCards(result);
+  const footerComponent = footer();
 
   //función que agrupa el renderizado del header y el filterbarcomponent
   const headerFilterFunc = () => {
