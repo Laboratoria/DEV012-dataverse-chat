@@ -6,7 +6,7 @@ body {
   height: 100vh
 }
 
-#root, .viewComponent {
+#root, .viewComponent, .factsComponent  {
   height: 100%;
   display: initial;
 }

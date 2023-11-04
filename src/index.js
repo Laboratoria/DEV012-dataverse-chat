@@ -1,12 +1,11 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
-// import data from "./data/data.js";
 import { onURLChange, setRootElement, setRoutes } from "./router.js";
-import {home} from "./views/home.js"
-import {error} from "./views/error.js"
-// import { filterData,sortData,sortBounty,computeStats,computeStatsBounty} from "./lib/dataFunctions.js";
-// import { renderCards } from "./components/renderCards.js";
+import { home } from "./views/home.js"
+import { error } from "./views/error.js"
+// import { facts } from "./views/facts.js";
 
-// let result = data;
+
+
 //enlace con el root del HMTL
 const viewContainer = document.getElementById("root");
 // const factsButton = document.getElementById("facts");
@@ -16,6 +15,7 @@ const viewContainer = document.getElementById("root");
 const routes = {
   "/": home,
   "/error": error,
+  // "/facts": facts,
 };
 
 

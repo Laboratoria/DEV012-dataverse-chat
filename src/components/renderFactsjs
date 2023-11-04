@@ -1,5 +1,5 @@
 export const renderStats = () => {
-  const root = document.querySelector("#root");
+  // const factsDiv = document.createElement("div") // placeholder en caso de que tengamos que reestructurar
   const ul = document.createElement("ul");
   //Render Origin Card
   const liOrigin = document.createElement("li");
@@ -36,6 +36,6 @@ export const renderStats = () => {
   pBounty.id = "idBounty";
   liBounty.appendChild(pBounty);
   ul.appendChild(liBounty);
-  root.appendChild(ul);
+  // factsDiv.appendChild(ul);  // placeholder en caso de que tengamos que reestructurar
   return ul;
 };
