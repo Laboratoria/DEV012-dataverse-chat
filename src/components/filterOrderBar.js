@@ -1,7 +1,8 @@
 export const filterOrderBar = () => {
   const section = document.createElement("section");
   section.classList.add("filters");
-  section.innerHTML = `<a href=""><img class="home" src="./img/home-button.png" alt="" /></a>
+  section.innerHTML = `
+  <button class="home-btn"><img class="home" src="./lib/img/home-button.png" alt=""/></img></button>
       <nav>
         <label for="menu">☰</label>
         <input type="checkbox" id="menu">
