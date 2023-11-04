@@ -33,9 +33,7 @@ export const home = () => {
     '[data-testid="select-filterOrigin"]'
   );
   const filterCrew = homeView.querySelector('[data-testid="select-filter"]');
-  const filterStatus = homeView.querySelector(
-    '[data-testid="select-filterStatus"]'
-  );
+  const filterStatus = homeView.querySelector('[data-testid="select-filterStatus"]');
   const sortName = homeView.querySelector('[data-testid="select-sort"]');
   const sortedBounty = homeView.querySelector('[data-testid="select-bounty"]');
   const clearButton = homeView.querySelector('[data-testid="button-clear"]');
@@ -122,4 +120,6 @@ export const home = () => {
   });
 
   return homeView;
+
+  //a
 };
