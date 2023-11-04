@@ -59,6 +59,7 @@ div {
 }
 .filters {
   width: 100%;
+  height: 46px;
   background-color: #A90000;
   display: flex;
 }
@@ -75,10 +76,15 @@ select {
   height: 70%;
   margin-top: 8px;
 }
+
+.home-btn{
+  background-color: #A90000;
+  border: none;
+}
+
 .home {
-  margin-top: 10px;
   width: 100%;
-  height: 60%;
+  height: 70%;
 }
 button[data-testid="button-clear"] {
   font-family: "Metal Mania", cursive;
