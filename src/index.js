@@ -9,17 +9,6 @@ import {error} from "./views/error.js"
 // let result = data;
 //enlace con el root del HMTL
 const viewContainer = document.getElementById("root");
-// viewContainer.appendChild(renderCards(result));
-// const sortName = document.querySelector('[data-testid="select-sort"]');
-// const sortedBounty = document.querySelector('[data-testid="select-bounty"]');
-// const filterOrigin = document.querySelector(
-//   '[data-testid="select-filterOrigin"]'
-// );
-// const filterCrew = document.querySelector('[data-testid="select-filter"]');
-// const filterStatus = document.querySelector(
-//   '[data-testid="select-filterStatus"]'
-// );
-// const clearButton = document.querySelector('[data-testid="button-clear"]');
 // const factsButton = document.getElementById("facts");
 // const charactersTitle = document.querySelector("h2");
 
@@ -42,70 +31,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 //eventos para funcionalidad de los filtros.
 
-// filterOrigin.addEventListener("change", (e) => {
-//   e.preventDefault();
-//   const value = filterOrigin.value;
-//   console.log(value);
-//   const filteredOrigin = filterData(data, "seaOfOrigin", value);
-//   viewContainer.innerHTML = "";
-//   filterCrew.value = "";
-//   filterStatus.value = "";
-//   const filteredList = renderCards(filteredOrigin);
-//   viewContainer.appendChild(filteredList);
-//   result = filteredOrigin;
-// });
-// filterCrew.addEventListener("change", (e) => {
-//   e.preventDefault();
-//   const value = filterCrew.value;
-//   const filteredCrew = filterData(data, "crewOrigin", value);
-//   viewContainer.innerHTML = "";
-//   filterOrigin.value = "";
-//   filterStatus.value = "";
-//   const filteredList = renderCards(filteredCrew);
-//   viewContainer.appendChild(filteredList);
-//   result = filteredCrew;
-// });
-// filterStatus.addEventListener("change", (e) => {
-//   e.preventDefault();
-//   const value = filterStatus.value;
-//   const filteredStatus = filterData(data, "status", value);
-//   viewContainer.innerHTML = "";
-//   filterOrigin.value = "";
-//   filterCrew.value = "";
-//   const filteredList = renderCards(filteredStatus);
-//   viewContainer.appendChild(filteredList);
-//   result = filteredStatus;
-// });
-// sortName.addEventListener("change", (e) => {
-//   e.preventDefault();
-//   const sortOrder = sortName.value;
-//   const sortedName = sortData(result, "name", sortOrder);
-//   viewContainer.innerHTML = "";
-//   sortedBounty.value = "";
-//   const sortedList = renderCards(sortedName);
-//   viewContainer.appendChild(sortedList);
-// }
-// );
-// sortedBounty.addEventListener("change", (e) => {
-//   e.preventDefault();
-//   const sortOrder = sortedBounty.value;
-//   const sortedResultBounty = sortBounty(result, sortOrder)
-//   viewContainer.innerHTML = "";
-//   sortName.value = "";
-//   const sortedList = renderCards(sortedResultBounty);
-//   viewContainer.appendChild(sortedList);
-// });
-// clearButton.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   filterOrigin.value = "";
-//   filterCrew.value = "";
-//   filterStatus.value = "";
-//   sortName.value = "";
-//   sortedBounty.value = "";
-//   viewContainer.innerHTML = "";
-//   viewContainer.appendChild(renderCards(data));
-//   result = data;
-// });
+
+
+
 // factsButton.addEventListener("click", (e) => {
 //   e.preventDefault();
 //   viewContainer.innerHTML = "";
