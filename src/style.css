@@ -293,4 +293,7 @@ footer {
   h4 {
     font-size: 12px;
   }
+  .error-h4 {
+  font-size: 25px;
+}
 }
