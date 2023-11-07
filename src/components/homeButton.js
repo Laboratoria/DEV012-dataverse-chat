@@ -8,7 +8,7 @@ export const homeButton = () => {
   const img = document.createElement("img");
   img.className = "home";
   img.src = "./lib/img/home-button.png";
-  img.alt = "";
+  img.alt = "botónCasa";
 
   homeButton.appendChild(img);
   sectionHomeButton.appendChild(homeButton);
