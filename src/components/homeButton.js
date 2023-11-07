@@ -1,18 +1,27 @@
-// import {home} from "../views/home.js"
+import {home} from "../views/home.js"
 
 export const homeButton = () => {
+  const sectionHomeButton = document.createElement("section");
+  sectionHomeButton.classList.add("filters");
+  const homeButton = document.createElement("button");
+  homeButton.className = "home-btn";
+  const img = document.createElement("img");
+  img.className = "home";
+  img.src = "./lib/img/home-button.png";
+  img.alt = "";
+
+  homeButton.appendChild(img);
+  sectionHomeButton.appendChild(homeButton);
+  
+  homeButton.addEventListener("click", () => {
+  //console.log("se hizo click");
   const section = document.createElement("section");
   section.classList.add("filters");
-  section.innerHTML = ` 
-  <button class="home-btn"><img class="home" src="./lib/img/home-button.png" alt=""/></img></button>
-  `;
-
-  // const homeButton = section.getElementsByClassName("home-btn");
-  // const homeView = home();
-
-  // homeButton.addEventlistener("click", () => {
-  //   homeView;
-  // })
+  section.innerHTML = "";
+  const homeView = home ();
+  section.appendChild(homeView);
   
-  return section;
+  });
+  return sectionHomeButton;
 };
+
