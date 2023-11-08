@@ -4,6 +4,7 @@ import { filterOrderBar } from "../components/filterOrderBar.js";
 import { renderCards } from "../components/renderCards.js";
 import { filterData, sortData, sortBounty } from "../lib/dataFunctions.js";
 import data from "../data/data.js";
+import { navigateTo } from "../router.js";
 
 export const home = () => {
   let result = data;
@@ -12,7 +13,7 @@ export const home = () => {
 
   //renderizado original del componente home
 
-  const headerComponent = header(); 
+  const headerComponent = header();
   const filterOrderBarComponent = filterOrderBar();
   const renderCardsComponent = renderCards(result);
   const footerComponent = footer();
@@ -37,9 +38,11 @@ export const home = () => {
   const sortName = homeView.querySelector('[data-testid="select-sort"]');
   const sortedBounty = homeView.querySelector('[data-testid="select-bounty"]');
   const clearButton = homeView.querySelector('[data-testid="button-clear"]');
+  const factsButton = homeView.querySelector("#facts")
 
 
   //eventos para funcionalidad de los filtros.
+
 
   filterOrigin.addEventListener("change", (e) => {
     e.preventDefault();
@@ -49,6 +52,7 @@ export const home = () => {
     filterCrew.value = "";
     filterStatus.value = "";
     const filteredList = renderCards(filteredOrigin);
+    //renderizamos componentes del home junto a la función que llama el evento
     headerFilterFunc();
     homeView.appendChild(filteredList);
     homeView.appendChild(footerComponent);
@@ -63,6 +67,7 @@ export const home = () => {
     filterOrigin.value = "";
     filterStatus.value = "";
     const filteredList = renderCards(filteredCrew);
+    //renderizamos componentes del home junto a la función que llama el evento
     headerFilterFunc();
     homeView.appendChild(filteredList);
     homeView.appendChild(footerComponent);
@@ -77,6 +82,7 @@ export const home = () => {
     filterOrigin.value = "";
     filterCrew.value = "";
     const filteredList = renderCards(filteredStatus);
+    //renderizamos componentes del home junto a la función que llama el evento
     headerFilterFunc();
     homeView.appendChild(filteredList);
     homeView.appendChild(footerComponent);
@@ -88,8 +94,9 @@ export const home = () => {
     const sortOrder = sortName.value;
     const sortedName = sortData(result, "name", sortOrder);
     homeView.innerHTML = "";
-    // sortedBounty.value = "";
+    sortedBounty.value = "";
     const sortedList = renderCards(sortedName);
+    //renderizamos componentes del home junto a la función que llama el evento
     headerFilterFunc();
     homeView.appendChild(sortedList);
     homeView.appendChild(footerComponent);
@@ -102,6 +109,7 @@ export const home = () => {
     homeView.innerHTML = "";
     sortName.value = "";
     const sortedList = renderCards(sortedResultBounty);
+    //renderizamos componentes del home junto a la función que llama el evento
     headerFilterFunc();
     homeView.appendChild(sortedList);
     homeView.appendChild(footerComponent);
@@ -115,12 +123,15 @@ export const home = () => {
     filterStatus.value = "";
     sortName.value = "";
     sortedBounty.value = "";
+    result = data;
+    //renderizamos componentes del home junto a la función que llama el evento
     headerFilterFunc();
-    homeView.appendChild(renderCards(data));
+    homeView.appendChild(renderCards(result));
     homeView.appendChild(footerComponent);
   });
 
+  factsButton.addEventListener("click", () => navigateTo("/facts"));
+
   return homeView;
 
-  //a
 };
