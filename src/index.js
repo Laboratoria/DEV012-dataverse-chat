@@ -1,8 +1,10 @@
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
-import { onURLChange, setRootElement, setRoutes } from "./router.js";
+import { onURLChange, setRootElement, setRoutes, } from "./router.js";
 import { home } from "./views/home.js"
 import { error } from "./views/error.js"
+import { details } from "./views/details.js";
 import { facts } from "./views/facts.js";
+
 
 
 
@@ -16,6 +18,7 @@ const routes = {
   "/": home,
   "/error": error,
   "/facts": facts,
+  "/details": details,
 };
 
 
@@ -25,11 +28,16 @@ setRoutes(routes);
 //Pasar "root element" a router.
 setRootElement(viewContainer);
 
+
+
 document.addEventListener("DOMContentLoaded", (event) => {
   onURLChange(event.target.location.pathname);
+
 });
 
+
 //eventos para funcionalidad de los filtros.
+
 
 
 

@@ -38,6 +38,7 @@ export const home = () => {
   const sortedBounty = homeView.querySelector('[data-testid="select-bounty"]');
   const clearButton = homeView.querySelector('[data-testid="button-clear"]');
 
+
   //eventos para funcionalidad de los filtros.
 
   filterOrigin.addEventListener("change", (e) => {

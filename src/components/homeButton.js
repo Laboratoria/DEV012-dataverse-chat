@@ -1,5 +1,3 @@
-import {home} from "../views/home.js"
-
 export const homeButton = () => {
   const sectionHomeButton = document.createElement("section");
   sectionHomeButton.classList.add("filters");
@@ -12,16 +10,6 @@ export const homeButton = () => {
 
   homeButton.appendChild(img);
   sectionHomeButton.appendChild(homeButton);
-  
-  homeButton.addEventListener("click", () => {
-  //console.log("se hizo click");
-  const section = document.createElement("section");
-  section.classList.add("filters");
-  section.innerHTML = "";
-  const homeView = home ();
-  section.appendChild(homeView);
-  
-  });
+
   return sectionHomeButton;
 };
-
