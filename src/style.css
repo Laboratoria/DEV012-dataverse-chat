@@ -3,14 +3,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
 
 body {
-  height: 100vh
+  height: 100vh;
 }
 
-#root, .viewComponent, .factsComponent  {
+#root,
+.viewComponent,
+.factsComponent,
+.descriptionComponent {
   height: 100%;
   display: initial;
 }
-
 
 * {
   padding: 0px;
@@ -24,7 +26,7 @@ header {
   height: 20vh;
   background-image: url(./img/header-image.png);
   background-size: 506px 234px;
-  background-color: #01367C;
+  background-color: #01367c;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -37,7 +39,7 @@ input {
 h1 {
   width: 450px;
   height: 129px;
-  background-color: #DA9A05;
+  background-color: #da9a05;
   font-size: 80px;
   display: flex;
   justify-content: center;
@@ -46,7 +48,7 @@ h1 {
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
 }
 body {
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
 }
 nav {
   display: flex;
@@ -60,7 +62,7 @@ div {
 .filters {
   width: 100%;
   height: 46px;
-  background-color: #A90000;
+  background-color: #a90000;
   display: flex;
 }
 label {
@@ -77,8 +79,8 @@ select {
   margin-top: 8px;
 }
 
-.home-btn{
-  background-color: #A90000;
+.home-btn {
+  background-color: #a90000;
   border: none;
 }
 
@@ -108,7 +110,8 @@ h2 {
   justify-content: center;
   margin: 10px;
 }
-ul {
+ul,
+.section-details {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -118,9 +121,9 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #D1A879;
+  background-color: #d1a879;
   width: 445px;
-  height: px;
+  height: 520px;
   margin: 30px 55px;
   border-radius: 20px;
   justify-content: space-around;
@@ -154,8 +157,6 @@ h4 {
   padding-bottom: 15px;
 }
 
-
-
 footer {
   display: flex;
   justify-content: center;
@@ -174,7 +175,7 @@ footer {
   height: 100vh;
 }
 
-.error{
+.error {
   font-size: 60px;
 }
 
@@ -188,6 +189,25 @@ footer {
   font-family: "Metal Mania", cursive;
 }
 
+.div-padre {
+  width: 1100px;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+}
+
+.div-card {
+  width: 30%;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d1a879;
+}
+
+.div-details {
+  width: 70%;
+}
+
 @media (max-width: 425px) {
   header {
     font-family: "Metal Mania", cursive;
@@ -195,7 +215,7 @@ footer {
     height: 22vh;
     background-image: url(./img/header-image.png);
     background-size: 420px 180px;
-    background-color: #01367C;
+    background-color: #01367c;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -230,7 +250,7 @@ footer {
     height: 10px;
     margin-top: 12px;
     line-height: 30px;
-    color: #EAEAEA;
+    color: #eaeaea;
     font-size: 40px;
   }
   select {
@@ -240,13 +260,13 @@ footer {
     height: 8%;
   }
   label {
-    color: #EAEAEA;
+    color: #eaeaea;
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
   }
   h1 {
     width: 257px;
     height: 101px;
-    background-color: #DA9A05;
+    background-color: #da9a05;
     font-size: 45px;
     display: flex;
     justify-content: center;
@@ -272,7 +292,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #D1A879;
+    background-color: #d1a879;
     width: 310px;
     height: 390px;
     margin: 10px;
@@ -294,6 +314,6 @@ footer {
     font-size: 12px;
   }
   .error-h4 {
-  font-size: 25px;
-}
+    font-size: 25px;
+  }
 }
