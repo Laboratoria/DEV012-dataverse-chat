@@ -12,4 +12,6 @@ export const homeButton = () => {
   sectionHomeButton.appendChild(homeButton);
 
   return sectionHomeButton;
+  
 };
+

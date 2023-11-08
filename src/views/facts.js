@@ -40,7 +40,6 @@ export const facts = () => {
  
 
   const homeButtonEvent = factsView.querySelector(".home-btn")
-  console.log(homeButtonEvent);
   homeButtonEvent.addEventListener("click", () => navigateTo("/"));
 
   return factsView;
