@@ -1,6 +1,11 @@
 export const renderStats = () => {
   // const factsDiv = document.createElement("div") // placeholder en caso de que tengamos que reestructurar
   const ul = document.createElement("ul");
+  const h2 = document.createElement("h2");
+  h2.textContent = "Character Details";
+  const divContainer = document.createElement("div");
+  divContainer.appendChild(h2);
+  ul.appendChild(divContainer);
   //Render Origin Card
   const liOrigin = document.createElement("li");
   liOrigin.classList.add("cards");
@@ -37,5 +42,6 @@ export const renderStats = () => {
   liBounty.appendChild(pBounty);
   ul.appendChild(liBounty);
   // factsDiv.appendChild(ul);  // placeholder en caso de que tengamos que reestructurar
+  
   return ul;
 };

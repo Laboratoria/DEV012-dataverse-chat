@@ -1,6 +1,9 @@
 export const renderDetails = (luffy) => {
   const section = document.createElement("section");
-  section.classList.add("section-details")
+  section.classList.add("section-details");
+  const h2 = document.createElement("h2");
+  h2.textContent = "Character Details";
+
   const divPadre = document.createElement("div");
   divPadre.classList.add("div-padre");
   const divCard = document.createElement("div");
@@ -37,9 +40,9 @@ export const renderDetails = (luffy) => {
   divDetails.appendChild(buttonChat)
 
 
-
   divPadre.appendChild(divCard);
   divPadre.appendChild(divDetails);
+  section.appendChild(h2);
   section.appendChild(divPadre);
 
   return section;
