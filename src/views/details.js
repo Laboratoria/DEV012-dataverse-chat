@@ -2,6 +2,7 @@ import { footer } from "../components/footer.js";
 import { header } from "../components/header.js";
 import { homeButton } from "../components/homeButton.js";
 import { renderDetails } from "../components/renderChrDetails.js";
+import { navigateTo } from "../router.js";
 
 const luffy =   {
   id: "monkey-d-luffy",
@@ -34,6 +35,8 @@ export const details = () => {
   detailsView.appendChild(renderCharacterComponent);
   detailsView.appendChild(footerComponent);
   
+  const homeButtonEvent = detailsView.querySelector(".home-btn")
+  homeButtonEvent.addEventListener("click", () => navigateTo("/"));
 
   return detailsView;
 

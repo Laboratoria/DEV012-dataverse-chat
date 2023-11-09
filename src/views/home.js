@@ -30,15 +30,14 @@ export const home = () => {
   homeView.appendChild(footerComponent);
 
   //llamado de selectores para interacción con eventos
-  const filterOrigin = homeView.querySelector(
-    '[data-testid="select-filterOrigin"]'
-  );
+  const filterOrigin = homeView.querySelector('[data-testid="select-filterOrigin"]');
   const filterCrew = homeView.querySelector('[data-testid="select-filter"]');
   const filterStatus = homeView.querySelector('[data-testid="select-filterStatus"]');
   const sortName = homeView.querySelector('[data-testid="select-sort"]');
   const sortedBounty = homeView.querySelector('[data-testid="select-bounty"]');
   const clearButton = homeView.querySelector('[data-testid="button-clear"]');
-  const factsButton = homeView.querySelector("#facts")
+  const factsButton = homeView.querySelector("#facts");
+  const pruebaLuffy = homeView.querySelector('#monkey-d-luffy')
 
 
   //eventos para funcionalidad de los filtros.
@@ -131,6 +130,8 @@ export const home = () => {
   });
 
   factsButton.addEventListener("click", () => navigateTo("/facts"));
+
+  pruebaLuffy.addEventListener("click", () => navigateTo("/details"))
 
   return homeView;
 
