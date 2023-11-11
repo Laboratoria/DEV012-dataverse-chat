@@ -11,11 +11,28 @@ export const home = () => {
   const homeView = document.createElement("div");
   homeView.className = "viewComponent";
 
+
+
+  function setupRenderCards(cards) {
+    const renderCardsComponent = renderCards(cards);
+    // Recuerda que renderCardsComponent es un elemento ul
+    renderCardsComponent.addEventListener('click', (event) => {
+      const closestLi = event.target.closest('li')
+      if(closestLi) { // Click inside a card
+        const characterId = closestLi.getAttribute('id')
+        navigateTo('/details', { id: characterId })
+      }
+    })
+    return renderCardsComponent
+  }
+
   //renderizado original del componente home
 
   const headerComponent = header();
   const filterOrderBarComponent = filterOrderBar();
-  const renderCardsComponent = renderCards(result);
+//  const renderCardsComponent = renderCards(result);
+  const renderCardsComponent = setupRenderCards(result);
+
   const footerComponent = footer();
 
   //función que agrupa el renderizado del header y el filterbarcomponent
@@ -50,7 +67,7 @@ export const home = () => {
     homeView.innerHTML = "";
     filterCrew.value = "";
     filterStatus.value = "";
-    const filteredList = renderCards(filteredOrigin);
+    const filteredList = setupRenderCards(result);
     //renderizamos componentes del home junto a la función que llama el evento
     headerFilterFunc();
     homeView.appendChild(filteredList);
@@ -65,7 +82,7 @@ export const home = () => {
     homeView.innerHTML = "";
     filterOrigin.value = "";
     filterStatus.value = "";
-    const filteredList = renderCards(filteredCrew);
+    const filteredList = setupRenderCards(result);
     //renderizamos componentes del home junto a la función que llama el evento
     headerFilterFunc();
     homeView.appendChild(filteredList);
@@ -80,7 +97,7 @@ export const home = () => {
     homeView.innerHTML = "";
     filterOrigin.value = "";
     filterCrew.value = "";
-    const filteredList = renderCards(filteredStatus);
+    const filteredList = setupRenderCards(result);
     //renderizamos componentes del home junto a la función que llama el evento
     headerFilterFunc();
     homeView.appendChild(filteredList);
@@ -94,7 +111,7 @@ export const home = () => {
     const sortedName = sortData(result, "name", sortOrder);
     homeView.innerHTML = "";
     sortedBounty.value = "";
-    const sortedList = renderCards(sortedName);
+    const sortedList = setupRenderCards(result);
     //renderizamos componentes del home junto a la función que llama el evento
     headerFilterFunc();
     homeView.appendChild(sortedList);
@@ -107,7 +124,7 @@ export const home = () => {
     const sortedResultBounty = sortBounty(result, sortOrder);
     homeView.innerHTML = "";
     sortName.value = "";
-    const sortedList = renderCards(sortedResultBounty);
+    const sortedList = setupRenderCards(result);
     //renderizamos componentes del home junto a la función que llama el evento
     headerFilterFunc();
     homeView.appendChild(sortedList);
@@ -125,13 +142,11 @@ export const home = () => {
     result = data;
     //renderizamos componentes del home junto a la función que llama el evento
     headerFilterFunc();
-    homeView.appendChild(renderCards(result));
+    homeView.appendChild(setupRenderCards(result));
     homeView.appendChild(footerComponent);
   });
 
   factsButton.addEventListener("click", () => navigateTo("/facts"));
-
-  pruebaLuffy.addEventListener("click", () => navigateTo("/details"))
 
   return homeView;
 

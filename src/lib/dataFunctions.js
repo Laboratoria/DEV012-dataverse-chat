@@ -1,3 +1,5 @@
+import data from "../data/data.js";
+
 export const sortData = (data, sortBy, sortOrder) => {
   const sort = data.sort((x, y) => {
     //se crean dos constantes con los valores de los parametros por los que se va a ordenar la data.
@@ -92,3 +94,7 @@ export const computeStatsBounty = (data, bounty, value) => {
   //devuelve el resultado y se decide retornar redondeando a dos decimales.
   return percentage.toFixed(2);
 };
+
+export function getCharacterById(characterId) {
+  return data.find((currentCharacter) => currentCharacter.id === characterId)
+}
