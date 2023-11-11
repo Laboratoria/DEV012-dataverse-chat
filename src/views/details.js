@@ -3,6 +3,7 @@ import { header } from "../components/header.js";
 import { homeButton } from "../components/homeButton.js";
 import { renderDetails } from "../components/renderChrDetails.js";
 import { navigateTo } from "../router.js";
+import { getCharacterById } from "../lib/dataFunctions.js";
 
 const luffy =   {
   id: "monkey-d-luffy",
@@ -18,16 +19,20 @@ const luffy =   {
   },
 }
 
+export const details = (props) => {
+  const characterId = props.id
 
-
-
-export const details = () => {
+  console.log({ idDetails: characterId })
   const detailsView = document.createElement("div");
-  detailsView.className = "descriptionComponent";
+  detailsView.className = "viewComponent";
 
   const headerComponent = header();
   const homeButtonComponent = homeButton();
-  const renderCharacterComponent = renderDetails(luffy);
+  
+  const character = getCharacterById(characterId)
+  //console.log({ characterId, character })
+
+  const renderCharacterComponent = renderDetails(character);
   const footerComponent = footer();
 
   detailsView.appendChild(headerComponent);
