@@ -31,8 +31,12 @@ setRootElement(viewContainer);
 
 
 document.addEventListener("DOMContentLoaded", (event) => {
-  onURLChange(event.target.location.pathname);
+  onURLChange(event.target.location);
+});
 
+document.addEventListener("popstate", (event) => {
+  console.log('popstate', event)
+  onURLChange(window.location);
 });
 
 
