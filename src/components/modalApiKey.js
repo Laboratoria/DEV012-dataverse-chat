@@ -8,13 +8,15 @@ export const modalApiKey = () => {
   const btnModal = document.createElement("button");
 
   //clases para manipulación de estilos
-  sectionModal.className.add("section-modal");
-  divModal.className.add("div-modal");
-  spanModal.className.add("span");
-  inputModal.className.add("input-modal");
-  btnModal.className.add("btn-modal");
+  sectionModal.classList.add("section-modal");
+  divModal.classList.add("div-modal");
+  spanModal.classList.add("span");
+  inputModal.classList.add("input-modal");
+  btnModal.classList.add("btn-modal");
 
   //Se agregan los atributos necesarios a cada elemento
+  inputModal.setAttribute("type", "text");
+  inputModal.setAttribute("name", "text")
   btnModal.setAttribute("type", "submit");
 
   //Texto de los elementos
@@ -35,7 +37,8 @@ export const modalApiKey = () => {
 
   //Evento para cerrar el modal
   spanModal.addEventListener("click", function () {
-  sectionModal.style.display = "none";});
+    sectionModal.style.display = "none";
+  });
 
   return sectionModal;
 };
