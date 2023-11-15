@@ -3,7 +3,7 @@ export default [
     id: "monkey-d-luffy",
     name: "Monkey D. Luffy",
     shortDescription: "Captain of the Straw Hat Pirates",
-    description: "Luffy is the fearless captain of the Straw Hat Pirates.",
+    description: "The indomitable captain of the Straw Hat Pirates, Monkey D. Luffy, is an aspirational force in the world of One Piece. Driven by an unwavering desire to claim the title of Pirate King, Luffy's boundless courage and Gum-Gum Fruit-enhanced elasticity are the rallying points for his diverse crew.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/7/71304.jpg",
     facts: {
       bounty: "1,500,000,000 Berries",
@@ -16,7 +16,7 @@ export default [
     id: "roronoa-zoro",
     name: "Roronoa Zoro",
     shortDescription: "Swordsman of the Straw Hat Pirates",
-    description: "Zoro is the skilled swordsman of the Straw Hat Pirates.",
+    description: "As the Straw Hat Pirates' devoted swordsman, Roronoa Zoro showcases not only unparalleled swordsmanship but an unyielding commitment to his dream—becoming the world's greatest swordsman. His stoic demeanor and three-sword technique make him an indispensable and formidable ally.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/5/94250.jpg",
     facts: {
       bounty: "320,000,000 Berries",
@@ -29,7 +29,7 @@ export default [
     id: "nami",
     name: "Nami",
     shortDescription: "Expert Navigator of the Straw Hat Pirates",
-    description: "Nami is the talented navigator of the Straw Hat Pirates.",
+    description: "The brilliant navigator of the Straw Hat crew, Nami's expertise in cartography and meteorology is pivotal for navigating the perilous Grand Line. Driven by the dream of creating the most accurate sea charts, Nami's intellect and responsibility are crucial assets to the crew.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/5/348437.jpg",
     facts: {
       bounty: "66,000,000 Berries",
@@ -42,8 +42,7 @@ export default [
     id: "usopp",
     name: "Usopp",
     shortDescription: "Sniper and Storyteller",
-    description:
-      "Usopp is the skilled sniper and storyteller of the Straw Hat Pirates.",
+    description: "Usopp, the sharpshooter and storyteller, contributes both practical and imaginative elements to the crew. With a slingshot in hand and an aspiration to be a brave warrior like his father, Usopp's tales and marksmanship enhance the crew's adventures.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/5/47237.jpg",
     facts: {
       bounty: "30,000,000 Berries",
@@ -56,8 +55,7 @@ export default [
     id: "sanji",
     name: "Sanji",
     shortDescription: "Cook and Martial Artist",
-    description:
-      "Sanji is the passionate cook and martial artist of the Straw Hat Pirates.",
+    description: "The suave chef of the Straw Hat Pirates, Sanji brings both culinary expertise and martial arts prowess to the crew. Known for his chivalrous nature and his culinary kicks, Sanji adds a touch of humor and romance to the crew's dynamics.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/9/41143.jpg",
     facts: {
       bounty: "330,000,000 Berries",
@@ -70,8 +68,7 @@ export default [
     id: "tony-tony-chopper",
     name: "Tony Tony Chopper",
     shortDescription: "Doctor and Reindeer with a Devil Fruit",
-    description:
-      "Chopper is the adorable doctor and reindeer with a Devil Fruit in the Straw Hat Pirates.",
+    description: "A delightful addition to the crew, Tony Tony Chopper is not only the ship's doctor but also a charming reindeer with the ability to transform. His Human-Human Fruit powers and adorable appearance endear him to both the crew and readers alike.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/3/267213.jpg",
     facts: {
       bounty: "100 Berries",
@@ -84,8 +81,7 @@ export default [
     id: "nico-robin",
     name: "Nico Robin",
     shortDescription: "Archaeologist and Devil Fruit Knowledge",
-    description:
-      "Robin is the enigmatic archaeologist with Devil Fruit knowledge in the Straw Hat Pirates.",
+    description: "The enigmatic archaeologist of the crew, Nico Robin, seeks to unravel the mysteries of the world's history. With Devil Fruit powers at her disposal, she brings a calm and intellectual presence, uncovering secrets that shape the crew's journey.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/12/136849.jpg",
     facts: {
       bounty: "130,000,000 Berries",
@@ -98,8 +94,7 @@ export default [
     id: "franky",
     name: "Franky",
     shortDescription: "Shipwright and Cyborg",
-    description:
-      "Franky is the eccentric shipwright and cyborg in the Straw Hat Pirates.",
+    description: "The flamboyant shipwright and cyborg of the crew, Franky's larger-than-life personality is reflected in the Thousand Sunny, the ship he built and maintains. His craftsmanship and passionate demeanor make him a vibrant member of the crew.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/14/99237.jpg",
     facts: {
       bounty: "94,000,000 Berries",
@@ -112,8 +107,7 @@ export default [
     id: "brook",
     name: "Brook",
     shortDescription: "Skeletal Musician",
-    description:
-      "Brook is the cheerful skeletal musician in the Straw Hat Pirates.",
+    description: "A living skeleton and musician, Brook's backstory is as tragic as it is fascinating. With the Revive-Revive Fruit granting him a second chance at life, Brook's musical talents and joyful spirit contribute to the crew's morale.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/4/48093.jpg",
     facts: {
       bounty: "83,000,000 Berries",
@@ -126,8 +120,7 @@ export default [
     id: "jimbei",
     name: "Jimbei",
     shortDescription: "Former Pirate Captain and Martial Arts Expert",
-    description:
-      "Jimbei is the wise former pirate captain and martial arts expert in the Straw Hat Pirates.",
+    description: "As the wise fish-man helmsman, Jimbei brings a unique perspective and martial prowess to the crew. His former status as a Warlord of the Sea adds layers to his character, providing valuable experience in navigating the turbulent waters of the Grand Line.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/12/159071.jpg",
     facts: {
       bounty: "250,000,000 Berries",
@@ -140,8 +133,7 @@ export default [
     id: "jewelry-bonney",
     name: "Jewelry Bonney",
     shortDescription: "Pirate with the 'Sorosoro no Mi' Devil Fruit ability",
-    description:
-      "Jewelry Bonney is a pirate with the rare 'Sorosoro no Mi' Devil Fruit ability.",
+    description: "A mysterious pirate with the ability to manipulate age, Jewelry Bonney's presence introduces an air of intrigue. Connected to the Void Century, she adds an enigmatic layer to the already complex world of One Piece.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/13/52427.jpg",
     facts: {
       bounty: "140,000,000 Berries",
@@ -154,8 +146,7 @@ export default [
     id: "buggy",
     name: "Buggy the Clown",
     shortDescription: "Captain of the Buggy Pirates",
-    description:
-      "Buggy the Clown is the eccentric captain of the Buggy Pirates.",
+    description: "Buggy, the amusing clown pirate, is not just a source of comic relief. His ability to split his body into floating segments conceals a formidable adversary, making him a colorful and unpredictable character.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/8/38643.jpg",
     facts: {
       bounty: "15,000,000 Berries",
@@ -168,8 +159,7 @@ export default [
     id: "gol-d-roger",
     name: "Gol D. Roger",
     shortDescription: "The legendary Pirate King",
-    description:
-      "Gol D. Roger is the legendary Pirate King and discoverer of the One Piece.",
+    description: "Gol D. Roger: The legendary Pirate King, Gol D. Roger's discovery of the One Piece marked the beginning of the Great Pirate Era. His execution set the stage for the tumultuous events that continue to unfold in the world of One Piece.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/5/432481.jpg",
     facts: {
       bounty: "5,564,800,000 Berries",
@@ -182,8 +172,7 @@ export default [
     id: "ace",
     name: "Portgas D. Ace",
     shortDescription: "Commander of the Spade Pirates",
-    description:
-      "Portgas D. Ace was the commander of the Spade Pirates and the older brother of Monkey D. Luffy.",
+    description: "Luffy's adoptive brother and former Whitebeard Pirates commander, Ace's Flame-Flame Fruit powers and pursuit of freedom make him a central figure in the series, leaving a lasting impact on the narrative.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/4/391977.jpg",
     facts: {
       bounty: "550,000,000 Berries",
@@ -196,8 +185,7 @@ export default [
     id: "crocodile",
     name: "Sir Crocodile",
     shortDescription: "Former Shichibukai and Baroque Works Leader",
-    description:
-      "Sir Crocodile is the cunning former Shichibukai and leader of the criminal organization Baroque Works.",
+    description: "The shrewd and deceptive former Warlord of the Sea, Sir Crocodile's sand-based Devil Fruit powers and intricate schemes make him a recurring and complex antagonist, shaping the events in the Grand Line.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/10/50146.jpg",
     facts: {
       bounty: "81,000,000 Berries",
@@ -210,10 +198,8 @@ export default [
     id: "eustass-kid",
     name: "Eustass Kid",
     shortDescription: "Captain of the Kid Pirates",
-    description:
-      "Eustass Kid is the fearsome captain of the Kid Pirates and a user of the 'Jiki Jiki no Mi' Devil Fruit.",
-    imageUrl:
-      "https://cdn.myanimelist.net/images/characters/3/48211.jpg?_gl=1*1gqozdd*_ga*ODUxOTU5MTIzLjE2OTQ3MDUzOTc.*_ga_26FEP9527K*MTY5NjM4NTc4MS4xMS4xLjE2OTYzODYwNzYuNTYuMC4w",
+    description: "An ambitious and violent pirate captain, Eustass Kid's unique attraction to metallic objects sets him apart. As a member of the Worst Generation, he is determined to conquer the Grand Line and make a name for himself.",
+    imageUrl: "https://cdn.myanimelist.net/images/characters/3/48211.jpg?_gl=1*1gqozdd*_ga*ODUxOTU5MTIzLjE2OTQ3MDUzOTc.*_ga_26FEP9527K*MTY5NjM4NTc4MS4xMS4xLjE2OTYzODYwNzYuNTYuMC4w",
     facts: {
       bounty: "315,000,000 Berries",
       status: "Alive",
@@ -225,8 +211,7 @@ export default [
     id: "shanks",
     name: "Shanks",
     shortDescription: "The Powerful and Friendly Yonko",
-    description:
-      "Shanks is the charismatic and powerful Yonko known for his friendship with Luffy.",
+    description: "The red-haired and powerful captain of the Red-Haired Pirates, Shanks' influence extends far beyond his own crew. Known for his sense of honor and friendship, Shanks plays a significant role in shaping the destiny of the seas.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/12/78448.jpg",
     facts: {
       bounty: "1,040,000,000 Berries",
@@ -239,8 +224,7 @@ export default [
     id: "sabo",
     name: "Sabo",
     shortDescription: "Second-in-Command of the Revolutionary Army",
-    description:
-      "Sabo is the brave second-in-command of the Revolutionary Army and Luffy's adoptive brother.",
+    description: "Initially presumed dead, Sabo's revelation as Luffy's childhood friend and adopted brother adds emotional depth to the narrative. His Flame-Flame Fruit powers and involvement with the revolutionary cause further enrich his character.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/15/131855.jpg",
     facts: {
       bounty: "602,000,000 Berries",
@@ -253,8 +237,7 @@ export default [
     id: "trafalgar-law",
     name: "Trafalgar Law",
     shortDescription: "The Surgeon of Death and Ally of the Straw Hat Pirates",
-    description:
-      "Trafalgar Law is the skilled Surgeon of Death and occasional ally of the Straw Hat Pirates.",
+    description: "A skilled surgeon and pirate captain with the Op-Op Fruit powers, Trafalgar Law's strategic mind and stoic demeanor make him a compelling character. His alliances and actions contribute to the intricate web of relationships in the New World.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/4/110998.jpg",
     facts: {
       bounty: "500,000,000 Berries",
@@ -268,8 +251,7 @@ export default [
     name: "Charlotte Katakuri",
     shortDescription:
       "Sweet Commander and Master of the 'Mochi Mochi no Mi' Devil Fruit",
-    description:
-      "Charlotte Katakuri is the formidable Sweet Commander and user of the 'Mochi Mochi no Mi' Devil Fruit.",
+    description: "Big Mom's formidable son, Katakuri's Mochi-Mochi Fruit powers and mastery of observation Haki make him a standout antagonist in the Big Mom Pirates. His imposing presence adds a layer of complexity to the world of One Piece.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/15/354400.jpg",
     facts: {
       bounty: "1,057,000,000 Berries",
@@ -282,8 +264,7 @@ export default [
     id: "blackbeard",
     name: "Marshall D. Teach",
     shortDescription: "Captain of the Blackbeard Pirates",
-    description:
-      "Marshall D. Teach, also known as Blackbeard, is the master of chaos and captain of the Blackbeard Pirates.",
+    description: "Also known as Blackbeard, Marshall D. Teach's cunning and the acquisition of both Dark-Dark and Quake-Quake Fruit powers make him a significant antagonist. His betrayal of Whitebeard marks a turning point in the power dynamics of the seas.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/2/49735.jpg",
     facts: {
       bounty: "198,200,000 Berries",
@@ -296,8 +277,7 @@ export default [
     id: "x-drake",
     name: "X Drake",
     shortDescription: "Marine Rear Admiral and Former Pirate",
-    description:
-      "X Drake is a Marine Rear Admiral and former pirate who possesses the 'Ancient Zoan' type Devil Fruit ability.",
+    description: "A former Marine turned pirate captain with the Ancient Zoan Dragon-Dragon Fruit, X Drake's unique abilities and actions as a member of the Worst Generation continue to shape the events in the New World.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/2/99553.jpg",
     facts: {
       bounty: "222,000,000 Berries",
@@ -310,8 +290,7 @@ export default [
     id: "donquixote-doflamingo",
     name: "Donquixote Doflamingo",
     shortDescription: "Former Shichibukai and King of Dressrosa",
-    description:
-      "Donquixote Doflamingo is the former Shichibukai and former ruler of Dressrosa.",
+    description: "A manipulative Shichibukai with String-String Fruit powers, Doflamingo's complex background and control over the underworld make him a formidable and multifaceted antagonist.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/12/96171.jpg",
     facts: {
       bounty: "340,000,000 Berries",
@@ -324,8 +303,7 @@ export default [
     id: "boa-hancock",
     name: "Boa Hancock",
     shortDescription: "Empress of the Kuja Pirates",
-    description:
-      "Boa Hancock is the Empress of the Kuja Pirates and possesses the 'Mero Mero no Mi' Devil Fruit abilities.",
+    description: "The stunning Empress of the Kuja Pirates, Boa Hancock's Love-Love Fruit powers initially manifest as disdain for men. Her journey from a Shichibukai to a potential ally showcases the depth and development of her character in the series.",
     imageUrl: "https://cdn.myanimelist.net/images/characters/6/63017.jpg",
     facts: {
       bounty: "80,000,000 Berries",
