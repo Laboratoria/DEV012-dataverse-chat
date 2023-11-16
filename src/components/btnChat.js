@@ -1,6 +1,23 @@
-import { modalApiKey } from "./modalApiKey";
+import { modalApiKey } from "./modalApiKey.js";
 
+const modalApiKeyFunction = modalApiKey();
 
-const btnChat = document.createElement("button");
+export const createBtnChat = () => { 
+    
+  const buttonChatHome = document.createElement("button");
+  buttonChatHome.textContent = "Chat with all";
+  
+  if(buttonChatHome) {
+  
+  buttonChatHome.addEventListener(click )
 
-if()
+    
+    
+    // console.log(buttonChatHome);
+    // modalApiKeyFunction;
+  }; 
+
+}
+
+return createBtnChat;
+}

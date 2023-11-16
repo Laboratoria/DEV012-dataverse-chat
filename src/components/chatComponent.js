@@ -1,0 +1,60 @@
+export const chatComponent = () => {
+  //contenedores section chat
+  const divChat = document.createElement("div");
+  const sectionChat = document.createElement("section");
+  const sectionCredential = document.createElement("section");
+  const sectionPrompting = document.createElement("section");
+
+  //elementos del contenedor sectionCredential
+  const imgCredential = document.createElement("img");
+  const h2Credential = document.createElement("h2");
+
+  //elementos del contenedor sectionPrompting
+  const textAreaChat = document.createElement("textarea");
+  const inputPrompt = document.createElement("input");
+  const buttonSend = document.createElement("button");
+  const imgBtnSend = document.createElement("img");
+
+  //clases de los section chat
+  divChat.className = "div-chat";
+  sectionChat.className = "section-chat";
+  sectionCredential.className = "section-credential";
+  sectionPrompting.className = "section-prompting";
+
+  //clases elementos del contenedor sectionCredential
+  imgCredential.className = "imgCredential";
+  h2Credential.className = "h2Credential";
+
+  //clases elementos del contenedor sectionPromting
+  textAreaChat.className = "text-area-chat";
+  inputPrompt.className = "input-promp";
+  buttonSend.className = "btn-send";
+  imgBtnSend.className = "img-btn-send";
+
+  //atributos a el input y el textarea
+  textAreaChat.setAttribute("id", "textAreaChat");
+  inputPrompt.setAttribute("id", "inputPrompt");
+  textAreaChat.setAttribute("type", "text");
+  inputPrompt.setAttribute("type", "text");
+  inputPrompt.setAttribute("placeholder", "Talk with me");
+  buttonSend.setAttribute("type", "submit");
+
+  h2Credential.textContent = data.name;
+
+  //agregar hijos al sectionPrompting
+  sectionPrompting.appendChild(textAreaChat);
+  sectionPrompting.appendChild(inputPrompt);
+  sectionPrompting.appendChild(buttonSend);
+  sectionPrompting.appendChild(imgBtnSend);
+
+  //agregar hijos al sectionCredential
+  sectionCredential.appendChild(imgCredential);
+  sectionCredential.appendChild(h2Credential);
+
+  sectionChat.appendChild(sectionCredential);
+  sectionChat.appendChild(sectionPrompting);
+
+  divChat.appendChild(sectionChat);
+
+  return divChat;
+};
