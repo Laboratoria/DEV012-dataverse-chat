@@ -11,26 +11,25 @@ export const home = () => {
   const homeView = document.createElement("div");
   homeView.className = "viewComponent";
 
-
-
   function setupRenderCards(cards) {
     const renderCardsComponent = renderCards(cards);
     // Recuerda que renderCardsComponent es un elemento ul
-    renderCardsComponent.addEventListener('click', (event) => {
-      const closestLi = event.target.closest('li')
-      if(closestLi) { // Click inside a card
-        const characterId = closestLi.getAttribute('id')
-        navigateTo('/details', { id: characterId })
+    renderCardsComponent.addEventListener("click", (event) => {
+      const closestLi = event.target.closest("li");
+      if (closestLi) {
+        // Click inside a card
+        const characterId = closestLi.getAttribute("id");
+        navigateTo("/details", { id: characterId });
       }
-    })
-    return renderCardsComponent
+    });
+    return renderCardsComponent;
   }
 
   //renderizado original del componente home
 
   const headerComponent = header();
   const filterOrderBarComponent = filterOrderBar();
-//  const renderCardsComponent = renderCards(result);
+  //  const renderCardsComponent = renderCards(result);
   const renderCardsComponent = setupRenderCards(result);
 
   const footerComponent = footer();
@@ -47,18 +46,19 @@ export const home = () => {
   homeView.appendChild(footerComponent);
 
   //llamado de selectores para interacción con eventos
-  const filterOrigin = homeView.querySelector('[data-testid="select-filterOrigin"]');
+  const filterOrigin = homeView.querySelector(
+    '[data-testid="select-filterOrigin"]'
+  );
   const filterCrew = homeView.querySelector('[data-testid="select-filter"]');
-  const filterStatus = homeView.querySelector('[data-testid="select-filterStatus"]');
+  const filterStatus = homeView.querySelector(
+    '[data-testid="select-filterStatus"]'
+  );
   const sortName = homeView.querySelector('[data-testid="select-sort"]');
   const sortedBounty = homeView.querySelector('[data-testid="select-bounty"]');
   const clearButton = homeView.querySelector('[data-testid="button-clear"]');
   const factsButton = homeView.querySelector("#facts");
-  const pruebaLuffy = homeView.querySelector('#monkey-d-luffy')
-
 
   //eventos para funcionalidad de los filtros.
-
 
   filterOrigin.addEventListener("change", (e) => {
     e.preventDefault();
@@ -149,5 +149,4 @@ export const home = () => {
   factsButton.addEventListener("click", () => navigateTo("/facts"));
 
   return homeView;
-
 };

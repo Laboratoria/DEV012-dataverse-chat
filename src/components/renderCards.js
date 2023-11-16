@@ -20,7 +20,7 @@ export const renderCards = (data) => {
     li.innerHTML = `
     <h3 itemprop="name">${element.name}</h3>
     <img src="${element.imageUrl}" alt="${element.id}">
-    <p itemprop="description">${element.description}</p>
+    <p itemprop="description">${element.shortDescription}</p>
     <h4 itemprop="bounty">${element.facts.bounty} </h4>
     `;
     ul.appendChild(li);
