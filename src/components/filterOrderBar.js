@@ -5,7 +5,7 @@ export const filterOrderBar = () => {
   <button class="home-btn"><img class="home" src="./lib/img/home-button.png" alt=""/></img></button>
       <nav>
         <label for="menu">☰</label>
-        <input type="checkbox" id="menu">
+        <input  class= "checkbox" type="checkbox" id="menu">
         <div>
           <label for="origin">Filter:</label>
           <select id="origin" name="origin" data-testid="select-filterOrigin">

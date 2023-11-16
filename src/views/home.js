@@ -39,9 +39,20 @@ export const home = () => {
     homeView.appendChild(headerComponent);
     homeView.appendChild(filterOrderBarComponent);
   };
+  //creación del botón de chat with me y h2 con info de la pagina.
+  const divBtnChat = document.createElement("div");
+  const h2 = document.createElement("h2");
+  h2.textContent = "FIND MORE INFO OR TALK TO YOU FAVORITE PIRATE BY CLICKING THEM";
+  const buttonChatHome = document.createElement("button");
+  buttonChatHome.textContent = "Chat with all";
+  //renderizado divBtnChat
+  divBtnChat.appendChild(h2);
+  divBtnChat.appendChild(buttonChatHome)
+
 
   //renderizado de home original
   headerFilterFunc();
+  homeView.appendChild(divBtnChat)
   homeView.appendChild(renderCardsComponent);
   homeView.appendChild(footerComponent);
 
