@@ -1,4 +1,5 @@
 import data from "../data/data.js";
+import { panel } from "../views/panel.js";
 
 export const sortData = (data, sortBy, sortOrder) => {
   const sort = data.sort((x, y) => {
@@ -97,4 +98,20 @@ export const computeStatsBounty = (data, bounty, value) => {
 
 export function getCharacterById(characterId) {
   return data.find((currentCharacter) => currentCharacter.id === characterId)
+}
+
+export const conditionalOpenModal = (verification,nodo,modal) => {
+  if(verification !== 0) {
+     return nodo.appendChild(modal);
+  } else {
+    navigateGO(btnGO, panelChat);
+  }
+}
+
+export const navigateGO = (btnGO, panelChat) => {
+  btnGO.addEventListener("click", () => navigateTo(panelChat));
+}
+
+export const validationApi = () => {
+  
 }
