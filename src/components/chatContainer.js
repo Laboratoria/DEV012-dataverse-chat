@@ -1,4 +1,4 @@
-export const chatComponent = () => {
+export const chatContainer = () => {
   //contenedores section chat
   const divChat = document.createElement("div");
   const sectionChat = document.createElement("section");
@@ -39,13 +39,13 @@ export const chatComponent = () => {
   inputPrompt.setAttribute("placeholder", "Talk with me");
   buttonSend.setAttribute("type", "submit");
 
-  h2Credential.textContent = data.name;
+  h2Credential.textContent = "poop";
 
   //agregar hijos al sectionPrompting
   sectionPrompting.appendChild(textAreaChat);
   sectionPrompting.appendChild(inputPrompt);
+  buttonSend.appendChild(imgBtnSend);
   sectionPrompting.appendChild(buttonSend);
-  sectionPrompting.appendChild(imgBtnSend);
 
   //agregar hijos al sectionCredential
   sectionCredential.appendChild(imgCredential);
