@@ -1,4 +1,4 @@
-export const renderDetails = (luffy) => {
+export const renderDetails = (data) => {
   // Main Container
   const section = document.createElement("section");
   section.classList.add("section-details");
@@ -17,20 +17,22 @@ export const renderDetails = (luffy) => {
   const h3 = document.createElement("h3");
   h3.setAttribute("itemscope", "");
   h3.setAttribute("itemtype", "One Piece");
-  h3.textContent = luffy.name;
+  h3.textContent = data.name;
   const img = document.createElement("img");
-  img.src = luffy["imageUrl"];
-  img.alt = luffy["id"];
+  img.src = data["imageUrl"];
+  img.alt = data["id"];
+  img.className = "img-details"
   const pCards = document.createElement("p");
-  pCards.textContent = luffy.shortDescription;
+  pCards.className = "p-cards"
+  pCards.textContent = data.shortDescription;
   const h4 = document.createElement("h4");
-  h4.textContent = luffy.facts.bounty;
+  h4.textContent = data.facts.bounty;
 
   // Details Paragraph
   const divDetails = document.createElement("div");
   divDetails.classList.add("div-details");
   const pDetails = document.createElement("p");
-  pDetails.textContent = luffy.description;
+  pDetails.textContent = data.description;
   const buttonChat = document.createElement("button");
   buttonChat.textContent = "Chat with me";
 

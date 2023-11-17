@@ -5,7 +5,7 @@ import { error } from "./views/error.js"
 import { details } from "./views/details.js";
 import { facts } from "./views/facts.js";
 import { modalApiKey } from "./components/modalApiKey.js";
-import { chatComponent } from "./components/chatComponent.js";
+import { panel } from "./views/panel.js";
 
 
 
@@ -22,7 +22,7 @@ const routes = {
   "/facts": facts,
   "/details": details,
   "/modaltest": modalApiKey,
-  "/panel": chatComponent
+  "/panel": panel
 };
 
 

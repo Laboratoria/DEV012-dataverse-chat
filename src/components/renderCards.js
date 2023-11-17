@@ -9,7 +9,7 @@ export const renderCards = (data) => {
     li.setAttribute("id", element.id);
     li.innerHTML = `
     <h3 itemprop="name">${element.name}</h3>
-    <img src="${element.imageUrl}" alt="${element.id}">
+    <img class="img-home" src="${element.imageUrl}" alt="${element.id}">
     <p itemprop="description">${element.shortDescription}</p>
     <h4 itemprop="bounty">${element.facts.bounty} </h4>
     `;
