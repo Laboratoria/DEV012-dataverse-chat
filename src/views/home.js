@@ -5,6 +5,7 @@ import { renderCards } from "../components/renderCards.js";
 import { filterData, sortData, sortBounty } from "../lib/dataFunctions.js";
 import data from "../data/data.js";
 import { navigateTo } from "../router.js";
+import { createBtnChat } from "../components/btnChat.js";
 
 export const home = () => {
   let result = data;
@@ -43,8 +44,7 @@ export const home = () => {
   const divBtnChat = document.createElement("div");
   const h2 = document.createElement("h2");
   h2.textContent = "FIND MORE INFO OR TALK TO YOU FAVORITE PIRATE BY CLICKING THEM";
-  const buttonChatHome = document.createElement("button");
-  buttonChatHome.textContent = "Chat with all";
+  const buttonChatHome = createBtnChat("/panel", "/api", "CHAT WITH ALL");
   //renderizado divBtnChat
   divBtnChat.appendChild(h2);
   divBtnChat.appendChild(buttonChatHome)

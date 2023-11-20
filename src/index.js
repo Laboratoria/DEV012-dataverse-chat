@@ -4,8 +4,8 @@ import { home } from "./views/home.js"
 import { error } from "./views/error.js"
 import { details } from "./views/details.js";
 import { facts } from "./views/facts.js";
-import { modalApiKey } from "./components/modalApiKey.js";
 import { panel } from "./views/panel.js";
+import { apiConfig } from "./views/apiConfig.js";
 
 
 
@@ -21,7 +21,7 @@ const routes = {
   "/error": error,
   "/facts": facts,
   "/details": details,
-  "/modaltest": modalApiKey,
+  "/api": apiConfig,
   "/panel": panel
 };
 

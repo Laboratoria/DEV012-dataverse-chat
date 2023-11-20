@@ -1,4 +1,4 @@
-export const modalApiKey = () => {
+export const apiKey = () => {
   const sectionModal = document.createElement("section");
   const divContenedorModal = document.createElement("div");
   const divCloseTitle = document.createElement("div");

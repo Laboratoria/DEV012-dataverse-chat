@@ -1,3 +1,5 @@
+import { createBtnChat } from "./btnChat.js";
+
 export const renderDetails = (data) => {
   // Main Container
   const section = document.createElement("section");
@@ -33,8 +35,7 @@ export const renderDetails = (data) => {
   divDetails.classList.add("div-details");
   const pDetails = document.createElement("p");
   pDetails.textContent = data.description;
-  const buttonChat = document.createElement("button");
-  buttonChat.textContent = "Chat with me";
+  const buttonChat = createBtnChat("/panel", "/api", "CHAT WITH ME")
 
   // Adding children to Internal card
   divCard.appendChild(h3);

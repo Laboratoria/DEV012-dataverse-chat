@@ -1,23 +1,20 @@
-import { modalApiKey } from "./modalApiKey.js";
+import { navigateTo } from "../router.js";
 
-const modalApiKeyFunction = modalApiKey();
+export const createBtnChat = (view, inputApi, btnText, btnCompChat) => {
+  btnCompChat = document.createElement("button");
+  btnCompChat.textContent = btnText;
 
-export const createBtnChat = () => { 
-    
-  const buttonChatHome = document.createElement("button");
-  buttonChatHome.textContent = "Chat with all";
-  
-  if(buttonChatHome) {
-  
-  buttonChatHome.addEventListener(click )
+  const localStorageAPI = localStorage.getItem("key");
 
-    
-    
-    // console.log(buttonChatHome);
-    // modalApiKeyFunction;
-  }; 
+  const verificationRoute = () => {
+    if (localStorageAPI !== "") {
+      navigateTo(view);
+    } else {
+      navigateTo(inputApi);
+    }
+  };
 
-}
+  btnCompChat.addEventListener("click", () => verificationRoute());
 
-return createBtnChat;
-}
+  return btnCompChat;
+};
