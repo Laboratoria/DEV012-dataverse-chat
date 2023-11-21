@@ -8,12 +8,12 @@ export const createBtnChat = (view, inputApi, btnText, btnCompChat) => {
   const verificationRoute = () => {
     const localStorageAPI = localStorage.getItem("key");
     console.log(localStorageAPI);
-    if (localStorageAPI !== "" || localStorageAPI !== undefined || localStorageAPI !== null) {
+    if (localStorageAPI !== "" && localStorageAPI !== undefined && localStorageAPI !== null) {
       navigateTo(view);
     } else {
       navigateTo(inputApi);
     }
-    // if(inputKey.value)
+  
   };
 
   btnCompChat.addEventListener("click", () => verificationRoute());
