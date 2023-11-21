@@ -1,50 +1,50 @@
 export const apiKey = () => {
-  const sectionModal = document.createElement("section");
-  const divContenedorModal = document.createElement("div");
+  const sectionApiKey = document.createElement("section");
+  const divContenedorApiKey = document.createElement("div");
   const divCloseTitle = document.createElement("div");
   const divInput = document.createElement("div");
-  const spanModal = document.createElement("span");
-  const h2Modal = document.createElement("h2");
-  const pModal = document.createElement("p");
-  const inputModal = document.createElement("input");
-  const btnModal = document.createElement("button");
+  const spanApiKey = document.createElement("span");
+  const h2ApiKey = document.createElement("h2");
+  const pApiKey = document.createElement("p");
+  const inputApiKey = document.createElement("input");
+  const btnApiKey = document.createElement("button");
 
   //clases para manipulación de estilos
-  sectionModal.classList.add("section-modal");
-  divContenedorModal.classList.add("div-contenedor-modal");
+  sectionApiKey.classList.add("section-modal");
+  divContenedorApiKey.classList.add("div-contenedor-modal");
   divCloseTitle.classList.add("div-close-title");
   divInput.classList.add("div-input");
-  spanModal.classList.add("span-close-modal");
-  inputModal.classList.add("input-modal");
-  btnModal.classList.add("btn-modal");
+  spanApiKey.classList.add("span-close-modal");
+  inputApiKey.classList.add("input-modal");
+  btnApiKey.classList.add("btn-modal");
 
   //Se agregan los atributos necesarios a cada elemento
-  inputModal.setAttribute("type", "text");
-  inputModal.setAttribute("id", "inputModal");
-  btnModal.setAttribute("type", "submit");
+  inputApiKey.setAttribute("type", "text");
+  inputApiKey.setAttribute("id", "inputModal");
+  btnApiKey.setAttribute("type", "submit");
 
   //Texto de los elementos
-  spanModal.textContent = "X";
-  h2Modal.textContent = "API KEY";
-  pModal.textContent = "Please, enter the corresponding key:";
-  btnModal.textContent = "GO";
+  spanApiKey.textContent = "X";
+  h2ApiKey.textContent = "API KEY";
+  pApiKey.textContent = "Please, enter the corresponding key:";
+  btnApiKey.textContent = "GO";
 
   //Agregar los hijos al padre
-  divCloseTitle.appendChild(h2Modal);
-  divCloseTitle.appendChild(spanModal);
-  divInput.appendChild(pModal);
-  divInput.appendChild(inputModal);
-  divInput.appendChild(btnModal);
+  divCloseTitle.appendChild(h2ApiKey);
+  divCloseTitle.appendChild(spanApiKey);
+  divInput.appendChild(pApiKey);
+  divInput.appendChild(inputApiKey);
+  divInput.appendChild(btnApiKey);
 
   //Agregar al contenedor padre
-  divContenedorModal.appendChild(divCloseTitle);
-  divContenedorModal.appendChild(divInput);
-  sectionModal.appendChild(divContenedorModal);
+  divContenedorApiKey.appendChild(divCloseTitle);
+  divContenedorApiKey.appendChild(divInput);
+  sectionApiKey.appendChild(divContenedorApiKey);
 
-  //Evento para cerrar el modal
-  // spanModal.addEventListener("click", function () {
-  //   sectionModal.style.display = "none";
-  // });
+  btnApiKey.addEventListener("click", () => {
+    localStorage.setItem("key", inputApiKey.value)
+    console.log("mostrando la apikey:", inputApiKey.value);
+  })
 
-  return sectionModal;
+  return sectionApiKey;
 };
