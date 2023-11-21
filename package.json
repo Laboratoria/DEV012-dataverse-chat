@@ -38,6 +38,7 @@
     "commit": "916e031e02c3283ec75092f3e122fa58755d56c3"
   },
   "dependencies": {
+    "dotenv": "^16.3.1",
     "openai": "^4.19.0"
   }
 }

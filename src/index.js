@@ -6,14 +6,13 @@ import { details } from "./views/details.js";
 import { facts } from "./views/facts.js";
 import { panel } from "./views/panel.js";
 import { apiConfig } from "./views/apiConfig.js";
+import { luffyChatConfig } from "./lib/API.js";
 
 
 
 
 //enlace con el root del HMTL
 const viewContainer = document.getElementById("root");
-// const factsButton = document.getElementById("facts");
-// const charactersTitle = document.querySelector("h2");
 
 //Definir rutas en router.
 const routes = {
@@ -43,22 +42,6 @@ document.addEventListener("popstate", (event) => {
   onURLChange(window.location);
 });
 
-
-//eventos para funcionalidad de los filtros.
-
-
-
-
-
-// factsButton.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   viewContainer.innerHTML = "";
-//   charactersTitle.innerHTML = "Facts"
-//   //viewContainer.appendChild(renderStats()); acá va el renderizado de las estadisticas (hay que hacer  el componente)
-//   const origen = document.querySelector("#idOrigin");
-//   origen.textContent = "Did you know that " + computeStats(data, "seaOfOrigin", "East Blue") + "% of the characters come from East Blue.";
-//   const crew = document.querySelector("#idCrew");
-//   crew.textContent = "Did you know that " + computeStats(data, "crewOrigin", "Straw Hat Pirates") + "% of the characters are from Luffy's crew (Straw Hat Pirates)."
-//   const bounty = document.querySelector("#idBounty");
-//   bounty.textContent = "Did you know that " + computeStatsBounty(data, "bounty", 315000000) + "% of the characters have a bounty over 315,000,000."
-// });
+luffyChatConfig().then((response) => {
+  return response.json()
+})
