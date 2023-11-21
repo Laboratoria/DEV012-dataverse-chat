@@ -6,7 +6,7 @@ import { details } from "./views/details.js";
 import { facts } from "./views/facts.js";
 import { panel } from "./views/panel.js";
 import { apiConfig } from "./views/apiConfig.js";
-import { luffyChatConfig } from "./lib/API.js";
+
 
 
 
@@ -42,6 +42,3 @@ document.addEventListener("popstate", (event) => {
   onURLChange(window.location);
 });
 
-luffyChatConfig().then((response) => {
-  return response.json()
-})

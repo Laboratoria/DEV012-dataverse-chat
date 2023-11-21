@@ -1,3 +1,4 @@
+import { luffyChatConfig } from "../lib/API.js";
 export const chatContainer = () => {
   //contenedores section chat
   const divChat = document.createElement("div");
@@ -40,6 +41,13 @@ export const chatContainer = () => {
   buttonSend.setAttribute("type", "submit");
 
   h2Credential.textContent = "poop";
+
+  buttonSend.addEventListener("click", () => {
+    luffyChatConfig().then((response) => {
+      return response.json()
+    })
+    
+  })
 
   //agregar hijos al sectionPrompting
   sectionPrompting.appendChild(textAreaChat);
