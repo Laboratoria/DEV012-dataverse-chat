@@ -1,3 +1,4 @@
+import { navigateTo } from "../router.js";
 export const apiKey = () => {
   const sectionApiKey = document.createElement("section");
   const divContenedorApiKey = document.createElement("div");
@@ -41,9 +42,10 @@ export const apiKey = () => {
   divContenedorApiKey.appendChild(divInput);
   sectionApiKey.appendChild(divContenedorApiKey);
 
-  btnApiKey.addEventListener("click", () => {
+  btnApiKey.addEventListener("click", () =>  {
     localStorage.setItem("key", inputApiKey.value)
     console.log("mostrando la apikey:", inputApiKey.value);
+    navigateTo("/panel")
   })
 
   return sectionApiKey;

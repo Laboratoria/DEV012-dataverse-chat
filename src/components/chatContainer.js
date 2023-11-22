@@ -43,11 +43,26 @@ export const chatContainer = () => {
   h2Credential.textContent = "poop";
 
   buttonSend.addEventListener("click", () => {
-    luffyChatConfig().then((response) => {
-      return response.json()
-    })
-    
-  })
+    const inputUser = inputPrompt.value;
+    luffyChatConfig(inputUser).then((response) => {
+      return response.json();
+    }).then((data) => {
+      const chatTextArea = document.getElementById("textAreaChat");
+      let messages = "No se ha encontrado respuesta.";
+
+      if (data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) {
+        messages = data.choices[0].message.content;
+      }
+  
+      // Agregar la respuesta al textarea
+      chatTextArea.value += messages + "\n";
+    }).catch((error) => {
+      console.error("Error:", error);
+      const chatTextArea = document.getElementById("textAreaChat");
+      chatTextArea.value += "Error al obtener la respuesta.\n";
+    });
+  });
+  
 
   //agregar hijos al sectionPrompting
   sectionPrompting.appendChild(textAreaChat);
