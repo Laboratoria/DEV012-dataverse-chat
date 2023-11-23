@@ -1,3 +1,6 @@
+/*El punto de partida para tu SPA sera el archivo src/index.js. Acá encontrarás algunas
+ instrucciones y comentarios para guiarte en el inicio del desarrollo de tu aplicación.*/
+
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 
 /*
