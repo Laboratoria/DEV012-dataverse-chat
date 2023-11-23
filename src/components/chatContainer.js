@@ -50,11 +50,18 @@ export const chatContainer = () => {
     luffyChatConfig(inputUser).then((response) => {
       return response.json();
     }).then((conversation) => {
+      let totalConversation = [];
       const chatTextArea = document.getElementById("textAreaChat");
       let messages = "No se ha encontrado respuesta.";
-
+      //funciones para agregar conversación nueva
+      const addConvertation = (role,content) => {totalConversation.push({role,content});};
+      //funcion para actualizar la vista del textarea con lo escrito desde el inicio hasta el fin
+      const updateTextarea = () => {
+        const chatTextArea = document.getElementById("textAreaChat");
+        chatTextArea.value = totalConversation.map(messages => `${messages.role}: ${messages.content}`).join("\n") 
+      };
       if (conversation && conversation.choices && conversation.choices[0] && conversation.choices[0].message && conversation.choices[0].message.content) {
-        addConvertation(user,inputUser);
+        addConvertation("user",inputUser);
         addConvertation(system,conversation.choices[0].message.content);
         updateTextarea();
       }
