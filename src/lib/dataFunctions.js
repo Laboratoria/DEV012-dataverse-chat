@@ -99,7 +99,3 @@ export function getCharacterById(characterId) {
   return data.find((currentCharacter) => currentCharacter.id === characterId);
 }
 
-export const validationApi = () => {
-};
-
-
