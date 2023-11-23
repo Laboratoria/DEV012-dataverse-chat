@@ -1,4 +1,7 @@
 import { luffyChatConfig } from "../lib/API.js";
+import { addConvertation } from "../lib/dataFunctions.js";
+import { updateTextarea } from "../lib/dataFunctions.js";
+
 export const chatContainer = () => {
   //contenedores section chat
   const divChat = document.createElement("div");
@@ -46,12 +49,14 @@ export const chatContainer = () => {
     const inputUser = inputPrompt.value;
     luffyChatConfig(inputUser).then((response) => {
       return response.json();
-    }).then((data) => {
+    }).then((conversation) => {
       const chatTextArea = document.getElementById("textAreaChat");
       let messages = "No se ha encontrado respuesta.";
 
-      if (data && data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content) {
-        messages = data.choices[0].message.content;
+      if (conversation && conversation.choices && conversation.choices[0] && conversation.choices[0].message && conversation.choices[0].message.content) {
+        addConvertation(user,inputUser);
+        addConvertation(system,conversation.choices[0].message.content);
+        updateTextarea();
       }
   
       // Agregar la respuesta al textarea

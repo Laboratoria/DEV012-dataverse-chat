@@ -99,7 +99,12 @@ export function getCharacterById(characterId) {
   return data.find((currentCharacter) => currentCharacter.id === characterId);
 }
 
-export const validationApi = () => {
+export const addConvertation = (role,content) => {
+  conversation.push({role,content});
 };
 
+export const updateTextarea = () => {
+  const chatTextArea = document.getElementById("textAreaChat");
+  chatTextArea.value = conversation.map(messages => `${messages.role}: ${messages.content}`).join("\n") 
+};
 
