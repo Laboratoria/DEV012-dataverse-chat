@@ -1,7 +1,4 @@
 import { luffyChatConfig } from "../lib/API.js";
-import { addConvertation } from "../lib/dataFunctions.js";
-import { updateTextarea } from "../lib/dataFunctions.js";
-
 export const chatContainer = () => {
   //contenedores section chat
   const divChat = document.createElement("div");
@@ -45,16 +42,16 @@ export const chatContainer = () => {
 
   h2Credential.textContent = "poop";
 
+  let totalConversation = [];
   buttonSend.addEventListener("click", () => {
     const inputUser = inputPrompt.value;
     luffyChatConfig(inputUser).then((response) => {
       return response.json();
     }).then((conversation) => {
-      let totalConversation = [];
-      const chatTextArea = document.getElementById("textAreaChat");
       let messages = "No se ha encontrado respuesta.";
       //funciones para agregar conversación nueva
       const addConvertation = (role,content) => {totalConversation.push({role,content});};
+      console.log(totalConversation);
       //funcion para actualizar la vista del textarea con lo escrito desde el inicio hasta el fin
       const updateTextarea = () => {
         const chatTextArea = document.getElementById("textAreaChat");
@@ -62,12 +59,13 @@ export const chatContainer = () => {
       };
       if (conversation && conversation.choices && conversation.choices[0] && conversation.choices[0].message && conversation.choices[0].message.content) {
         addConvertation("user",inputUser);
-        addConvertation(system,conversation.choices[0].message.content);
+        console.log(totalConversation);
+        messages = conversation.choices[0].message.content;
+        addConvertation("system",messages);
         updateTextarea();
-      }
+      } 
   
       // Agregar la respuesta al textarea
-      chatTextArea.value += messages + "\n";
     }).catch((error) => {
       console.error("Error:", error);
       const chatTextArea = document.getElementById("textAreaChat");
