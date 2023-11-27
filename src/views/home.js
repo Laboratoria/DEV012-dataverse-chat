@@ -42,12 +42,13 @@ export const home = () => {
   };
   //creación del botón de chat with me y h2 con info de la pagina.
   const divBtnChat = document.createElement("div");
+  divBtnChat.className = "h2-btn-chat"
   const h2 = document.createElement("h2");
   h2.textContent = "FIND MORE INFO OR TALK TO YOU FAVORITE PIRATE BY CLICKING THEM";
   const buttonChatHome = createBtnChat("/panel", "/api", "CHAT WITH ALL");
   //renderizado divBtnChat
   divBtnChat.appendChild(h2);
-  divBtnChat.appendChild(buttonChatHome)
+  divBtnChat.appendChild(buttonChatHome);
 
 
   //renderizado de home original

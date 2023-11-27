@@ -7,6 +7,7 @@ export const renderDetails = (data) => {
 
   // Title
   const h2 = document.createElement("h2");
+  h2.className = "h2-details";
   h2.textContent = "Character Details";
 
   // Card Container
