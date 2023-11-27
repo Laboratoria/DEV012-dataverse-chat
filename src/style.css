@@ -415,7 +415,7 @@ footer {
   align-items: center;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1366px) {
   header {
     height: 30vh;
   }
@@ -424,7 +424,7 @@ footer {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 340px) {
 
   header {
     font-family: "Metal Mania", cursive;
