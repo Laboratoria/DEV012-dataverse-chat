@@ -15,6 +15,8 @@ export const chatContainer = () => {
   const inputPrompt = document.createElement("input");
   const buttonSend = document.createElement("button");
   const imgBtnSend = document.createElement("img");
+  imgBtnSend.src = "./lib/img/send.png";
+  imgBtnSend.alt = "SEND";
 
   //clases de los section chat
   divChat.className = "div-chat";
@@ -40,39 +42,51 @@ export const chatContainer = () => {
   inputPrompt.setAttribute("placeholder", "Talk with me");
   buttonSend.setAttribute("type", "submit");
 
-  h2Credential.textContent = "poop";
+  h2Credential.textContent = "(placeholder)";
 
-  let totalConversation = [];
+  const totalConversation = [];
   buttonSend.addEventListener("click", () => {
     const inputUser = inputPrompt.value;
-    luffyChatConfig(inputUser).then((response) => {
-      return response.json();
-    }).then((conversation) => {
-      let messages = "No se ha encontrado respuesta.";
-      //funciones para agregar conversación nueva
-      const addConvertation = (role,content) => {totalConversation.push({role,content});};
-      console.log(totalConversation);
-      //funcion para actualizar la vista del textarea con lo escrito desde el inicio hasta el fin
-      const updateTextarea = () => {
-        const chatTextArea = document.getElementById("textAreaChat");
-        chatTextArea.value = totalConversation.map(messages => `${messages.role}: ${messages.content}`).join("\n") 
-      };
-      if (conversation && conversation.choices && conversation.choices[0] && conversation.choices[0].message && conversation.choices[0].message.content) {
-        addConvertation("user",inputUser);
+    luffyChatConfig(inputUser)
+      .then((response) => {
+        return response.json();
+      })
+      .then((conversation) => {
+        let messages = "No se ha encontrado respuesta.";
+        //funciones para agregar conversación nueva
+        const addConvertation = (role, content) => {
+          totalConversation.push({ role, content });
+        };
         console.log(totalConversation);
-        messages = conversation.choices[0].message.content;
-        addConvertation("system",messages);
-        updateTextarea();
-      } 
-  
-      // Agregar la respuesta al textarea
-    }).catch((error) => {
-      console.error("Error:", error);
-      const chatTextArea = document.getElementById("textAreaChat");
-      chatTextArea.value += "Error al obtener la respuesta.\n";
-    });
+        //funcion para actualizar la vista del textarea con lo escrito desde el inicio hasta el fin
+        const updateTextarea = () => {
+          const chatTextArea = document.getElementById("textAreaChat");
+          chatTextArea.value = totalConversation
+            .map((messages) => `${messages.role}: ${messages.content}`)
+            .join("\n");
+        };
+        if (
+          conversation &&
+          conversation.choices &&
+          conversation.choices[0] &&
+          conversation.choices[0].message &&
+          conversation.choices[0].message.content
+        ) {
+          addConvertation("user", inputUser);
+          console.log(totalConversation);
+          messages = conversation.choices[0].message.content;
+          addConvertation("system", messages);
+          updateTextarea();
+        }
+
+        // Agregar la respuesta al textarea
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        const chatTextArea = document.getElementById("textAreaChat");
+        chatTextArea.value += "Error al obtener la respuesta.\n";
+      });
   });
-  
 
   //agregar hijos al sectionPrompting
   sectionPrompting.appendChild(textAreaChat);
