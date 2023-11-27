@@ -1,4 +1,7 @@
+import { getCharacterById } from "./dataFunctions.js";
 import { luffyChatConfig } from "../lib/API.js";
+import data from "../data/data.js";
+
 export const chatContainer = () => {
   //contenedores section chat
   const divChat = document.createElement("div");
@@ -47,8 +50,13 @@ export const chatContainer = () => {
   const totalConversation = [];
   buttonSend.addEventListener("click", () => {
     const inputUser = inputPrompt.value;
-    luffyChatConfig(inputUser)
+    const character = data.id;
+    const characterId = getCharacterById(character)
+    luffyChatConfig(inputUser, characterId)
       .then((response) => {
+        if (response.status === 401 || response.status === 403) {
+          throw new Error("invalid api key");
+        }
         return response.json();
       })
       .then((conversation) => {
