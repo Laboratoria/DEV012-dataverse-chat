@@ -1,4 +1,5 @@
 import { navigateTo } from "../router.js";
+import { petition } from "../lib/dataFunctions.js";
 export const apiKey = () => {
   const sectionApiKey = document.createElement("section");
   const divContenedorApiKey = document.createElement("div");
@@ -22,6 +23,8 @@ export const apiKey = () => {
   //Se agregan los atributos necesarios a cada elemento
   inputApiKey.setAttribute("type", "text");
   inputApiKey.setAttribute("id", "inputModal");
+  inputApiKey.setAttribute("minlength", "49");
+  inputApiKey.setAttribute("maxlength", "60");
   btnApiKey.setAttribute("type", "submit");
 
   //Texto de los elementos
@@ -42,11 +45,27 @@ export const apiKey = () => {
   divContenedorApiKey.appendChild(divInput);
   sectionApiKey.appendChild(divContenedorApiKey);
 
-  btnApiKey.addEventListener("click", () =>  {
-    localStorage.setItem("key", inputApiKey.value)
+  btnApiKey.addEventListener("click", () => {
+    petition().then((response) => {
+      if (response.status === 401) {
+        alert("Ingrese una API Key válida");
+        inputApiKey.focus();
+      }
+    });
+
+    localStorage.setItem("key", inputApiKey.value);
     console.log("mostrando la apikey:", inputApiKey.value);
-    navigateTo("/panel")
-  })
+
+    const historyState = history.state;
+
+    const isComingFromHome = historyState && historyState.from === "home";
+
+    if (isComingFromHome) {
+      navigateTo("/panelAll");
+    } else {
+      navigateTo("/panelChr");
+    }
+  });
 
   return sectionApiKey;
 };

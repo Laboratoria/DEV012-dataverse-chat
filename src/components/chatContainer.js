@@ -1,4 +1,4 @@
-import { getCharacterById } from "./dataFunctions.js";
+import { getCharacterById } from "../lib/dataFunctions.js";
 import { luffyChatConfig } from "../lib/API.js";
 import data from "../data/data.js";
 
@@ -55,7 +55,8 @@ export const chatContainer = () => {
     luffyChatConfig(inputUser, characterId)
       .then((response) => {
         if (response.status === 401 || response.status === 403) {
-          throw new Error("invalid api key");
+          alert("invalid api key");
+          return
         }
         return response.json();
       })

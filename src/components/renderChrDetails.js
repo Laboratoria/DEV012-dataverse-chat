@@ -36,7 +36,7 @@ export const renderDetails = (data) => {
   divDetails.classList.add("div-details");
   const pDetails = document.createElement("p");
   pDetails.textContent = data.description;
-  const buttonChat = createBtnChat("/panel", "/api", "CHAT WITH ME")
+  const buttonChat = createBtnChat("/panelChr", "/api", "CHAT WITH ME")
 
   // Adding children to Internal card
   divCard.appendChild(h3);
