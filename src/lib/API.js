@@ -6,7 +6,7 @@ const API_KEY = localStorage.getItem("key");
 export const luffyChatConfig = (inputUser, characterIdChat) => {
   const characterConversation = getCharacterById(characterIdChat);
   if (!characterConversation) {
-    throw new Error("Personaje no encontrado");
+    throw new Error(alert("Personaje no Encontrado"));
   }
 
   const conversation = {
@@ -36,3 +36,32 @@ export const luffyChatConfig = (inputUser, characterIdChat) => {
 
   return result;
 };
+
+// export const chatWithEveryone = (inputUser) => {
+
+//   const conversation = {
+//     model: "gpt-3.5-turbo",
+//     messages: [
+//       {
+//         role: "system",
+//         content: "Eres estos personajes de one piece: Monkey D. Luffy, Roronoa Zoro, Nami, Usopp, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jimbei, Jewelry Bonney, Buggy the Clown, Gol D. Roger, Portgas D. Ace, Sir Crocodile, Eustass Kid, Shanks, Sabo, Trafalgar Law, Charlotte Katakuri, Marshall D. Teach, X Drake, Donquixote Doflamingo, Boa Hancock. Debes identificar cada personaje que se comunique con el usuario. No deben escribir todos al mismo tiempo. Puede ser un máximo de 4 a la vez y deben esperar a que termine de escribir uno antes de empezar a escribir el siguiente."
+//       },
+//       {
+//         role: "user",
+//         content: inputUser,
+//       },
+//     ],
+//     temperature: 0.4,
+//   };
+//   const result = fetch(endpoint, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization: `Bearer ${API_KEY}`,
+//     },
+//     body: JSON.stringify(conversation),
+//   });
+
+//   return result;
+
+// };

@@ -45,7 +45,7 @@ export const home = () => {
   divBtnChat.className = "h2-btn-chat"
   const h2 = document.createElement("h2");
   h2.textContent = "FIND MORE INFO OR TALK TO YOU FAVORITE PIRATE BY CLICKING THEM";
-  const buttonChatHome = createBtnChat("/panel", "/api", "CHAT WITH ALL");
+  const buttonChatHome = createBtnChat("/panelAll", "/api", "CHAT WITH ALL");
   //renderizado divBtnChat
   divBtnChat.appendChild(h2);
   divBtnChat.appendChild(buttonChatHome);

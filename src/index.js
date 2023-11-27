@@ -4,12 +4,9 @@ import { home } from "./views/home.js"
 import { error } from "./views/error.js"
 import { details } from "./views/details.js";
 import { facts } from "./views/facts.js";
-import { panel } from "./views/panel.js";
+import { panelCharacter } from "./views/panelCharacter.js";
 import { apiConfig } from "./views/apiConfig.js";
-
-
-
-
+import { panelAll } from "./views/panelAll.js";
 
 //enlace con el root del HMTL
 const viewContainer = document.getElementById("root");
@@ -21,18 +18,15 @@ const routes = {
   "/facts": facts,
   "/details": details,
   "/api": apiConfig,
-  "/panel": panel
+  "/panelChr": panelCharacter,
+  "/panelAll": panelAll
 };
-
 
 //Invocar el router para renderizar la vista correcta.
 setRoutes(routes);
 
 //Pasar "root element" a router.
 setRootElement(viewContainer);
-
-
-
 document.addEventListener("DOMContentLoaded", (event) => {
   onURLChange(event.target.location);
 });
