@@ -1,7 +1,14 @@
+import {getCharacterById} from "./dataFunctions.js"
+
 const endpoint = "https://api.openai.com/v1/chat/completions";
 const API_KEY = localStorage.getItem("key");
 
-export const luffyChatConfig = (inputUser) => {
+export const luffyChatConfig = (inputUser, characterIdChat) => {
+  const characterConversation = getCharacterById(characterIdChat);
+  if (!characterConversation) {
+    throw new Error("Personaje no encontrado");
+  }
+
   const conversation = {
     model: "gpt-3.5-turbo",
     messages: [
