@@ -1,5 +1,5 @@
 import { navigateTo } from "../router.js";
-import { petition } from "../lib/dataFunctions.js";
+import { emptyPetition } from "../lib/API.js";
 export const apiKey = () => {
   const sectionApiKey = document.createElement("section");
   const divContenedorApiKey = document.createElement("div");
@@ -46,26 +46,26 @@ export const apiKey = () => {
   sectionApiKey.appendChild(divContenedorApiKey);
 
   btnApiKey.addEventListener("click", () => {
-    petition().then((response) => {
-      if (response.status === 401) {
-        alert("Ingrese una API Key válida");
-        inputApiKey.focus();
-      }
-    });
-
-    localStorage.setItem("key", inputApiKey.value);
-    console.log("mostrando la apikey:", inputApiKey.value);
-
-    const historyState = history.state;
-
-    const isComingFromHome = historyState && historyState.from === "home";
-
-    if (isComingFromHome) {
-      navigateTo("/panelAll");
-    } else {
-      navigateTo("/panelChr");
-    }
+    emptyPetition("/api")
+      .then(() => {
+        // La petición es exitosa, puedes continuar con el resto del código
+        localStorage.setItem("key", inputApiKey.value);
+        console.log("mostrando la apikey:", inputApiKey.value);
+  
+        const historyState = history.state;
+        const isComingFromHome = historyState && historyState.from === "home";
+  
+        if (isComingFromHome) {
+          navigateTo("/panelAll");
+        } else {
+          navigateTo("/panelChr");
+        }
+      })
+      .catch((error) => {
+        // Manejar el error si la petición no es exitosa
+        console.error("Error al verificar la API Key:", error);
+      });
   });
-
+  
   return sectionApiKey;
-};
+}
