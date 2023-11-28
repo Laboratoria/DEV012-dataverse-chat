@@ -99,16 +99,3 @@ export function getCharacterById(characterId) {
   return data.find((currentCharacter) => currentCharacter.id === characterId);
 }
 
-//función de petición vacía para usar en el apikey.js
-export const petition = () => {
-  const emptyPetition = {
-    model: "gpt-3.5-turbo",
-    messages: [
-      {
-        role: "system",
-        content: "",
-      },
-    ],
-  };
-  return emptyPetition;
-};

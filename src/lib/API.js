@@ -1,7 +1,30 @@
-import {getCharacterById} from "./dataFunctions.js"
+import { getCharacterById } from "./dataFunctions.js";
+import { navigateTo } from "../router.js";
+
 
 const endpoint = "https://api.openai.com/v1/chat/completions";
 const API_KEY = localStorage.getItem("key");
+
+export const emptyPetition = async (inputApi) => {
+  try {
+    const response = await fetch(endpoint, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (response.status === 401) {
+      alert("Por favor, ingresa una API Key válida");
+      navigateTo(inputApi);
+      throw new Error("API Key inválida");
+    }
+
+  } catch (error) {
+    console.error("Error:", error);
+    throw error;
+  }
+};
 
 export const luffyChatConfig = (inputUser, characterIdChat) => {
   const characterConversation = getCharacterById(characterIdChat);
