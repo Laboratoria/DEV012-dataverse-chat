@@ -1,30 +1,31 @@
 import { getCharacterById } from "./dataFunctions.js";
-import { navigateTo } from "../router.js";
-
+// import { navigateTo } from "../router.js";
 
 const endpoint = "https://api.openai.com/v1/chat/completions";
 const API_KEY = localStorage.getItem("key");
 
-export const emptyPetition = async (inputApi) => {
-  try {
-    const response = await fetch(endpoint, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+// export const emptyPetition = (inputApi) => {
+//   try {
+//     const response = fetch(endpoint, {
+//       method: "GET",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${API_KEY}`,
+//       },
+//     });
 
-    if (response.status === 401) {
-      alert("Por favor, ingresa una API Key válida");
-      navigateTo(inputApi);
-      throw new Error("API Key inválida");
-    }
+//     if (response.status === 401) {
+//       alert("Por favor, ingresa una API Key válida");
+//       navigateTo(inputApi);
+//       throw new Error("API Key inválida");
+//     }
+//     return response;
 
-  } catch (error) {
-    console.error("Error:", error);
-    throw error;
-  }
-};
+//   } catch (error) {
+//     console.error("Error:", error);
+//     throw error;
+//   }
+// };
 
 export const luffyChatConfig = (inputUser, characterIdChat) => {
   const characterConversation = getCharacterById(characterIdChat);
@@ -60,31 +61,54 @@ export const luffyChatConfig = (inputUser, characterIdChat) => {
   return result;
 };
 
-// export const chatWithEveryone = (inputUser) => {
+export const chatWithEveryone = (inputUser) => {
+  const conversation = {
+    model: "gpt-3.5-turbo",
+    messages: [
+      {
+        role: "system",
+        content:
+          "Eres estos personajes de one piece: Monkey D. Luffy, Roronoa Zoro, Nami, Usopp, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jimbei, Jewelry Bonney, Buggy the Clown, Gol D. Roger, Portgas D. Ace, Sir Crocodile, Eustass Kid, Shanks, Sabo, Trafalgar Law, Charlotte Katakuri, Marshall D. Teach, X Drake, Donquixote Doflamingo, Boa Hancock. así que deben responder colectivamente a todas las preguntas sobre sus vidas que les puedan hacer. No deben escribir todos al mismo tiempo.",
+      },
+      {
+        role: "user",
+        content: inputUser,
+      },
+    ],
+    temperature: 0.4,
+  };
+  const result = fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${API_KEY}`,
+    },
+    body: JSON.stringify(conversation),
+  });
 
-//   const conversation = {
-//     model: "gpt-3.5-turbo",
-//     messages: [
-//       {
-//         role: "system",
-//         content: "Eres estos personajes de one piece: Monkey D. Luffy, Roronoa Zoro, Nami, Usopp, Sanji, Tony Tony Chopper, Nico Robin, Franky, Brook, Jimbei, Jewelry Bonney, Buggy the Clown, Gol D. Roger, Portgas D. Ace, Sir Crocodile, Eustass Kid, Shanks, Sabo, Trafalgar Law, Charlotte Katakuri, Marshall D. Teach, X Drake, Donquixote Doflamingo, Boa Hancock. Debes identificar cada personaje que se comunique con el usuario. No deben escribir todos al mismo tiempo. Puede ser un máximo de 4 a la vez y deben esperar a que termine de escribir uno antes de empezar a escribir el siguiente."
-//       },
-//       {
-//         role: "user",
-//         content: inputUser,
-//       },
-//     ],
-//     temperature: 0.4,
-//   };
-//   const result = fetch(endpoint, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: `Bearer ${API_KEY}`,
-//     },
-//     body: JSON.stringify(conversation),
-//   });
+  return result;
+};
 
-//   return result;
-
-// };
+// function generarRegexParaToken(tokenBase) {
+//   // Escapar los caracteres especiales que puedan aparecer en el token base
+//   var escapedTokenBase = tokenBase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+//   // Crear la expresión regular dinámica para validar el token  var regexPattern = new RegExp('^' + escapedTokenBase + '$');
+//   return regexPattern;
+// }
+// function validarToken(token, regex) {
+//   return regex.test(token);
+// }
+// // Token base con la estructura conocida
+// var tokenBase = "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";
+// // Generar la expresión regular dinámica para el token basevar regexParaToken = generarRegexParaToken(tokenBase);
+// // Obtener el token almacenado en localStorage
+// var tokenAlmacenado = localStorage.getItem("miToken");
+// if (tokenAlmacenado) {
+//   if (validarToken(tokenAlmacenado, regexParaToken)) {
+//     console.log("El token almacenado cumple con la estructura.");
+//   } else {
+//     console.log("El token almacenado no cumple con la estructura.");
+//   }
+// } else {
+//   console.log("No se encontró ningún token en el localStorage.");
+// }

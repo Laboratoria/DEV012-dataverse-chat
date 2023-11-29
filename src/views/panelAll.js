@@ -1,4 +1,4 @@
-import { chatContainer } from "../components/chatContainer.js";
+import { chatContainerAll } from "../components/chatContainerAll.js";
 import { footer } from "../components/footer.js";
 import { header } from "../components/header.js";
 import { homeButton } from "../components/homeButton.js";
@@ -7,7 +7,7 @@ import { navigateTo } from "../router.js";
 export const panelAll = () => {
   const headerComponent = header();
   const homeButtonComponent = homeButton();
-  const chatComponent = chatContainer();
+  const chatComponent = chatContainerAll();
   const footerComponent = footer();
 
   const viewPanel = document.createElement("div");
