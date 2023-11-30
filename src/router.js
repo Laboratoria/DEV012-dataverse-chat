@@ -31,16 +31,20 @@ const renderView = (pathname, props = {}) => {
   // clear the root element
   const root = rootElement;
   root.innerHTML = "";
+
   // find the correct view in ROUTES for the pathname
   if (ROUTES[pathname]) {
-    const template = ROUTES[pathname](props);
+    const { component, title } = ROUTES[pathname];
+    const template = component(props);
+
+    // Update the document title based on the route
+    document.title = title || "Default Title";
+
     root.appendChild(template);
   } else {
     // in case not found render the error view
-    root.appendChild(ROUTES["/error"](props));
+    root.appendChild(ROUTES["/error"].component(props));
   }
-  // render the correct view passing the value of props
-  // add the view element to the DOM root element
 };
 
 export const navigateTo = (pathname, props = {}) => {
