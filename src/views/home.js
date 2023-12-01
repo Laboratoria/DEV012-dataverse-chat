@@ -8,17 +8,17 @@ import { navigateTo } from "../router.js";
 import { createBtnChat } from "../components/btnChat.js";
 
 export const home = () => {
-  let result = data;
+  let result = data.filter(character => character.id !== "all");
   const homeView = document.createElement("div");
   homeView.className = "viewComponent";
 
   function setupRenderCards(cards) {
     const renderCardsComponent = renderCards(cards);
-    // Recuerda que renderCardsComponent es un elemento ul
+    // RenderCardsComponent es un elemento ul
     renderCardsComponent.addEventListener("click", (event) => {
       const closestLi = event.target.closest("li");
       if (closestLi) {
-        // Click inside a card
+        // Click dentro de la tarjeta
         const characterId = closestLi.getAttribute("id");
         navigateTo("/details", { id: characterId });
       }
@@ -45,7 +45,7 @@ export const home = () => {
   divBtnChat.className = "h2-btn-chat"
   const h2 = document.createElement("h2");
   h2.textContent = "FIND MORE INFO OR TALK TO YOU FAVORITE PIRATE BY CLICKING THEM";
-  const buttonChatHome = createBtnChat("/panelAll", "/api", "CHAT WITH ALL");
+  const buttonChatHome = createBtnChat("all", "CHAT WITH ALL");
   //renderizado divBtnChat
   divBtnChat.appendChild(h2);
   divBtnChat.appendChild(buttonChatHome);

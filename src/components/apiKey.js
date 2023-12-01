@@ -1,6 +1,8 @@
 import { navigateTo } from "../router.js";
-import { emptyPetition } from "../lib/API.js";
-export const apiKey = () => {
+import { checkAPIKey } from "../lib/API.js";
+export const apiKey = (props) => {
+  const pathToNavigate = props.pathToNavigate
+  const propsToNavigate = props.propsToNavigate
   const sectionApiKey = document.createElement("section");
   const divContenedorApiKey = document.createElement("div");
   const divCloseTitle = document.createElement("div");
@@ -44,28 +46,18 @@ export const apiKey = () => {
   divContenedorApiKey.appendChild(divCloseTitle);
   divContenedorApiKey.appendChild(divInput);
   sectionApiKey.appendChild(divContenedorApiKey);
-
+  
   btnApiKey.addEventListener("click", () => {
-    emptyPetition("/api")
-      .then(() => {
-        // La petición es exitosa, puedes continuar con el resto del código
+    checkAPIKey(inputApiKey.value)
+    .then(() => {
         localStorage.setItem("key", inputApiKey.value);
-        console.log("mostrando la apikey:", inputApiKey.value);
-  
-        const historyState = history.state;
-        const isComingFromHome = historyState && historyState.from === "home";
-  
-        if (isComingFromHome) {
-          navigateTo("/panelAll");
-        } else {
-          navigateTo("/panelChr");
-        }
-      })
-      .catch((error) => {
-        // Manejar el error si la petición no es exitosa
-        console.error("Error al verificar la API Key:", error);
-      });
-  });
+        console.log("API key almacenada:", inputApiKey.value);
+        if(pathToNavigate && propsToNavigate) navigateTo(pathToNavigate, propsToNavigate)
+    })
+    .catch((error) => {
+      alert("Error al verificar la API Key: " + error);
+    });
+});
   
   return sectionApiKey;
 }

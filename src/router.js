@@ -42,6 +42,7 @@ const renderView = (pathname, props = {}) => {
 export const navigateTo = (pathname, props = {}) => {
   // update window history with pushState
   let URLvisited = window.location.origin + pathname
+  console.log({ props })
   if(Object.keys(props).length !== 0) {
     const search = new URLSearchParams()
     for (const [key, value] of Object.entries(props)) {

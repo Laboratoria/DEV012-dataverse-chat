@@ -1,6 +1,6 @@
 import { createBtnChat } from "./btnChat.js";
 
-export const renderDetails = (data) => {
+export const renderDetails = (character) => {
   // Main Container
   const section = document.createElement("section");
   section.classList.add("section-details");
@@ -20,23 +20,23 @@ export const renderDetails = (data) => {
   const h3 = document.createElement("h3");
   h3.setAttribute("itemscope", "");
   h3.setAttribute("itemtype", "One Piece");
-  h3.textContent = data.name;
+  h3.textContent = character.name;
   const img = document.createElement("img");
-  img.src = data["imageUrl"];
-  img.alt = data["id"];
+  img.src = character["imageUrl"];
+  img.alt = character["id"];
   img.className = "img-details"
   const pCards = document.createElement("p");
   pCards.className = "p-cards"
-  pCards.textContent = data.shortDescription;
+  pCards.textContent = character.shortDescription;
   const h4 = document.createElement("h4");
-  h4.textContent = data.facts.bounty;
+  h4.textContent = character.facts.bounty;
 
   // Details Paragraph
   const divDetails = document.createElement("div");
   divDetails.classList.add("div-details");
   const pDetails = document.createElement("p");
-  pDetails.textContent = data.description;
-  const buttonChat = createBtnChat("/panelChr", "/api", "CHAT WITH ME")
+  pDetails.textContent = character.description;
+  const buttonChat = createBtnChat(character.id, "CHAT WITH ME")
 
   // Adding children to Internal card
   divCard.appendChild(h3);

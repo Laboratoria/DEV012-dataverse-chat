@@ -1,16 +1,16 @@
 import { navigateTo } from "../router.js";
 
-export const createBtnChat = (view, inputApi, btnText, btnCompChat) => {
-  btnCompChat = document.createElement("button");
-  btnCompChat.className = "button-home "
+export const createBtnChat = (characterId, btnText) => {
+  const btnCompChat = document.createElement("button");
+  btnCompChat.className = "button-home ";
   btnCompChat.textContent = btnText;
 
   const verificationRoute = () => {
     const localStorageAPI = localStorage.getItem("key");
     if (localStorageAPI !== "" && localStorageAPI !== undefined && localStorageAPI !== null) {
-      navigateTo(view);
+      navigateTo('/panelChr', { id: characterId });
     } else {
-      navigateTo(inputApi);
+      navigateTo('/api', { pathToNavigate: '/panelChr', propsToNavigate: { id: characterId }  });
     }
   };
   btnCompChat.addEventListener("click", () => verificationRoute());

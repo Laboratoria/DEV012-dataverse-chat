@@ -6,7 +6,6 @@ import { details } from "./views/details.js";
 import { facts } from "./views/facts.js";
 import { panelCharacter } from "./views/panelCharacter.js";
 import { apiConfig } from "./views/apiConfig.js";
-import { panelAll } from "./views/panelAll.js";
 
 //enlace con el root del HMTL
 const viewContainer = document.getElementById("root");
@@ -18,8 +17,7 @@ const routes = {
   "/facts": facts,
   "/details": details,
   "/api": apiConfig,
-  "/panelChr": panelCharacter,
-  "/panelAll": panelAll
+  "/panelChr": panelCharacter
 };
 
 //Invocar el router para renderizar la vista correcta.
