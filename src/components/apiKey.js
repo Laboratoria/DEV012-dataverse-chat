@@ -1,5 +1,5 @@
 import { navigateTo } from "../router.js";
-// import { emptyPetition } from "../lib/API.js";
+import { emptyPetition } from "../lib/API.js";
 export const apiKey = () => {
   const sectionApiKey = document.createElement("section");
   const divContenedorApiKey = document.createElement("div");
@@ -18,7 +18,7 @@ export const apiKey = () => {
   divInput.classList.add("div-input");
   inputApiKey.classList.add("input-modal");
   btnApiKey.classList.add("btn-modal");
-  btnDeleteApiKey.classList.add("btn-modal")
+  btnDeleteApiKey.classList.add("btn-modal");
 
   //Se agregan los atributos necesarios a cada elemento
   inputApiKey.setAttribute("type", "text");
@@ -26,13 +26,13 @@ export const apiKey = () => {
   inputApiKey.setAttribute("minlength", "49");
   inputApiKey.setAttribute("maxlength", "60");
   btnApiKey.setAttribute("type", "submit");
-  btnDeleteApiKey.setAttribute("type", "button")
+  btnDeleteApiKey.setAttribute("type", "button");
 
   //Texto de los elementos
   h2ApiKey.textContent = "API KEY";
   pApiKey.textContent = "Please, enter the corresponding key:";
   btnApiKey.textContent = "GO";
-  btnDeleteApiKey.textContent = "DELETE"
+  btnDeleteApiKey.textContent = "DELETE";
 
   //Agregar los hijos al padre
   divCloseTitle.appendChild(h2ApiKey);
@@ -48,29 +48,32 @@ export const apiKey = () => {
 
   btnDeleteApiKey.addEventListener("click", () => {
     localStorage.removeItem("key");
-  })
+  });
 
   btnApiKey.addEventListener("click", () => {
-    // emptyPetition("/api")
-    //   .then(() => {
-    //     // La petición es exitosa, puedes continuar con el resto del código
-    localStorage.setItem("key", inputApiKey.value);
-    console.log("mostrando la apikey:", inputApiKey.value);
-
-    const historyState = history.state;
-    const isComingFromHome = historyState && historyState.from === "home";
-
-    if (isComingFromHome) {
-      navigateTo("/panelAll");
-    } else {
-      navigateTo("/panelChr");
-    }
+    //primero obtener la api key -pedirla a input.value
+    //luego llamo a empty petition y le paso el api key como parámetro
+    emptyPetition(inputApiKey.value)
+      //acá valido si la respuesta está correcta y que haga el navigate a donde corresponda
+      .then((response) => {
+        if (response.status === 401) {
+          alert("API Key inválida");
+          inputApiKey.focus();
+        } else if (response.status === 400) {
+          localStorage.setItem("key", inputApiKey.value);
+          console.log("mostrando la apikey:", inputApiKey.value);
+          const currentUrl = window.location.href;
+          if (currentUrl.includes("http://localhost:3000/")) {
+            navigateTo("/panelAll");
+          } else {
+            navigateTo("/panelChr");
+          }
+        } 
+      })
+      .catch((error) => {
+        console.error("Error al verificar la API Key:", error);
+      });
   });
-  //     .catch((error) => {
-  //       // Manejar el error si la petición no es exitosa
-  //       console.error("Error al verificar la API Key:", error);
-  //     });
-  // });
 
   return sectionApiKey;
 };

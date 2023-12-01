@@ -4,28 +4,25 @@ import { getCharacterById } from "./dataFunctions.js";
 const endpoint = "https://api.openai.com/v1/chat/completions";
 const API_KEY = localStorage.getItem("key");
 
-// export const emptyPetition = (inputApi) => {
-//   try {
-//     const response = fetch(endpoint, {
-//       method: "GET",
-//       headers: {
-//         "Content-Type": "application/json",
-//         Authorization: `Bearer ${API_KEY}`,
-//       },
-//     });
-
-//     if (response.status === 401) {
-//       alert("Por favor, ingresa una API Key válida");
-//       navigateTo(inputApi);
-//       throw new Error("API Key inválida");
-//     }
-//     return response;
-
-//   } catch (error) {
-//     console.error("Error:", error);
-//     throw error;
-//   }
-// };
+export const emptyPetition = (key) => {
+  try {
+    const emptyConversation = {
+      model: "gpt-3.5-turbo",
+      messages: [],
+    };
+    const response = fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${key}`,
+      },
+      body: JSON.stringify(emptyConversation),
+    });
+    return response;
+  } catch (error) {
+    return error.message
+  }
+};
 
 export const luffyChatConfig = (inputUser, characterIdChat) => {
   const characterConversation = getCharacterById(characterIdChat);
@@ -86,29 +83,6 @@ export const chatWithEveryone = (inputUser) => {
     body: JSON.stringify(conversation),
   });
 
+  console.log(result);
   return result;
 };
-
-// function generarRegexParaToken(tokenBase) {
-//   // Escapar los caracteres especiales que puedan aparecer en el token base
-//   var escapedTokenBase = tokenBase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-//   // Crear la expresión regular dinámica para validar el token  var regexPattern = new RegExp('^' + escapedTokenBase + '$');
-//   return regexPattern;
-// }
-// function validarToken(token, regex) {
-//   return regex.test(token);
-// }
-// // Token base con la estructura conocida
-// var tokenBase = "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";
-// // Generar la expresión regular dinámica para el token basevar regexParaToken = generarRegexParaToken(tokenBase);
-// // Obtener el token almacenado en localStorage
-// var tokenAlmacenado = localStorage.getItem("miToken");
-// if (tokenAlmacenado) {
-//   if (validarToken(tokenAlmacenado, regexParaToken)) {
-//     console.log("El token almacenado cumple con la estructura.");
-//   } else {
-//     console.log("El token almacenado no cumple con la estructura.");
-//   }
-// } else {
-//   console.log("No se encontró ningún token en el localStorage.");
-// }
