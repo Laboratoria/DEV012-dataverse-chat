@@ -14,3 +14,4 @@ export const errorPage = () => {
    p.innerHTML = "error 404"
   return p;
 };
+
