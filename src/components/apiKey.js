@@ -1,8 +1,8 @@
 import { navigateTo } from "../router.js";
 import { checkAPIKey } from "../lib/API.js";
 export const apiKey = (props) => {
-  const pathToNavigate = props.pathToNavigate
-  const propsToNavigate = props.propsToNavigate
+  const pathToNavigate = props.pathToNavigate;
+  const propsToNavigate = props.propsToNavigate;
   const sectionApiKey = document.createElement("section");
   const divContenedorApiKey = document.createElement("div");
   const divCloseTitle = document.createElement("div");
@@ -47,21 +47,26 @@ export const apiKey = (props) => {
   divContenedorApiKey.appendChild(divCloseTitle);
   divContenedorApiKey.appendChild(divInput);
   sectionApiKey.appendChild(divContenedorApiKey);
-  
+
+  btnDeleteApiKey.addEventListener("click", () => {
+    localStorage.removeItem("key");
+  });
+
   btnDeleteApiKey.addEventListener("click", () => {
     localStorage.removeItem("key");
   });
 
   btnApiKey.addEventListener("click", () => {
     checkAPIKey(inputApiKey.value)
-    .then(() => {
+      .then(() => {
         localStorage.setItem("key", inputApiKey.value);
-        if(pathToNavigate && propsToNavigate) navigateTo(pathToNavigate, propsToNavigate)
-    })
-    .catch((error) => {
-      alert("Error al verificar la API Key: " + error);
-    });
-});
-  
+        if (pathToNavigate && propsToNavigate)
+          navigateTo(pathToNavigate, propsToNavigate);
+      })
+      .catch((error) => {
+        alert("Error al verificar la API Key: " + error);
+      });
+  });
+
   return sectionApiKey;
-}
+};

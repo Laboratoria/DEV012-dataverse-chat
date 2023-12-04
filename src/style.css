@@ -2,7 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Mono+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
 
-body,
+body {
+  height: 100vh;
+}
+
 #root,
 .viewComponent,
 .factsComponent,
@@ -311,17 +314,7 @@ footer {
 }
 
 .div-close-title {
-  justify-content: center;
-}
-
-.div-input {
-  width: 80%;
-  height: 60%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-between;
 }
 
 .span-close-modal {

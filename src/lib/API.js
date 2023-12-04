@@ -1,7 +1,6 @@
 import { getCharacterById } from "./dataFunctions.js";
 // import { navigateTo } from "../router.js";
 
-
 const endpoint = "https://api.openai.com/v1/chat/completions";
 // export const emptyPetition = () => {
   
@@ -84,5 +83,4 @@ export const sendMessagesToCharacter = (totalConversation, characterId) => {
 
   return result;
 };
-
 

@@ -8,6 +8,7 @@ export const setRootElement = (newRootElementValue) => {
   });
 };
 
+
 export const setRoutes = (newRoutesValue) => {
   // optional Throw errors if routes isn't an object
   if (typeof newRoutesValue === "object") {
@@ -64,12 +65,10 @@ export const onURLChange = (URL) => {
   const pathname = URL.pathname
   const searchString = URL.search
   const queryParams = new URLSearchParams(searchString)
-  let props = {}
+  const props = {}
   for (const [key, value] of queryParams) {
     props[key] = value
   }
   console.log({ URL, pathname, searchString, queryParams, props })
   renderView(pathname, props);
 };
-
-
