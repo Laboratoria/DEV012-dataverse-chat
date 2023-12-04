@@ -35,6 +35,7 @@ export const renderDetails = (character) => {
   const divDetails = document.createElement("div");
   divDetails.classList.add("div-details");
   const pDetails = document.createElement("p");
+  pDetails.className = "p-details"
   pDetails.textContent = character.description;
   const buttonChat = createBtnChat(character.id, "CHAT WITH ME")
 

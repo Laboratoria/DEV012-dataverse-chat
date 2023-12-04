@@ -211,7 +211,6 @@ footer {
   height: 60vh;
   display: flex;
   flex-direction: row;
-  /* flex-wrap: wrap; */
   border-radius: 20px;
   background-color: #d1a879;
   justify-content: center;
@@ -410,10 +409,74 @@ footer {
   header {
     height: 30vh;
   }
-  .section-chat {
-    width: 80%;
+  .cards {
+    width: 310px;
+    height: 390px;
+    margin: 10px;
+  }
+  .cards-facts {
+    width: 310px;
+    height: 400px;
+    margin: 10px;
+  }
+  .div-facts h2 {
+    font-size: 1.6rem;
+    
+  }
+  .facts-img {
+    width: 13rem;
+    height: 17rem;
+  }
+
+  .section-details {
+    height: 100vh;
+  }
+  .div-padre {
+    max-width: 68vw;
+    height: 65vh;
+  }
+  h3 {
+    font-weight: 200;
+    font-size: 25px;
+  }
+  .p-details {
+    width: 0.5rem;
+  }
+  p {
+    width: 270px;
+    font-size: 10px;
+    font-weight: 200;
+
+  }
+  h4 {
+    font-family: "Rye", cursive;
+    font-size: 10px;
+    padding-bottom: 15px;
+  }
+  .img-home,
+  .img-details {
+    width: 150px;
+    height: 200px;
+    padding: auto;
+  }
+  h2 {
+    font-size: 1.5rem;
+    align-items: center;
+    margin-top: -15px;
+    margin-bottom: -15px;
+  }
+  .button-home {
+    font-size: 15px;
+    width: 130px;
+    height: 30px;
+  }
+  .div-details .button-home {
+    font-size: 15px;
+    width: 130px;
+    height: 30px;
   }
 }
+
 
 @media (max-width: 340px) {
   header {
