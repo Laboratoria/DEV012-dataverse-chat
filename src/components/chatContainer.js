@@ -1,6 +1,6 @@
 import { getCharacterById } from "../lib/dataFunctions.js";
 import { sendMessagesToCharacter } from "../lib/API.js";
-import data from "../data/data.js";
+
 
 export const chatContainer = (characterId) => {
   //console.log('chatContainer', { characterId })
@@ -76,7 +76,7 @@ export const chatContainer = (characterId) => {
       .join("\n");
   };
 
-  // Funcion que obtiene el mensaje del input y lo envia a GPT3 Turbo
+  // Funcion que obtiene el mensaje del input y lo envia a GPT-3.5-Turbo
   const sendMessage = () => {
     const inputUser = inputPrompt.value;
     inputPrompt.value = ''
