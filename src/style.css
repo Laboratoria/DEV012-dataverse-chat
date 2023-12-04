@@ -2,8 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Mono+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
 
+body {
+  height: 100vh;
+}
 
-body,#root,
+#root,
 .viewComponent,
 .factsComponent,
 .descriptionComponent,
@@ -116,23 +119,6 @@ ul {
   flex-wrap: wrap;
   justify-content: center;
 }
-
-/* ul div {
-  font-family: "Metal Mania", cursive;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-} */
-/* 
-ul button {
-  font-family: "Metal Mania", cursive;
-  font-size: 20px;
-  width: 140px;
-  height: 40px;
-  background-color: black;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-} */
 
 .cards {
   display: flex;
@@ -328,17 +314,8 @@ footer {
 }
 
 .div-close-title {
-  justify-content: center;
+  justify-content: space-between;
 }
-
-.div-input {
-  width: 80%;
-  height: 60%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;}
 
 .span-close-modal {
   font-size: xx-large;
@@ -408,7 +385,7 @@ footer {
   height: 5%;
 }
 
-.img-btn-send{
+.img-btn-send {
   width: 20px;
   height: 20px;
 }
@@ -439,7 +416,6 @@ footer {
 }
 
 @media (max-width: 340px) {
-
   header {
     font-family: "Metal Mania", cursive;
     width: 100%;
@@ -579,9 +555,9 @@ footer {
     height: 100%;
   }
 
- .img-btn-send{
-      width: 20px;
-      height: 20px;
+  .img-btn-send {
+    width: 20px;
+    height: 20px;
   }
 
   .cards-facts {
@@ -595,6 +571,6 @@ footer {
   }
 
   .section-chat {
-    width: 100%; 
+    width: 100%;
   }
 }

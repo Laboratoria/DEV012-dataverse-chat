@@ -1,6 +1,8 @@
 import { navigateTo } from "../router.js";
-import { emptyPetition } from "../lib/API.js";
-export const apiKey = () => {
+import { checkAPIKey } from "../lib/API.js";
+export const apiKey = (props) => {
+  const pathToNavigate = props.pathToNavigate;
+  const propsToNavigate = props.propsToNavigate;
   const sectionApiKey = document.createElement("section");
   const divContenedorApiKey = document.createElement("div");
   const divCloseTitle = document.createElement("div");
@@ -50,28 +52,19 @@ export const apiKey = () => {
     localStorage.removeItem("key");
   });
 
+  btnDeleteApiKey.addEventListener("click", () => {
+    localStorage.removeItem("key");
+  });
+
   btnApiKey.addEventListener("click", () => {
-    //primero obtener la api key -pedirla a input.value
-    //luego llamo a empty petition y le paso el api key como parámetro
-    emptyPetition(inputApiKey.value)
-      //acá valido si la respuesta está correcta y que haga el navigate a donde corresponda
-      .then((response) => {
-        if (response.status === 401) {
-          alert("API Key inválida");
-          inputApiKey.focus();
-        } else if (response.status === 400) {
-          localStorage.setItem("key", inputApiKey.value);
-          console.log("mostrando la apikey:", inputApiKey.value);
-          const currentUrl = window.location.href;
-          if (currentUrl.includes("http://localhost:3000/")) {
-            navigateTo("/panelAll");
-          } else {
-            navigateTo("/panelChr");
-          }
-        } 
+    checkAPIKey(inputApiKey.value)
+      .then(() => {
+        localStorage.setItem("key", inputApiKey.value);
+        if (pathToNavigate && propsToNavigate)
+          navigateTo(pathToNavigate, propsToNavigate);
       })
       .catch((error) => {
-        console.error("Error al verificar la API Key:", error);
+        alert("Error al verificar la API Key: " + error);
       });
   });
 

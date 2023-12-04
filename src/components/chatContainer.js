@@ -1,8 +1,10 @@
 import { getCharacterById } from "../lib/dataFunctions.js";
-import { luffyChatConfig } from "../lib/API.js";
-import data from "../data/data.js";
+import { sendMessagesToCharacter } from "../lib/API.js";
 
-export const chatContainer = () => {
+
+export const chatContainer = (characterId) => {
+  //console.log('chatContainer', { characterId })
+  const character = getCharacterById(characterId)
   //contenedores section chat
   const divChat = document.createElement("div");
   const sectionChat = document.createElement("section");
@@ -45,56 +47,60 @@ export const chatContainer = () => {
   inputPrompt.setAttribute("placeholder", "Talk with me");
   buttonSend.setAttribute("type", "submit");
 
-  h2Credential.textContent = "(placeholder)";
+  h2Credential.textContent = character.name;
 
-  const totalConversation = [];
-  buttonSend.addEventListener("click", () => {
-    const inputUser = inputPrompt.value;
-    const character = data.id;
-    const characterId = getCharacterById(character)
-    luffyChatConfig(inputUser, characterId)
-      .then((response) => {
-        if (response.status === 401 || response.status === 403) {
-          alert("invalid api key");
-          return
-        }
-        return response.json();
+  
+
+  //funciones para agregar conversación nueva
+  const addToConversation = (role, content) => {
+    totalConversation.push({ role, content });
+  };
+
+  //funcion para actualizar la vista del textarea con lo escrito desde el inicio hasta el fin
+  const updateTextarea = (conversationToPaint) => {
+    console.log(JSON.parse(JSON.stringify(conversationToPaint)))
+    conversationToPaint = conversationToPaint
+    .filter(message => message.role !== 'system')
+    .map(message => {
+      const newRole = message.role === 'assistant' ? character.name : message.role 
+      const messageToPaint = { role: newRole, content: message.content }
+      return messageToPaint
+    })
+    console.log(conversationToPaint)
+    const chatTextArea = document.getElementById("textAreaChat");
+    chatTextArea.value = conversationToPaint
+      .map((messages) => {
+        console.log({ role: messages.role, content: messages.content })
+        return `${messages.role}: ${messages.content}`
       })
-      .then((conversation) => {
-        let messages = "No se ha encontrado respuesta.";
-        //funciones para agregar conversación nueva
-        const addConvertation = (role, content) => {
-          totalConversation.push({ role, content });
-        };
-        console.log(totalConversation);
-        //funcion para actualizar la vista del textarea con lo escrito desde el inicio hasta el fin
-        const updateTextarea = () => {
-          const chatTextArea = document.getElementById("textAreaChat");
-          chatTextArea.value = totalConversation
-            .map((messages) => `${messages.role}: ${messages.content}`)
-            .join("\n");
-        };
-        if (
-          conversation &&
-          conversation.choices &&
-          conversation.choices[0] &&
-          conversation.choices[0].message &&
-          conversation.choices[0].message.content
-        ) {
-          addConvertation("user", inputUser);
-          console.log(totalConversation);
-          messages = conversation.choices[0].message.content;
-          addConvertation("system", messages);
-          updateTextarea();
-        }
+      .join("\n");
+  };
 
-        // Agregar la respuesta al textarea
+  // Funcion que obtiene el mensaje del input y lo envia a GPT-3.5-Turbo
+  const sendMessage = () => {
+    const inputUser = inputPrompt.value;
+    inputPrompt.value = ''
+    addToConversation('user', inputUser)
+    sendMessagesToCharacter(totalConversation, characterId)
+      .then((newTotalConversation) => {
+        console.log(newTotalConversation)
+        totalConversation = newTotalConversation
+        // Se pinta de nuevo la conversacion
+        updateTextarea(totalConversation)
       })
       .catch((error) => {
         console.error("Error:", error);
         const chatTextArea = document.getElementById("textAreaChat");
-        chatTextArea.value += "Error al obtener la respuesta.\n";
+        chatTextArea.value += "Error al obtener la respuesta.\n" + error.message;
       });
+  }
+
+  let totalConversation = [];
+  buttonSend.addEventListener("click", sendMessage);
+  inputPrompt.addEventListener("keypress", (event) => {
+    if(event.key === 'Enter') {
+      sendMessage()
+    }
   });
 
   //agregar hijos al sectionPrompting
