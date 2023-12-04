@@ -5,10 +5,12 @@ import { homeButton } from "../components/homeButton.js";
 import { navigateTo } from "../router.js";
 
 
-export const panelCharacter = () => {
+export const panelCharacter = (props) => {
+  const characterId = props.id
+  
   const headerComponent = header();
   const homeButtonComponent = homeButton();
-  const chatComponent = chatContainer();
+  const chatComponent = chatContainer(characterId);
   const footerComponent = footer();
   
   const viewPanel = document.createElement("div");

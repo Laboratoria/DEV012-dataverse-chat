@@ -4,13 +4,13 @@ import { header } from "../components/header.js";
 import { homeButton } from "../components/homeButton.js";
 import { navigateTo } from "../router.js";
 
-export const apiConfig = () => {
+export const apiConfig = (props) => {
   const apiView = document.createElement("div");
   apiView.className = "apiComponent";
 
   const headerComponent = header();
   const homeButtonComponent = homeButton();
-  const modalAPIKeyComponent = apiKey();
+  const modalAPIKeyComponent = apiKey(props);
   const footerComponent = footer();
 
   // renderizado de vista apiKey

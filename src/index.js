@@ -6,20 +6,18 @@ import { details } from "./views/details.js";
 import { facts } from "./views/facts.js";
 import { panelCharacter } from "./views/panelCharacter.js";
 import { apiConfig } from "./views/apiConfig.js";
-import { panelAll } from "./views/panelAll.js";
 
 //enlace con el root del HMTL
 const viewContainer = document.getElementById("root");
 
 //Definir rutas en router.
 const routes = {
-  "/": home,
-  "/error": error,
-  "/facts": facts,
-  "/details": details,
-  "/api": apiConfig,
-  "/panelChr": panelCharacter,
-  "/panelAll": panelAll
+  "/": { component: home, title: "One Pedia | Home" },
+  "/error": { component: error, title: "One Pedia | Error" },
+  "/facts": { component: facts, title: "One Pedia | Facts" },
+  "/details": { component: details, title: "One Pedia | Details" },
+  "/api": { component: apiConfig, title: "One Pedia | API Configuration" },
+  "/panelChr": { component: panelCharacter, title: "One Pedia | Chat" },
 };
 
 //Invocar el router para renderizar la vista correcta.

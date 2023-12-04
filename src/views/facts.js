@@ -2,11 +2,12 @@ import { computeStats, computeStatsBounty } from "../lib/dataFunctions.js";
 import { renderStats } from "../components/renderFacts.js";
 import { header } from "../components/header.js";
 import { footer } from "../components/footer.js";
-import data from "../data/data.js";
+import allData from "../data/data.js";
 import { homeButton } from "../components/homeButton.js";
 import { navigateTo } from "../router.js";
 
 export const facts = () => {
+  const data = allData.filter(character  => character.id !== "all")
   const factsView = document.createElement("div");
   factsView.className = "factsComponent";
 

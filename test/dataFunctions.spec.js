@@ -1,5 +1,5 @@
 
-import { sortData, filterData, sortBounty, computeStats, computeStatsBounty } from '../src/dataFunctions.js';
+import { sortData, filterData, sortBounty, computeStats, computeStatsBounty, getCharacterById } from '../src/dataFunctions.js';
 import { names, crew, arrBounty, origin } from './data.js';
 
 
@@ -74,5 +74,21 @@ describe("computeStatsBounty", () => {
   it("percentage of characters whose bounty is over 315,000,000", () => {
 
     expect(computeStatsBounty(arrBounty, "bounty", 315000000)).toStrictEqual("60.00");
+  });
+});
+
+describe('getCharacterById', () => {
+
+  const dataChar = [
+    { id: "monkey-d-luffy", name: "Monkey D. Luffy"},
+    { id: "roronoa-zoro", name: "Roronoa Zoro" },
+    { id: "nami", name: "Nami" }
+  ];
+  
+  it('devuelve el personaje correspondiente al ID proporcionado', () => {
+
+    expect(getCharacterById(2, dataChar)).toEqual({ id: 2, name: 'Roronoa Zoro' });
+
+    expect(getCharacterById(4, dataChar)).toBeUndefined();
   });
 });

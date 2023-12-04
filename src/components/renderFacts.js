@@ -1,12 +1,13 @@
 export const renderStats = () => {
   // const factsDiv = document.createElement("div") // placeholder en caso de que tengamos que reestructurar
-  const ul = document.createElement("ul");
+  const main = document.createElement("main");
+  main.className = "main-container-facts"
   const h2 = document.createElement("h2");
   h2.textContent = "Character Details";
   const divContainer = document.createElement("div");
   divContainer.className = "div-facts"
   divContainer.appendChild(h2);
-  ul.appendChild(divContainer);
+  main.appendChild(divContainer);
   //Render Origin Card
   const liOrigin = document.createElement("li");
   liOrigin.classList.add("cards-facts");
@@ -17,7 +18,7 @@ export const renderStats = () => {
   const pOrigin = document.createElement("p");
   pOrigin.id = "idOrigin";
   liOrigin.appendChild(pOrigin);
-  ul.appendChild(liOrigin);
+  main.appendChild(liOrigin);
 
   //Render Crew Card
   const liCrew = document.createElement("li");
@@ -29,7 +30,7 @@ export const renderStats = () => {
   const pCrew = document.createElement("p");
   pCrew.id = "idCrew";
   liCrew.appendChild(pCrew);
-  ul.appendChild(liCrew);
+  main.appendChild(liCrew);
 
   //Render Bounty Card
   const liBounty = document.createElement("li");
@@ -41,8 +42,8 @@ export const renderStats = () => {
   const pBounty = document.createElement("p");
   pBounty.id = "idBounty";
   liBounty.appendChild(pBounty);
-  ul.appendChild(liBounty);
-  // factsDiv.appendChild(ul);  // placeholder en caso de que tengamos que reestructurar
+  main.appendChild(liBounty);
+  // factsDiv.appendChild(main);  // placeholder en caso de que tengamos que reestructurar
   
-  return ul;
+  return main;
 };
