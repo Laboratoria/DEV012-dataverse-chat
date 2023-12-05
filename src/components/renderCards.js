@@ -1,5 +1,6 @@
 export const renderCards = (data) => {
   const ul = document.createElement("ul");
+  ul.id = "ul"
   
   data.forEach((element) => {
     const li = document.createElement("li");
