@@ -12,3 +12,5 @@ export const details = () => {
     p.innerHTML = "Aqui debe ir el chat con una sola peli"
    return p;
  };
+
+ 
