@@ -84,6 +84,7 @@ select {
 .home-btn {
   background-color: #a90000;
   border: none;
+  cursor: pointer;
 }
 
 .home {
@@ -96,6 +97,7 @@ button[data-testid="button-clear"] {
   width: 10%;
   height: 70%;
   margin: 8px 5px 5px 10px;
+  cursor: pointer;
 }
 .button {
   font-family: "Metal Mania", cursive;
@@ -103,6 +105,7 @@ button[data-testid="button-clear"] {
   width: 10%;
   height: 70%;
   margin: 8px 15px 5px 15px;
+  cursor: pointer;
 }
 h2 {
   font-family: "Metal Mania", cursive;
@@ -131,6 +134,12 @@ ul {
   border-radius: 20px;
   justify-content: space-around;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+.cards:hover {
+  box-shadow: 0 0 20px red;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 .img-home,
@@ -308,12 +317,19 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   border-radius: 15px;
 }
 
+.div-input {
+  height: 40px;
+  
+}
+
 .div-close-title {
-  justify-content: space-between;
+  width: 80px;
+}
+.div-close-title h2 {
+  width: 80px;
 }
 
 .span-close-modal {
@@ -335,6 +351,7 @@ footer {
   font-family: "Metal Mania", cursive;
   font-size: 1.3em;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .div-chat {
@@ -400,6 +417,7 @@ footer {
   height: 45px;
   margin: 8px 5px 5px 10px;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .h2-btn-chat {
@@ -473,13 +491,17 @@ footer {
   h2 {
     font-size: 1.5rem;
     align-items: center;
-    margin-top: -15px;
-    margin-bottom: -15px;
+    margin-top: -5px;
+    margin-bottom: -1px;
   }
   .button-home {
     font-size: 15px;
     width: 130px;
     height: 30px;
+  }
+  .div-contenedor-modal {
+    width: 30rem;
+    height: 15rem;
   }
   .div-details .button-home {
     font-size: 15px;
