@@ -1,10 +1,9 @@
 import { getCharacterById } from "../lib/dataFunctions.js";
 import { sendMessagesToCharacter } from "../lib/API.js";
 
-
 export const chatContainer = (characterId) => {
   //console.log('chatContainer', { characterId })
-  const character = getCharacterById(characterId)
+  const character = getCharacterById(characterId);
   //contenedores section chat
   const divChat = document.createElement("div");
   const sectionChat = document.createElement("section");
@@ -38,6 +37,7 @@ export const chatContainer = (characterId) => {
   inputPrompt.className = "input-promp";
   buttonSend.className = "btn-send";
   imgBtnSend.className = "img-btn-send";
+  imgCredential.className = "profile-icon"
 
   //atributos a el input y el textarea
   textAreaChat.setAttribute("id", "textAreaChat");
@@ -46,10 +46,10 @@ export const chatContainer = (characterId) => {
   inputPrompt.setAttribute("type", "text");
   inputPrompt.setAttribute("placeholder", "Talk with me");
   buttonSend.setAttribute("type", "submit");
-
+  //pasamos atributos que acceden a las propiedades de en la data
+  imgCredential.src = character["imageUrl"];
+  imgCredential.alt = character["id"];
   h2Credential.textContent = character.name;
-
-  
 
   //funciones para agregar conversación nueva
   const addToConversation = (role, content) => {
@@ -58,20 +58,21 @@ export const chatContainer = (characterId) => {
 
   //funcion para actualizar la vista del textarea con lo escrito desde el inicio hasta el fin
   const updateTextarea = (conversationToPaint) => {
-    console.log(JSON.parse(JSON.stringify(conversationToPaint)))
+    console.log(JSON.parse(JSON.stringify(conversationToPaint)));
     conversationToPaint = conversationToPaint
-    .filter(message => message.role !== 'system')
-    .map(message => {
-      const newRole = message.role === 'assistant' ? character.name : message.role 
-      const messageToPaint = { role: newRole, content: message.content }
-      return messageToPaint
-    })
-    console.log(conversationToPaint)
+      .filter((message) => message.role !== "system")
+      .map((message) => {
+        const newRole =
+          message.role === "assistant" ? character.name : message.role;
+        const messageToPaint = { role: newRole, content: message.content };
+        return messageToPaint;
+      });
+    console.log(conversationToPaint);
     const chatTextArea = document.getElementById("textAreaChat");
     chatTextArea.value = conversationToPaint
       .map((messages) => {
-        console.log({ role: messages.role, content: messages.content })
-        return `${messages.role}: ${messages.content}`
+        console.log({ role: messages.role, content: messages.content });
+        return `${messages.role}: ${messages.content}`;
       })
       .join("\n");
   };
@@ -79,27 +80,28 @@ export const chatContainer = (characterId) => {
   // Funcion que obtiene el mensaje del input y lo envia a GPT-3.5-Turbo
   const sendMessage = () => {
     const inputUser = inputPrompt.value;
-    inputPrompt.value = ''
-    addToConversation('user', inputUser)
+    inputPrompt.value = "";
+    addToConversation("user", inputUser);
     sendMessagesToCharacter(totalConversation, characterId)
       .then((newTotalConversation) => {
-        console.log(newTotalConversation)
-        totalConversation = newTotalConversation
+        console.log(newTotalConversation);
+        totalConversation = newTotalConversation;
         // Se pinta de nuevo la conversacion
-        updateTextarea(totalConversation)
+        updateTextarea(totalConversation);
       })
       .catch((error) => {
         console.error("Error:", error);
         const chatTextArea = document.getElementById("textAreaChat");
-        chatTextArea.value += "Error al obtener la respuesta.\n" + error.message;
+        chatTextArea.value +=
+          "Error al obtener la respuesta.\n" + error.message;
       });
-  }
+  };
 
   let totalConversation = [];
   buttonSend.addEventListener("click", sendMessage);
   inputPrompt.addEventListener("keypress", (event) => {
-    if(event.key === 'Enter') {
-      sendMessage()
+    if (event.key === "Enter") {
+      sendMessage();
     }
   });
 
