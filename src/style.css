@@ -318,17 +318,17 @@ footer {
   flex-direction: column;
   justify-content: center;
   border-radius: 15px;
+  align-items: center;
 }
 
 .div-input {
   height: 6rem;
   width: 80%;
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 
-  
 }
 
 .div-close-title {
@@ -339,9 +339,6 @@ footer {
   align-items: center;
   justify-content: center;
 }
-/* .div-close-title h2 {
-  width: 80px;
-} */
 
 .span-close-modal {
   font-size: xx-large;
@@ -373,7 +370,7 @@ footer {
 }
 
 .section-chat {
-  width: 70%;
+  width: 100%;
   border: 1px solid;
 }
 
@@ -514,6 +511,11 @@ footer {
     width: 30rem;
     height: 15rem;
   }
+
+  .div-input{
+    width: 100% ;
+    display: flex;
+  }
   .div-details .button-home {
     font-size: 15px;
     width: 130px;
@@ -604,7 +606,7 @@ footer {
   }
 
   h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
   .cards {
     display: flex;
@@ -626,31 +628,44 @@ footer {
   }
   p {
     margin-top: 0px;
-    margin-bottom: 0px;
-    font-size: 12px;
+    margin-bottom: 5px;
+    font-size: 0.5rem;
   }
   h4 {
-    font-size: 12px;
+    font-size: 0.6rem;
+    padding: 5px;
   }
   .error-h4 {
     font-size: 25px;
   }
 
   .div-padre {
-    height: 80%;
+    height: 85%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .img-details {
+    width: 130px;
+    height: 170px;
+    padding: auto;
   }
 
   .section-details {
     padding: 10px 0px;
+    height: 80vh;
   }
   .h2-details {
-    height: 5%;
+    height: 1.5rem;
   }
   .div-details p {
-    width: 70%;
+    width: 85%;
+    margin-top: 25px;
   }
   .div-chat {
     width: 100%;
@@ -679,5 +694,23 @@ footer {
 
   .section-chat {
     width: 100%;
+  }
+
+  .div-card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+  }
+  .div-card p {
+    width: 85%;
+    
+  }
+
+  .div-details{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40%;
   }
 }

@@ -13,7 +13,7 @@
 
 ## 1. Preámbulo
 
-One Pedia es una página web que toma la premisa de una Single Page Aplication (SPA) para visualizar un conjunto de datos sobre personajes del manga/anime One Piece y que permite que puedas conversar de manera individual con cada uno de ellos o hablar con todos a la vez. Esta conversación se genera mediante peticiones a la Application Programming Interface (API) mediante una serie de configuraciones en las cuales se le asigna un rol a la inteligencia artificial desarrollada por OpenAI dando a la usuaria la oportunidad de poder conversar con sus personajes favoritos. Adicionalmente, puede filtrar y ordenar los personajes antes de conversar con ellos.
+One Pedia es una página web que toma la premisa de una Single Page Aplication (SPA) para visualizar un conjunto de datos sobre personajes del manga/anime One Piece y permite que puedas conversar de manera individual con cada uno de ellos o hablar con todos a la vez en instancias separadas. Esta conversación se genera mediante peticiones a la Application Programming Interface (API) mediante una serie de configuraciones en las cuales se le asigna un rol a la inteligencia artificial desarrollada por OpenAI dando a la usuaria la oportunidad de poder conversar con sus personajes favoritos. Adicionalmente, puede filtrar y ordenar los personajes antes de conversar con ellos.
 
 ![Preview app](https://one-pedia-dataverse-chat.vercel.app/)
 
