@@ -524,7 +524,7 @@ footer {
 }
 
 
-@media (max-width: 340px) {
+@media (max-width: 400px) {
   header {
     font-family: "Metal Mania", cursive;
     width: 100%;
