@@ -11,7 +11,7 @@ export default Example;*/
 
 export const errorPage = () => {
    const p = document.createElement('p');
-   p.innerHTML = "error 404"
+   p.innerHTML = "error 404 test"
   return p;
 };
 
