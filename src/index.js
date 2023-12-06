@@ -4,7 +4,7 @@ import {home} from './views/home.js';
 import {errorPage} from './views/errorPage.js';
 import {apiKey} from './views/apiKey.js';
 import {details} from './views/details.js';
-import {panelAllMovies} from './views/panel.js';
+import {panel} from './views/panel.js';
 
 
 // Define the routes and their associated views
@@ -13,7 +13,7 @@ const routes = {
   '/errorPage': errorPage,
   '/apiKey': apiKey,
   '/details': details,
-  '/panelAllMovies': panelAllMovies,
+  '/panel': panel,
 };
 
 // Assign the routes
