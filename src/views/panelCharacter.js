@@ -1,7 +1,7 @@
 import { chatContainer } from "../components/chatContainer.js";
 import { footer } from "../components/footer.js";
 import { header } from "../components/header.js";
-import { homeButton } from "../components/homeButton.js";
+import { homeButtonApi } from "../components/homeButtonApi.js";
 import { navigateTo } from "../router.js";
 
 
@@ -9,7 +9,7 @@ export const panelCharacter = (props) => {
   const characterId = props.id
   
   const headerComponent = header();
-  const homeButtonComponent = homeButton();
+  const homeButtonComponent = homeButtonApi();
   const chatComponent = chatContainer(characterId);
   const footerComponent = footer();
   
@@ -24,6 +24,9 @@ export const panelCharacter = (props) => {
   
   const homeButtonEvent = viewPanel.querySelector(".home-btn")
   homeButtonEvent.addEventListener("click", () => navigateTo("/"));
+
+  const apiConfigEvent = viewPanel.querySelector(".chat-api-button");
+  apiConfigEvent.addEventListener("click", () => navigateTo("/api"));
 
 
   return viewPanel;
