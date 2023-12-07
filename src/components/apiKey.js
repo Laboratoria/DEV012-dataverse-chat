@@ -52,9 +52,6 @@ export const apiKey = (props) => {
     localStorage.removeItem("key");
   });
 
-  btnDeleteApiKey.addEventListener("click", () => {
-    localStorage.removeItem("key");
-  });
 
   btnApiKey.addEventListener("click", () => {
     checkAPIKey(inputApiKey.value)
