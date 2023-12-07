@@ -6,7 +6,7 @@ export const navBar = () => {
       id="inputFilter"
       name="searchButton"
       type="search"
-      placeholder="Buscar película"
+      placeholder="Buscar película..."
     />
     <label for="genre"></label>
     <select id="genre" data-testid="select-filter" name="genre">
