@@ -1,216 +1,440 @@
-# Dataverse Chat
+# One pedia | Dataverse Chat
 
 ## Índice
-
 * [1. Preámbulo](#1-preámbulo)
-* [2. Proceso de diseño](#2-proceso-de-diseño)
-* [3. Funcionalidades](#3-funcionalidades)
-* [4. Cómo leer el proyecto](#4-cómo-leer-el-proyecto)
-* [5. Problemas de usabilidad](#5-problemas-de-usabilidad)
-
+* [2. Resumen](#2-resumen)
+* [3. Proceso de diseño](#3-proceso-de-diseño)
+* [4. Funcionalidades](#4-funcionalidades)
+* [5. Cómo leer el readme](#5-cómo-leer-el-readme)
+* [6. Objetivos de aprendizaje](#6-objetivos-de-aprendizaje)
+* [7. Problemas de usabilidad](#7-problemas-de-usabilidad)
 
 ***
-
 ## 1. Preámbulo
-
 One Pedia es una página web que toma la premisa de una Single Page Aplication (SPA) para visualizar un conjunto de datos sobre personajes del manga/anime One Piece y permite que puedas conversar de manera individual con cada uno de ellos o hablar con todos a la vez en instancias separadas. Esta conversación se genera mediante peticiones a la Application Programming Interface (API) mediante una serie de configuraciones en las cuales se le asigna un rol a la inteligencia artificial desarrollada por OpenAI dando a la usuaria la oportunidad de poder conversar con sus personajes favoritos. Adicionalmente, puede filtrar y ordenar los personajes antes de conversar con ellos.
 
-![Preview app](https://one-pedia-dataverse-chat.vercel.app/)
+## 2. Resumen del proyecto
 
-## 2. Proceso de diseño
+se busca transformar la aplicación de Dataverse, en una Single Page Application (SPA), conservando las funcionalidades de visualización, filtrado, ordenamiento y cálculo estadístico. Además, se añade una nueva vista para ver información detallada de cada personaje o entidad, así como la inclusión de una vista de chat que permita interactuar con uno o varios personajes a través de la API de OpenAI.
 
-En este proyecto convertirás la aplicación desarrollada
-en Dataverse en una
-[Single Page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application),
-manteniendo las funcionalidades de visualizar, filtrar, ordenar y
-calcular alguna estadística, adicionando una nueva vista para
-consultar información detallada de cada personaje/entidad y agregando
-la posibilidad de interactuar con un personaje/entidad o todos ellos
-a través de un sistema de chat impulsado por la
-[API de OpenAI](https://openai.com/product).
+## 3. Proceso de diseño
 
-### Los objetivos generales de este proyecto son los siguientes
+#### Ejemplo historia de usuario
+![Historia de usuario](../DEV012-dataverse-chat/src/lib/img/historiaUsuario.jpg)
 
-* Desarrollar una [Single Page Application (SPA)](https://es.wikipedia.org/wiki/Single-page_application)
-* Aplicar los conceptos de responsividad en el desarrollo de las vistas
-* Implementar un router para la navegación entre las diferentes
-  vistas de la aplicación
-* Integrar una API externa
-* Entender la asincronía en JavaScript
-* Crear una suite de pruebas unitarias que permitan testear código asíncrono
-
-## 3. Funcionalidades
-
+#### Prototipo de alta fidelidad
+![Prototipo alta fidelidad](../DEV012-dataverse-chat/src/lib/img/figma.jpg)
 
 ## 4. Funcionalidades
 
-El entregable final será una Single Page Application (SPA) que permitira al usuario **visualizar la información, filtrarla, ordenarla y calcular alguna estadística**, tal como se hizo en Dataverse. Además, deberá permitir  acceder a una página que muestre el detalle de cada personaje para  _interactuar_ con cada una de las entidades del set de datos que utilizaste anteriormente.
+Es una Single Page Application (SPA) que permite al usuario visualizar, filtrar, ordenar y calcular estadísticas, similar a lo realizado en [Dataverse](https://github.com/dinciarte/DEV012-dataverse). También proporciona acceso a una página que muestra el detalle de cada personaje para interactuar con las entidades del conjunto de datos utilizado previamente.
 
-A continuación, detallamos las funcionalidades mínimas que tu proyecto debe cumplir:
+Las funcionalidades clave que el proyecto cumple son:
 
-* La aplicación debe ser _responsive_
-* La aplicación debe ser una SPA con múltiples vistas:
-  - Implementar un sistema de enrutamiento que permita la navegación
-    dentro de la aplicación.
-  - Cada vista de la aplicación debe ser cargada dinámicamente
-    mediante JavaScript.
-  - Asegurarse de que la URL se actualice de manera acorde a la vista
-    cargada al igual que el `title` del documento (la pestaña del navegador).
-  - La aplicación debe ser capaz de cargar la vista correspondiente a
-    la URL actual al iniciar la aplicación.
-* La aplicación debe mantener las funcionalidades de Dataverse: visualizar,
-  filtrar, ordenar y calcular estadística de la data.
-* Al hacer clic en una tarjeta de personaje/entidad, la aplicación debe
-  redirigirse a una vista **con su propia URL** que muestre la información
-  detallada sobre ese personaje/entidad en particular
-* La aplicación debe permitir a la usuaria configurar la API Key para
-  interactuar con la API de Open AI
-* Usando la API de Open AI, la aplicación debe permitir al usuario
-  interactuar con un personaje/entidad a través de un chat.
-  Por ejemplo, si usamos la data de ejemplo de Dataverse, correspondiente
-  a las mujeres con mayores contribuciones a la programación en la historia,
-  una usuaria puede establecer una conversación
-  interactiva con
-  [Ada Lovelace](https://es.wikipedia.org/wiki/Ada_Lovelace)
-  a través del sistema de chat, obteniendo
-  información sobre sus logros, desafíos y contribuciones a la informática.
-  La inteligencia artificial de OpenAI permite que las respuestas sean
-  informativas y personalizadas según las preguntas de los usuarios.
+- La aplicación es responsive.
+- Se trata de una SPA con múltiples vistas:
+   - Tiene un sistema de enrutamiento para la navegación.
+   - Cada vista se carga dinámicamente mediante JavaScript.
+   - Actualiza la URL y el título del documento (pestaña del navegador) conforme a la vista cargada.
+   - Carga la vista correspondiente a la URL al iniciar la aplicación.
+- Mantiene las funcionalidades de [Dataverse](https://github.com/dinciarte/DEV012-dataverse): visualización, filtrado, ordenamiento y cálculo estadístico de la data.
+- Al hacer clic en una tarjeta de personaje, redirige a una vista con su propia URL que muestra información detallada.
+- Permite configurar la API Key para la interacción con la API de OpenAI.
+- Utilizando la API de OpenAI, permite al usuario interactuar con un personaje a través de un chat, obteniendo respuestas informativas y personalizadas según las preguntas.
+- Permite interactuar simultáneamente con todos los personajes a través de un chat, adaptando las respuestas a cada personaje y mostrándolas en el orden de recepción.
+- Informa a la usuaria sobre posibles errores al interactuar con la API, proporcionando descripciones claras y posibles soluciones.
 
-```text
-Usuaria: "Hola, Ada. Cuéntame más sobre tus contribuciones a la informática."
-
-Ada Lovelace (AI de OpenAI): "¡Hola! Claro, estaré encantada de hablar sobre eso.
-Mis contribuciones más destacadas se relacionan con el trabajo junto a Charles Babbage
-en el diseño de la Máquina Analítica. Además, desarrollé el primer algoritmo destinado
-a ser procesado por una máquina, lo que me convierte en la primera programadora de la historia.
-¿Hay algo más en particular que te gustaría saber?"
-
-Usuaria: "¡Eso es fascinante! ¿Qué desafíos enfrentaste en ese tiempo?"
-
-Ada Lovelace (AI de OpenAI): "En ese tiempo, enfrenté varios desafíos, uno de los
-principales fue la limitación de recursos y la falta de reconocimiento del potencial
-de la Máquina Analítica. También tuve que superar las restricciones sociales de
-la época, ya que las mujeres tenían un acceso limitado a la educación en
-matemáticas y ciencias. Sin embargo, mi pasión por la matemática y la visión
-de lo que estas máquinas podrían lograr me impulsaron a seguir adelante."
-```
-
-* La aplicación debe  permitir al usuario interactuar de manera simultánea
-  con **todos** los personajes/entidades a través de un chat:
-  - Esta funcionalidad debe cargarse en la URL `/panel`
-  - La usuaria puede ingresar su pregunta o mensaje para todos los
-    personajes/entidades en un cuadro de texto y enviarlo con un botón
-  - El mensaje de la usuaria debe ser ajustado para cada personaje/entidad,
-    con el objetivo que este genere una respuesta basada en su personalidad
-    y conocimiento
-  - Las respuestas de todos los personajes se muestran de acuerdo al orden
-    respuesta.
-  - Indicar visualmente cuando uno o varios personajes/entidades esten
-    generando una respuesta al mensaje enviado
-* La aplicacion debe informar a la usuaria los errores que puedan surgir al
-  interactuar con la API, como por ejemplo alcanzar la cuota de tokens por
-  minuto o cualquier otro error relacionado con la API. Debería
-  proporcionarse una descripción clara de la causa del problema y posibles
-  soluciones.
-
-Para que los chats anteriores puedan funcionar, es esencial que la aplicación
-se integre con la IA a través de la API de OpenAI. Para ello, el equipo de
-Laboratoria te proporcionará una API Key que la usuaria deberá poder ingresar
-en la aplicación que tu construirás.
-
-_Nota_: puedes revisar esta [implementación](https://laboratoria-dataverse-talks.netlify.app/)
-de ejemplo, cuyo principal objetivo es mostrarte cómo se vería la
-funcionalidad de chat en tu aplicación, más no tomes el diseño como
-referencia para tu proyecto, siente libre de hacer volar tu imaginación
-diseñando tu propia interfaz.
-
-## 5. Consideraciones técnicas
-
-La lógica del proyecto debe estar implementada completamente en JavaScript
-(ES6), HTML y CSS. En este proyecto NO está permitido usar librerías o
-frameworks, solo [vanilla JavaScript](https://medium.com/laboratoria-how-to/vanillajs-vs-jquery-31e623bbd46e).
-
-El _boilerplate_ que viene con el proyecto es una estructura inicial. Ustedes
-deben ir agregando más archivos conforme vayan avanzando en su proyecto.
-La siguiente es una estructura de archivos que recomendamos:
-
-```text
-.
-├── src
-|  ├── components
-|  ├── data
-|  |  └── dataset.js
-|  ├── lib
-|  |  └── dataFunctions.js
-|  ├── views
-|  ├── index.html
-|  ├── index.js
-|  ├── router.js
-|  └── style.css
-├── test
-|  └── dataFunctions.spec.js
-|  └── example.spec.js
-├── README.md
-└── package.json
-
-```
+## 5. Cómo leer el readme
 
 ### `src/components`
 
 Esta carpeta contendrá archivos JavaScript
-que representan [componentes](https://lenguajejs.com/vuejs/componentes/que-es-un-componente/)
-reutilizables de tu aplicación. Estos componentes
+que representan componentes 
+reutilizables en la aplicación. Estos componentes
 pueden ser elementos de la interfaz de usuario que se utilizan en varias partes
-de tu aplicación. Organizar tus componentes de esta manera ayuda a mantener un
-código más modular y reutilizable.
+de la aplicación.
+
+   - ### ./apiKey.js
+      En este documento se encuentran los elementos necesarios para crear dinámicamente una sección de interfaz para que los usuarios puedan ingresar una API key valida. Esta sección incluye elementos HTML como campos de texto, botones y mensajes informativos. 
+  
+   - ### ./btnChat.js
+       Componente que permite generar botones interactivos que controlan la navegación basada en la existencia y validez de claves de API almacenadas en el navegador.
+
+   - ### ./chatConteiner.js
+       Crea una vista de chat interactiva en la interfaz. Permite a los usuarios enviar mensajes a un personaje identificado por su ID, actualizando dinámicamente la conversación en tiempo real en función de los mensajes enviados.
+
+   - ### ./filterOrderBar.js
+       Genera una sección de filtros en la interfaz de usuario. Esta sección proporciona opciones de filtrado y ordenamiento para elementos, como una lista de personajes. Ofrece controles para seleccionar el origen, grupo, estado vital, y orden alfabético o de recompensa. Además, incluye botones para borrar los filtros aplicados y un botón que navega a otra vista('Facts').
+
+   - ### ./footer.js
+       Crea un elemento de pie de página en la interfaz. Este pie de página se muestra en todas las vistas de la SPA.
+
+   - ### ./header.js
+       Crea un encabezado de página en la interfaz. Este encabezado se muestra en todas las vistas de la SPA.
+
+   - ### ./homeButton.js
+       Genera un botón de inicio en la interfaz. Este botón, representado por una imagen de una casa, se utiliza para la navegación o para dirigir al usuario a la página principal de la aplicación.
+
+   - ### ./renderCards.js
+       Crea una lista de tarjetas en la interfaz basada en los datos proporcionados. Utiliza un conjunto de datos para generar elementos de lista (li) que contienen información como nombre, imagen, descripción corta y un hecho relacionado a la tématica. Cada tarjeta representa un elemento de la lista de datos y está estructurada con etiquetas HTML semánticas.
+
+   - ### ./renderChrDetails.js
+       Crea dinámicamente una sección de detalles, según el id de un personaje en la interfaz. Esta sección muestra información clave, como nombre, imagen, descripción corta, recompensa y una descripción más extensa del personaje. Además, incluye un botón generado mediante la función createBtnChat para iniciar un chat con el personaje.
+
+   - ### ./renderFacts.js
+       Crea una sección en la interfaz para mostrar estadisticas de hechos específicos sobre los personajes. Utiliza elementos HTML para organizar la información en tarjetas.
+
 
 ### `src/data`
 
-En esta carpeta están los datos con los que vas a trabajar (los datos de ejemplo
-o los datos que generarías con ayuda de la inteligencia artificial).
+En esta carpeta están los datos generados con ayuda de inteligencia artificial, para alimentar el contenido de la aplicación.
 
 ### `src/lib`
 
-En esta carpeta, crearás módulos que contengan funcionalidades no relacionadas
-al DOM. Aquí podrás incluir el archivo
-`dataFunctions.js` que contiene las funciones que te permiten filtrar,
-ordenar y hacer cálculos agregados. También podrás crear  archivos con
+Aquí se guardan las funciones que te permiten filtrar,
+ordenar, hacer cálculos estadisticos y captar la información de un personaje gracias a su id. También se encuentran archivos con
 las funciones que
-interactúen con la API de inteligencia artificial o utilidades destinadas
-a almacenar datos en el local storage.
+interactuan con la API de inteligencia artificial y una carpeta con imagenes varias de la app.
 
 ### `src/views`
 
-Esta carpeta generalmente contiene archivos de los componentes que
-representan las diferentes páginas o vistas de tu aplicación.
-Cada vista (view) puede tener su propio archivo
-JavaScript, que exporta una función que es responsable de generar
+Contiene archivos de las diferentes páginas o vistas de la aplicación.
+Cada vista exporta una función que es responsable de generar
 los elementos del DOM.
+
+   - ### ./apiConfig.js
+       construye una vista para la configuración de la API en la interfaz.
+
+   - ### ./details.js
+       construye una vista para los detalles del personaje en la interfaz.
+
+   - ### ./error.js
+       construye una vista de error 404.
+
+   - ### ./facts.js
+       construye una vista para mostrar las estadisticas de los hechos de los personajes en la interfaz.
+
+   - ### ./home.js
+       Exporta un componente home que representa la vista principal de la aplicación. Incluye elementos como encabezado, barra de filtros, cartas de personajes, y pie de página. El componente establece interacciones para filtrar, ordenar y limpiar las cartas de personajes en función de filtros específicos como origen, tripulación y estado. También presenta un botón para ir a un chat en el cual pueda interactuar con los personajes.
+
+   - ### ./panelCharacter.js
+       construye una vista de chat que se carga con el identificador del personaje para chatear con el personaje en cuestión.
 
 ### `src/index.html`
 
-Como en el proyecto anterior, existe un archivo `index.html`. En este archivo
-HTML encontrarás un elemento DOM `<div id='root'></div>` donde vas a
-renderizar las diferentes vistas de tu aplicación.
+En este archivo
+HTML se encuentra un elemento DOM `<div id='root'></div>` donde se
+renderizar las diferentes vistas de la aplicación.
 
 ### `src/index.js`
 
-El punto de partida para tu SPA sera el archivo `src/index.js`. Acá encontrarás
-algunas instrucciones y comentarios para guiarte en el inicio del desarrollo
-de tu aplicación.
+En este archivo, se definen las rutas de la aplicación y se importan los componentes asociados para renderizar cada ruta. Se establece un contenedor de vista obtenido del documento HTML, se definen las rutas junto con los componentes, títulos correspondientes y cambios en el historial de navegación.
 
 ### `src/router.js`
 
-En este archivo vas a manejar el enrutamiento de tu aplicación. Es un archivo
-que debes crearlo por tu cuenta.
+Proporciona un conjunto de funciones para manejar la navegación y renderización de vistas. Estas funciones están diseñadas para gestionar los cambios de URL, renderizar las vistas correspondientes según las rutas definidas y manipular el historial del navegador.
 
 ### `src/style.css`
 
-Es un archivo que debes crearlo por tu cuenta para agregar los estilos que
-necesites para tu aplicación.
+Se encuentran los estilos de la SPA.
 
-### `src/test`
 
-Esta carpeta contiene los tests de tus funciones y componentes. Por ejemplo
-los tests de dataFunctions deben estar aquí.
+## 6. Objetivos de aprendizaje
+
+
+Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
+
+### HTML
+
+- [ ] **Uso de HTML semántico**
+
+  <details><summary>Links</summary><p>
+
+  * [HTML semántico](https://curriculum.laboratoria.la/es/topics/html/html5/semantic-html)
+  * [Semantics - MDN Web Docs Glossary](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
+</p></details>
+
+### CSS
+
+- [ ] **Uso de selectores de CSS**
+
+  <details><summary>Links</summary><p>
+
+  * [Intro a CSS](https://curriculum.laboratoria.la/es/topics/css/css/intro-css)
+  * [CSS Selectors - MDN](https://developer.mozilla.org/es/docs/Web/CSS/CSS_Selectors)
+</p></details>
+
+- [ ] **Modelo de caja (box model): borde, margen, padding**
+
+  <details><summary>Links</summary><p>
+
+  * [Box Model & Display](https://curriculum.laboratoria.la/es/topics/css/css/boxmodel-and-display)
+  * [The box model - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model)
+  * [Introduction to the CSS box model - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  * [CSS display - MDN](https://developer.mozilla.org/pt-BR/docs/Web/CSS/display)
+  * [display - CSS Tricks](https://css-tricks.com/almanac/properties/d/display/)
+</p></details>
+
+- [ ] **Uso de flexbox en CSS**
+
+  <details><summary>Links</summary><p>
+
+  * [A Complete Guide to Flexbox - CSS Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+  * [Flexbox Froggy](https://flexboxfroggy.com/#es)
+  * [Flexbox - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox)
+</p></details>
+
+- [ ] **Uso de CSS Grid Layout**
+
+  <details><summary>Links</summary><p>
+
+  * [A Complete Guide to Grid - CSS Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
+  * [Grids - MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Grids)
+</p></details>
+
+### Web APIs
+
+- [ ] **Uso de selectores del DOM**
+
+  <details><summary>Links</summary><p>
+
+  * [Manipulación del DOM](https://curriculum.laboratoria.la/es/topics/browser/dom/1-dom-methods-selection)
+  * [Introducción al DOM - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction)
+  * [Localizando elementos DOM usando selectores - MDN](https://developer.mozilla.org/es/docs/Web/API/Document_object_model/Locating_DOM_elements_using_selectors)
+</p></details>
+
+- [ ] **Manejo de eventos del DOM (listeners, propagación, delegación)**
+
+  <details><summary>Links</summary><p>
+
+  * [Introducción a eventos - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Events)
+  * [EventTarget.addEventListener() - MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)
+  * [EventTarget.removeEventListener() - MDN](https://developer.mozilla.org/es/docs/Web/API/EventTarget/removeEventListener)
+  * [El objeto Event](https://developer.mozilla.org/es/docs/Web/API/Event)
+</p></details>
+
+- [ ] **Manipulación dinámica del DOM**
+
+  <details><summary>Links</summary><p>
+
+  * [Introducción al DOM](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model/Introduction)
+  * [Node.appendChild() - MDN](https://developer.mozilla.org/es/docs/Web/API/Node/appendChild)
+  * [Document.createElement() - MDN](https://developer.mozilla.org/es/docs/Web/API/Document/createElement)
+  * [Document.createTextNode()](https://developer.mozilla.org/es/docs/Web/API/Document/createTextNode)
+  * [Element.innerHTML - MDN](https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML)
+  * [Node.textContent - MDN](https://developer.mozilla.org/es/docs/Web/API/Node/textContent)
+</p></details>
+
+- [ ] **Ruteado (History API, evento hashchange, window.location)**
+
+  <details><summary>Links</summary><p>
+
+  * [Manipulando el historial del navegador - MDN](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
+</p></details>
+
+- [ ] **Browser storage (localStorage, sessionStorage)**
+
+  <details><summary>Links</summary><p>
+
+  * [Window.localStorage - MDN](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)
+</p></details>
+
+- [ ] **Fetch API**
+
+  <details><summary>Links</summary><p>
+
+  * [Fetch API - MDN](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
+</p></details>
+
+### JavaScript
+
+- [ ] **Callbacks**
+
+  <details><summary>Links</summary><p>
+
+  * [Función Callback - MDN](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
+</p></details>
+
+- [ ] **Promesas**
+
+  <details><summary>Links</summary><p>
+
+  * [Promise - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+  * [How to Write a JavaScript Promise - freecodecamp (en inglés)](https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/)
+</p></details>
+
+- [ ] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
+
+- [ ] **Variables (declaración, asignación, ámbito)**
+
+  <details><summary>Links</summary><p>
+
+  * [Valores, tipos de datos y operadores](https://curriculum.laboratoria.la/es/topics/javascript/basics/values-variables-and-types)
+  * [Variables](https://curriculum.laboratoria.la/es/topics/javascript/basics/variables)
+</p></details>
+
+- [ ] **Funciones (params, args, return)**
+
+  <details><summary>Links</summary><p>
+
+  * [Funciones (control de flujo)](https://curriculum.laboratoria.la/es/topics/javascript/flow-control/functions)
+  * [Funciones clásicas](https://curriculum.laboratoria.la/es/topics/javascript/functions/classic)
+  * [Arrow Functions](https://curriculum.laboratoria.la/es/topics/javascript/functions/arrow)
+  * [Funciones — bloques de código reutilizables - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Functions)
+</p></details>
+
+- [ ] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
+
+  <details><summary>Links</summary><p>
+
+  * [Estructuras condicionales y repetitivas](https://curriculum.laboratoria.la/es/topics/javascript/flow-control/conditionals-and-loops)
+  * [Tomando decisiones en tu código — condicionales - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals)
+</p></details>
+
+- [ ] **Diferenciar entre tipos de datos primitivos y no primitivos**
+
+- [ ] **Arrays (arreglos)**
+
+  <details><summary>Links</summary><p>
+
+  * [Arreglos](https://curriculum.laboratoria.la/es/topics/javascript/arrays)
+  * [Array - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/)
+  * [Array.prototype.sort() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+  * [Array.prototype.forEach() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+  * [Array.prototype.map() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+  * [Array.prototype.filter() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+  * [Array.prototype.reduce() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+</p></details>
+
+- [ ] **Objetos (key, value)**
+
+  <details><summary>Links</summary><p>
+
+  * [Objetos en JavaScript](https://curriculum.laboratoria.la/es/topics/javascript/objects/objects)
+</p></details>
+
+- [ ] **Diferenciar entre expresiones (expressions) y sentencias (statements)**
+
+- [ ] **Uso de bucles/ciclos (while, for, for..of)**
+
+  <details><summary>Links</summary><p>
+
+  * [Bucles (Loops)](https://curriculum.laboratoria.la/es/topics/javascript/flow-control/loops)
+  * [Bucles e iteración - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration)
+</p></details>
+
+- [ ] **Módulos de ECMAScript (ES Modules)**
+
+  <details><summary>Links</summary><p>
+
+  * [import - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/import)
+  * [export - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/export)
+</p></details>
+
+- [ ] **Pruebas unitarias (unit tests)**
+
+  <details><summary>Links</summary><p>
+
+  * [Empezando con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/getting-started)
+</p></details>
+
+- [ ] **Pruebas asíncronas**
+
+  <details><summary>Links</summary><p>
+
+  * [Tests de código asincrónico con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/asynchronous)
+</p></details>
+
+- [ ] **Uso de mocks y espías**
+
+  <details><summary>Links</summary><p>
+
+  * [Manual Mocks con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/manual-mocks)
+</p></details>
+
+### HTTP
+
+- [ ] **Cabeceras (headers)**
+
+  <details><summary>Links</summary><p>
+
+  * [HTTP headers - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Headers)
+</p></details>
+
+- [ ] **Consulta o petición (request) y respuesta (response).**
+
+  <details><summary>Links</summary><p>
+
+  * [Generalidades del protocolo HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)
+  * [Mensajes HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Messages)
+</p></details>
+
+- [ ] **Códigos de status de HTTP**
+
+  <details><summary>Links</summary><p>
+
+  * [Códigos de estado de respuesta HTTP - MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
+  * [The Complete Guide to Status Codes for Meaningful ReST APIs - dev.to](https://dev.to/khaosdoctor/the-complete-guide-to-status-codes-for-meaningful-rest-apis-1-5c5)
+</p></details>
+
+### AI Prompting
+
+- [ ] **Priming Chatbots**
+
+  <details><summary>Links</summary><p>
+
+  * [Priming Chatbots | Learn Prompting: Your Guide to Communicating with AI](https://learnprompting.org/es/docs/basics/priming_prompt)
+</p></details>
+
+- [ ] **OpenAI API**
+
+  <details><summary>Links</summary><p>
+
+  * [Introduction - API Reference - OpenAI API](https://platform.openai.com/docs/introduction)
+  * [Authentication - API Reference - OpenAI API](https://platform.openai.com/docs/api-reference/authentication)
+  * [Making requests - API Reference - OpenAI API](https://platform.openai.com/docs/api-reference/making-requests)
+  * [The chat completion object - API Reference - OpenAI API](https://platform.openai.com/docs/api-reference/chat/object)
+</p></details>
+
+### Control de Versiones (Git y GitHub)
+
+- [ ] **Git: Instalación y configuración**
+
+- [ ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
+
+- [ ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
+
+- [ ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
+
+- [ ] **GitHub: Despliegue con GitHub Pages**
+
+  <details><summary>Links</summary><p>
+
+  * [Sitio oficial de GitHub Pages](https://pages.github.com/)
+</p></details>
+
+- [ ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
+
+### Centrado en el usuario
+
+- [ ] **Diseñar y desarrollar un producto o servicio poniendo a las usuarias en el centro**
+
+### Diseño de producto
+
+- [ ] **Crear prototipos de alta fidelidad que incluyan interacciones**
+
+- [ ] **Seguir los principios básicos de diseño visual**
+
+### Investigación
+
+- [ ] **Planear y ejecutar testeos de usabilidad de prototipos en distintos niveles de fidelidad**
+
+  <details><summary>Links</summary><p>
+
+  * [Intro a testeos usabilidad](https://coda.io/@bootcamp-laboratoria/contenido-ux/test-de-usabilidad-15)
+  * [Pruebas con Usuarios 1 — ¿Qué, cuándo y para qué testeamos?](https://eugeniacasabona.medium.com/pruebas-con-usuarios-1-qu%C3%A9-cu%C3%A1ndo-y-para-qu%C3%A9-testeamos-7c3a89b4b5e7)
+</p></details>
+
+## 7. Problemas de usabilidad
+
+  Si no deseas chatear más con ningun personaje y antes de abandonar la página, se debe entrar a la vista de configuración de la API para borrar la API key. El anterior problema de usabilidad aplica solo para Laboratoria.
