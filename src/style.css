@@ -5,6 +5,7 @@
 }
 * {
   margin: 0px;
+  padding: 0px;
 }
 html,
 body {
@@ -19,68 +20,79 @@ header {
   padding-bottom: 40px;
 }
 
-  h1 {
-    font-size: 35px;
-    color:#ec004a;
-    font-family: "Bleak Chop";
-    margin-top: 0px;
-    letter-spacing: 2px;
-  }
-  #logo {
-    max-height: 180px;
-    max-width: 180px;
-    margin-top: 25px;
-  }
-  nav {
-    height: auto;
-    width: 100%;
-    background-color: #ec004a;
-    padding: 10px 0px;
-  }
-  /* falta un float*/
-  .menuIcon {
-    width: 30px;
-    height: 30px;
-    float: right;
-    margin: 15px 20px 15px 0px;
-    display: none;
-  }
-  #check {
-    display: none;
-  }
-  input {
-    font-size: 18px;
-    text-align: left;
-    padding: 8px 10px 6px 8px;
-    margin: 0px 6px 0px 10px;
-    box-shadow: 3px 3px 3px rgba(132, 132, 132, 0.13);
-    border: 0;
-    border-radius: 8px;
-    outline: none;
-  }
-  label {
-    padding: 5px;
-    border: none;
-    font-family: "Hammersmith One", sans-serif;
-  }
-  select {
-    font-size: 18px;
-    font-family: "Hammersmith One", sans-serif;
-    background-color: #ece9e2;
-    padding: 6px 10px 6px 10px;
-    box-shadow: 2px rgba(132, 132, 132, 0.13);
-    border: 0;
-    border-radius: 5px;
-    outline: none;
-  }
-  select[name="year"] {
-    padding: 8px 12px 8px 12px;
-  }
-  select:hover {
-    background-color: #f8b943;
-    transition: 5ms;
-  }
-  /*No funciona
+h1 {
+  font-size: 35px;
+  color: #ec004a;
+  font-family: "Bleak Chop";
+  margin-top: 0px;
+  letter-spacing: 2px;
+}
+h2 {
+  padding: 20px;
+  text-align: center;
+}
+h3{
+  padding: 20px;
+  text-align: center; 
+}
+#logo {
+  max-height: 180px;
+  max-width: 180px;
+  margin-top: 25px;
+  align-content: center;
+}
+nav {
+  height: auto;
+  width: 100%;
+  background-color: #e4034a;
+  padding: 10px 0px;
+}
+/* falta un float*/
+.menuIcon {
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin: 15px 20px 15px 0px;
+  display: none;
+}
+#check {
+  display: none;
+}
+input {
+  font-size: 18px;
+  text-align: left;
+  padding: 8px 10px 6px 16px;
+  margin: 0px 6px 0px 10px;
+  box-shadow: 3px 3px 3px rgba(132, 132, 132, 0.13);
+  border: 0;
+  border-radius: 8px;
+  outline: none;
+}
+label {
+  padding: 5px;
+  border: none;
+  font-family: "Hammersmith One", sans-serif;
+}
+select {
+  color: white;
+  font-size: 18px;
+  font-family: "Hammersmith One", sans-serif;
+  background-color: #ec004a;
+  padding: 6px 10px 6px 10px;
+  box-shadow: 2px rgba(132, 132, 132, 0.13);
+  border: 0;
+  border-radius: 5px;
+  outline: none;
+}
+select[name="year"] {
+  padding: 8px 12px 8px 12px;
+}
+select:hover {
+  color: #010101;
+  background-color: #ece9e2;
+  transition: 5ms;
+}
+/*No funciona
   option {
     color: #080808;
     background-color: #febf4e;
@@ -88,105 +100,106 @@ header {
   option:hover {
     background-color: #fe9a4e;
   }*/
-  button {
-    font-size: 15px;
-    font-weight: bold;
-    border: none;
-    color: #ec004a;
-    background-color: #ece9e2;
-    padding: 8px 10px 8px 10px;
-    border-radius: 5px;
-    margin-left: 15px;
-  }
-  button:hover {
-    background-color: rgba(249, 238, 242, 0.902);
-  }
+button {
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  color: #ec004a;
+  background-color: #ece9e2;
+  padding: 8px 10px 8px 10px;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+button:hover {
+  background-color: rgba(249, 238, 242, 0.902);
+}
 
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 40px;
-  }
-  .itemcontainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    word-wrap: break-word;
-    width: 500px;
-    height: 280px;
-    margin: 10px;
-    color: #ec004a;
-    border-radius: 6px;
-    padding: 15px 5px 0px 15px;
-    background: #ece9e2;
-    position: relative;
-  }
-  img {
-    max-width: 220px;
-    max-height: 264px;
-    border-radius: 6px;
-  }
-  
-  .texto {
-    position: absolute;
-    top: 8px;
-    left: 220px;
-    padding-right: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  
-  dd[itemprop="studio"] {
-    color: #f8b943;
-    font-size: 13px;
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 1px;
-    margin-top: 25px;
-  }
-  
-  dd[itemprop="name"] {
-    font-size: 17px;
-    font-weight: bold;
-    font-family: "Hammersmith One", sans-serif;
-    margin-top: 30px;
-    letter-spacing: 1px;
-  }
-  dd[itemprop="shortDescription"] {
-    font-size: 16px;
-    text-align: left;
-    margin-top: 30px;
-    color: #010101;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  dd[itemprop="genre"] {
-    font-size: 15px;
-    padding-top: 10px;
-    text-align: left;
-    margin-top: 15px;
-    color: #010101;
-    font-family: Arial, Helvetica, sans-serif;
-    position: absolute;
-    top: 220px;
-  }
-  dd[itemprop="year"] {
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-    position: absolute;
-    top: 245px;
-    left: 240px;
-    letter-spacing: 1px;
-  }
-  footer {
-    font-size: 20px;
-    position: static;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin-top: 30px;
-    padding: 20px 20px;
-    background-color: #ec004a;
-    font-family: "Hammersmith One", sans-serif;
-  }
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+}
+.itemcontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  word-wrap: break-word;
+  width: 500px;
+  height: 280px;
+  margin: 10px;
+  color: #ec004a;
+  border-radius: 6px;
+  padding: 15px 5px 0px 15px;
+  background: #ece9e2;
+  position: relative;
+}
+img {
+  max-width: 220px;
+  max-height: 264px;
+  border-radius: 6px;
+}
+
+.texto {
+  position: absolute;
+  top: 8px;
+  left: 220px;
+  padding-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+dd[itemprop="studio"] {
+  color: #f8b943;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+  margin-top: 25px;
+}
+
+dd[itemprop="name"] {
+  font-size: 17px;
+  font-weight: bold;
+  font-family: "Hammersmith One", sans-serif;
+  margin-top: 30px;
+  letter-spacing: 1px;
+}
+dd[itemprop="shortDescription"] {
+  font-size: 16px;
+  text-align: left;
+  margin-top: 30px;
+  color: #010101;
+  font-family: Arial, Helvetica, sans-serif;
+}
+dd[itemprop="genre"] {
+  font-size: 15px;
+  padding-top: 10px;
+  text-align: left;
+  margin-top: 15px;
+  color: #010101;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 220px;
+}
+dd[itemprop="year"] {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 245px;
+  left: 240px;
+  letter-spacing: 1px;
+}
+footer {
+  color: white;
+  font-size: 20px;
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 30px;
+  padding: 20px 20px;
+  background-color: #ec004a;
+  font-family: "Hammersmith One", sans-serif;
+}
