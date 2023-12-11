@@ -1,6 +1,6 @@
 
-import { sortData, filterData, sortBounty, computeStats, computeStatsBounty, getCharacterById } from '../src/dataFunctions.js';
-import { names, crew, arrBounty, origin } from './data.js';
+import { sortData, filterData, sortBounty, computeStats, computeStatsBounty, getCharacterById } from '../src/lib/dataFunctions.js';
+import { names, crew, arrBounty, origin } from '../test/dataset.js';
 
 
 describe("sortData", () => {
@@ -80,9 +80,9 @@ describe("computeStatsBounty", () => {
 describe('getCharacterById', () => {
 
   const dataChar = [
-    { id: "monkey-d-luffy", name: "Monkey D. Luffy"},
-    { id: "roronoa-zoro", name: "Roronoa Zoro" },
-    { id: "nami", name: "Nami" }
+    { id: 1, name: "Monkey D. Luffy"},
+    { id: 2, name: "Roronoa Zoro" },
+    { id: 3, name: "Nami" }
   ];
   
   it('devuelve el personaje correspondiente al ID proporcionado', () => {
