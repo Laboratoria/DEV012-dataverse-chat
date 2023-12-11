@@ -2,7 +2,7 @@ import { getCharacterById } from "../lib/dataFunctions.js";
 import { sendMessagesToCharacter } from "../lib/API.js";
 
 export const chatContainer = (characterId) => {
-  //console.log('chatContainer', { characterId })
+  //console.log('chatContainer', { characterId }
   const character = getCharacterById(characterId);
   //contenedores section chat
   const divChat = document.createElement("div");
