@@ -1,0 +1,725 @@
+@import url("https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Rubik+Mono+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rye&display=swap");
+
+body {
+  height: 100vh;
+}
+
+#root,
+.viewComponent,
+.factsComponent,
+.descriptionComponent,
+.panelComponent,
+.apiComponent {
+  height: 100%;
+  display: initial;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+header {
+  font-family: "Metal Mania", cursive;
+  font-style: normal;
+  line-height: n;
+  width: 100%;
+  height: 20vh;
+  background-image: url(./lib/img/header-image.png);
+  background-size: 506px 234px;
+  background-color: #01367c;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+label[for="menu"],
+.checkbox {
+  display: none;
+}
+h1 {
+  width: 450px;
+  height: 129px;
+  background-color: #da9a05;
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.6);
+}
+body {
+  background-color: #eaeaea;
+}
+nav {
+  display: flex;
+  width: 100%;
+}
+div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.filters {
+  width: 100%;
+  height: 2.9rem;
+  background-color: #a90000;
+  display: flex;
+}
+label {
+  font-family: "Metal Mania", cursive;
+  font-size: 20px;
+  width: fit-content;
+  margin-top: 12px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+select {
+  width: 10%;
+  height: 70%;
+  margin-top: 8px;
+}
+
+.home-btn {
+  background-color: #a90000;
+  border: none;
+  cursor: pointer;
+}
+
+.home {
+  width: 100%;
+  height: 70%;
+}
+button[data-testid="button-clear"] {
+  font-family: "Metal Mania", cursive;
+  font-size: 20px;
+  width: 10%;
+  height: 70%;
+  margin: 8px 5px 5px 10px;
+  cursor: pointer;
+}
+.button {
+  font-family: "Metal Mania", cursive;
+  font-size: 24px;
+  width: 10%;
+  height: 70%;
+  margin: 8px 15px 5px 15px;
+  cursor: pointer;
+}
+h2 {
+  font-family: "Metal Mania", cursive;
+  font-weight: 200;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  text-align: center;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d1a879;
+  width: 445px;
+  height: 550px;
+  margin: 30px 55px;
+  border-radius: 20px;
+  justify-content: space-around;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+}
+.cards:hover {
+  box-shadow: 0 0 20px red;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.img-home,
+.img-details {
+  width: 250px;
+  height: 346px;
+  padding: auto;
+  font-weight: 200;
+}
+h3 {
+  font-family: "Metal Mania", cursive;
+  font-weight: 200;
+  font-size: 40px;
+  padding-top: 15px;
+}
+p {
+  width: 270px;
+  font-family: "Rubik Mono One", regular;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 200;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h4 {
+  font-family: "Rye", cursive;
+  font-size: 16;
+  padding-bottom: 15px;
+}
+
+footer {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  font-family: "Rye", cursive;
+  font-size: 16px;
+  color: #858585;
+  background-color: #3f3f3f;
+}
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.error {
+  font-size: 60px;
+}
+
+.img-error {
+  width: 300px;
+  height: 300px;
+}
+
+.error-h4 {
+  font-size: 30px;
+  font-family: "Metal Mania", cursive;
+}
+
+.section-details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+}
+
+.section-details h2 {
+  width: 100%;
+}
+
+.div-padre {
+  max-width: 70vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  background-color: #d1a879;
+  justify-content: center;
+}
+
+.div-card {
+  /*width: 40%;*/
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1em;
+  /*width: 60%;*/
+  flex-grow: 5;
+}
+
+.img-details {
+  margin-top: 1.5rem;
+}
+
+.p-cards {
+  margin-top: 1.5rem;
+}
+
+.div-details p {
+  width: 500px;
+}
+
+.div-details button {
+  font-family: "Metal Mania", cursive;
+  font-size: 20px;
+  width: 160px;
+  height: 45px;
+  margin: 8px 5px 5px 10px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+/*Estilo del h2 que está dentro del ul en facts*/
+.factsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container-facts {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cards-facts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #d1a879;
+  width: 445px;
+  height: 550px;
+  margin: 30px 55px;
+  border-radius: 20px;
+  justify-content: space-around;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.div-facts {
+  display: flex;
+  justify-content: center;
+}
+
+.facts-img {
+  width: 15rem;
+  height: 20rem;
+}
+
+.section-modal {
+  width: 100%;
+  height: 100vh;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div-contenedor-modal {
+  width: 40rem;
+  height: 15rem;
+  background-color: #a90000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  align-items: center;
+}
+
+.div-input {
+  height: 6rem;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.div-close-title {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.span-close-modal {
+  font-size: xx-large;
+  font-family: "Metal Mania", cursive;
+  width: 1rem;
+  align-self: baseline;
+}
+
+.input-modal {
+  width: 15rem;
+  height: 1.5rem;
+}
+
+.btn-modal {
+  margin-left: 0.5rem;
+  width: 4rem;
+  height: 1.7rem;
+  font-family: "Metal Mania", cursive;
+  font-size: 1.3em;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.div-chat {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.section-chat {
+  width: 100%;
+  border: 1px solid;
+}
+
+.section-credential {
+  width: 100%;
+  height: 10%;
+  background-color: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+.section-prompting {
+  width: 100%;
+  height: 90%;
+}
+
+.imgCredentials {
+  width: 3rem;
+  height: 3rem;
+}
+
+.text-area-chat {
+  width: 100%;
+  height: 95%;
+  border: none;
+  resize: none;
+  background-color: #d1a879;
+}
+
+.input-promp {
+  width: 90%;
+  height: 5%;
+  border: none;
+}
+
+.btn-send {
+  width: 10%;
+  height: 5%;
+}
+
+.img-btn-send {
+  width: 20px;
+  height: 20px;
+}
+
+.button-home {
+  font-family: "Metal Mania", cursive;
+  font-size: 20px;
+  width: 160px;
+  height: 45px;
+  margin: 8px 5px 5px 10px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.h2-btn-chat {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat-api-button { 
+  font-family: "Metal Mania", cursive;
+  font-size: 24px;
+  width: 10%;
+  height: 70%;
+  margin: 8px 15px 5px 15px;
+  cursor: pointer;
+}
+
+.profile-icon{
+  width: 60px;
+  height: 65px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+@media (max-width: 1366px) {
+  header {
+    height: 30vh;
+  }
+  .cards {
+    width: 310px;
+    height: 390px;
+    margin: 10px;
+  }
+  .cards-facts {
+    width: 310px;
+    height: 400px;
+    margin: 10px;
+  }
+  .div-facts h2 {
+    font-size: 1.6rem;
+    
+  }
+  .facts-img {
+    width: 13rem;
+    height: 17rem;
+  }
+
+  .section-details {
+    height: 100vh;
+  }
+  .div-padre {
+    max-width: 68vw;
+    height: 65vh;
+  }
+  h3 {
+    font-weight: 200;
+    font-size: 25px;
+  }
+  .p-details {
+    width: 0.5rem;
+  }
+  p {
+    width: 270px;
+    font-size: 10px;
+    font-weight: 200;
+
+  }
+  h4 {
+    font-family: "Rye", cursive;
+    font-size: 10px;
+    padding-bottom: 15px;
+  }
+  .img-home,
+  .img-details {
+    width: 150px;
+    height: 200px;
+    padding: auto;
+  }
+  h2 {
+    font-size: 1.5rem;
+    align-items: center;
+    margin-top: -5px;
+    margin-bottom: -1px;
+  }
+  .button-home {
+    font-size: 15px;
+    width: 130px;
+    height: 30px;
+  }
+  .div-contenedor-modal {
+    width: 30rem;
+    height: 15rem;
+  }
+
+  .div-input{
+    width: 100% ;
+    display: flex;
+  }
+  .div-details .button-home {
+    font-size: 15px;
+    width: 130px;
+    height: 30px;
+  }
+}
+
+
+@media (max-width: 500px) {
+  header {
+    font-family: "Metal Mania", cursive;
+    width: 100%;
+    height: 18vh;
+    background-image: url(./lib/img/header-image.png);
+    background-size: 420px 180px;
+    background-color: #01367c;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+  }
+  nav {
+    display: flex;
+    flex-direction: wrap;
+    width: 100%;
+    height: 50px;
+  }
+  div {
+    display: none;
+  }
+  .checkbox {
+    display: none;
+  }
+  input:checked ~ div {
+    display: block;
+    width: 100%;
+    height: 450px;
+    background-color: rgba(1, 54, 124, 0.9);
+    margin-left: 39px;
+    padding: 10px;
+    position: relative;
+  }
+  label[for="menu"] {
+    display: inline-block;
+    border: 1px;
+    border-radius: 5px;
+    width: 30px;
+    height: 10px;
+    margin-top: 12px;
+    line-height: 30px;
+    color: #eaeaea;
+    font-size: 40px;
+  }
+  select {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 8%;
+  }
+  label {
+    color: #eaeaea;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+  }
+  h1 {
+    width: 257px;
+    height: 101px;
+    background-color: #da9a05;
+    font-size: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+  }
+  button[data-testid="button-clear"],
+  .button {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 8%;
+    margin-left: 0px;
+    margin-top: 15px;
+    font-size: 20px;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d1a879;
+    width: 310px;
+    height: 390px;
+    margin: 10px;
+  }
+  h3 {
+    text-align: center;
+  }
+  .img-home,
+  .img-details {
+    width: 150px;
+    height: 200px;
+    padding: auto;
+  }
+  p {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 0.5rem;
+  }
+  h4 {
+    font-size: 0.6rem;
+    padding: 5px;
+  }
+  .error-h4 {
+    font-size: 25px;
+  }
+
+  .div-padre {
+    height: 85%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .img-details {
+    width: 130px;
+    height: 170px;
+    padding: auto;
+  }
+
+  .section-details {
+    padding: 10px 0px;
+    height: 80vh;
+  }
+  .h2-details {
+    height: 1.5rem;
+  }
+  .div-details p {
+    width: 85%;
+    margin-top: 25px;
+  }
+  .div-chat {
+    width: 100%;
+    height: 80%;
+    flex-direction: column;
+  }
+
+  .section-chat {
+    height: 100%;
+  }
+
+  .img-btn-send {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cards-facts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #d1a879;
+    width: 310px;
+    height: 450px;
+    margin: 10px;
+  }
+
+  .section-chat {
+    width: 100%;
+  }
+
+  .div-card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+  }
+  .div-card p {
+    width: 85%;
+    
+  }
+
+  .div-details{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+  }
+}
