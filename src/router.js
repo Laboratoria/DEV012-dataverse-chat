@@ -3,14 +3,21 @@ let routes = {};
 // es la referencia al elemento html en donde se van a dibujar los componentes 
 let rootElement = ''; 
 
-export const setRoutes =(newRoutesValue)=> {
+export const setRoutes =(newRoutesValue)=>{ 
+    //arroja los errores en caso tal de que el string no sea un objeto, valida 
+console.log(newRoutesValue)
 
-    routes=newRoutesValue
+    if(typeof newRoutesValue === "object") {
+        if(newRoutesValue["/error" ]){  // se accede a los valores de un objeto, se hace de esta forma ya que el . no distingue cáracteres especiales
+        routes=newRoutesValue;
+        }
+    }
 }
 
 //setters, antes de asignarlo, verifica si es correcto,  este export asigna funciones a los lets de arriba
 export const setRootElement = (newRootElementValue)=> {
-    
+    //es importante que el setter haga validaciones 
+
     rootElement=newRootElementValue
 }
 
@@ -21,6 +28,7 @@ const renderView = (pathname, props={}) => {
     const root= rootElement;
     root.innerHTML ='';
     // find the correct view in ROUTES for the pathname
+    console.log(pathname,routes )
     if (routes[pathname]) {
         const template=routes[pathname](props);
         //devuelve un elemento html y lo guarda un template 

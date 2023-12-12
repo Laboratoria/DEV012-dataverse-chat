@@ -1,3 +1,3 @@
-export const Error = () => {
+export const example = () => {
     return document.createElement('p').textContent("hola mundo");
 };
