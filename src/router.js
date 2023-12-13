@@ -5,7 +5,7 @@ let rootElement = '';
 
 export const setRoutes =(newRoutesValue)=>{ 
     //arroja los errores en caso tal de que el string no sea un objeto, valida 
-console.log(newRoutesValue)
+    console.log(newRoutesValue)
 
     if(typeof newRoutesValue === "object") {
         if(newRoutesValue["/error" ]){  // se accede a los valores de un objeto, se hace de esta forma ya que el . no distingue cáracteres especiales
@@ -13,6 +13,7 @@ console.log(newRoutesValue)
         }
     }
 }
+
 
 //setters, antes de asignarlo, verifica si es correcto,  este export asigna funciones a los lets de arriba
 export const setRootElement = (newRootElementValue)=> {
@@ -33,8 +34,7 @@ const renderView = (pathname, props={}) => {
         const template=routes[pathname](props);
         //devuelve un elemento html y lo guarda un template 
         root.appendChild(template);
-    }
-        else {
+    } else {
             root.appendChild(routes['/error'](props))
         }
     // carga la vista de error si no existe una ruta asignada al pathname
