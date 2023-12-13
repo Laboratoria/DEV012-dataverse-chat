@@ -1,5 +1,5 @@
 import { setRootElement, setRoutes } from './router.js';
-import home from './views/home.js'
+import {Home} from './views/home.js'
 import { onURLChange } from './router.js';
 import example from './views/example.js';
 import {Error} from './views/error.js';
@@ -33,7 +33,12 @@ window.addEventListener('popstate', ({objetivo}) => {
  });
  */
 const routes = {
+<<<<<<< HEAD
     "/":example,
+=======
+    "/":Home,
+    "/example":Example,
+>>>>>>> 374008ea736d620ed24472e113b6f1be4d344bc3
     "/error": Error,
 };
 
