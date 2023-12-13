@@ -4,6 +4,7 @@
   src: url("./Bleak\ Chop.ttf");
 }
 * {
+  text-align: center;
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
@@ -29,6 +30,24 @@ h1 {
   letter-spacing: 2px;
 }
 
+
+
+h2 {
+  padding: 30px;
+  text-align: center;
+}
+
+.error-img {
+  display: flexbox; /* Buscar como centrarlo utilizando flexbox*/
+  width: 300px;
+  height: 300px;
+}
+
+h3 {
+  padding: 20px;
+  text-align: center;
+}
+
 #logo {
   max-height: 180px;
   max-width: 180px;
@@ -38,9 +57,11 @@ h1 {
 nav {
   height: auto;
   width: 100%;
-  background-color: #e4034a;
-  padding: 10px 0px;
+  background-color: #ec004a;
+  padding: 10px 0px 0px 0px;
 }
+
+
 /* falta un float*/
 .menuIcon {
   width: 30px;
@@ -119,8 +140,26 @@ button {
   margin-left: 15px;
 }
 button:hover {
-  background-color: rgba(249, 238, 242, 0.902);
+  background-color: rgba(31, 30, 30, 0.902);
 }
+
+p {
+  width: 100%;
+  font-size: 17px;
+  color: rgb(255, 255, 255);
+  font-family:  "Hammersmith One", sans-serif;
+  padding: 7px 0px;
+ 
+}
+
+.metrics {
+  height: auto;
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:#ec004a;
+  padding-bottom: 0px;
+}
+
 /*header views*/
 h2 {
   padding: 20px;
@@ -129,6 +168,25 @@ h2 {
 h3{
   padding: 20px;
   text-align: center; 
+
+.compute-stats {
+  font-size: 17px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 5px 0px;
+  background-color: rgb(40, 40, 40);
+}
+#noResultsFound{
+  padding-top: 20px opx;
+  
+}
+.chatmss{
+  font-size: 17px;
+  color:#ec004a;
+  text-align: center;
+  padding: 5px 0px;
+
+
 }
 ul {
   display: flex;
@@ -207,10 +265,25 @@ dd[itemprop="year"] {
   left: 240px;
   letter-spacing: 1px;
 }
+.apiText{
+  color:#010101;
+}
+#saveApiButton, #clearApiButton{
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  color: #ece9e2;
+  background-color: #ec004a;
+  padding: 8px 10px 8px 10px;
+  border-radius: 5px;
+  margin-left: 15px; 
+
+}
+
 footer {
   color: white;
   font-size: 20px;
-  position: static;
+  /*position: static;*/
   bottom: 0;
   left: 0;
   right: 0;

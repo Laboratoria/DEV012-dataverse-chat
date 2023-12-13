@@ -70,11 +70,15 @@ export const navBar = () => {
     </select>
 
     <button id="button" data-testid="button-clear">Limpiar</button>
-  
-  </nav>`; //template string
-  const nodoNavB = document.createElement("nav"); //Nodo
-  nodoNavB.innerHTML = htmlNav;
-  nodoNavB.classList.add("navComponent");
+    <button id="chat" data-testid="panel-chat">Chat</button>
+    <button id="apiKey" data-testid="api-key">Api Key</button>
+  </nav> 
+  <div class="metrics"> <br/> </div>
+  <p class="compute-stats"></p>
+  <div id="noResultsFound"></div>`; //Creates a template string
+    const nodoNavB = document.createElement("nav");// Creates a Nodo 
+    nodoNavB.innerHTML = htmlNav;
+    nodoNavB.classList.add("navComponent");
+    return nodoNavB;
+}
 
-  return nodoNavB;
-};
