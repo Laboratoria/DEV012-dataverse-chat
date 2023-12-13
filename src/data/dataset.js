@@ -1,4 +1,4 @@
-export default [
+export default [ //colocarle comillas a las claves
     {
       id: "akira",
       name: "Akira",
@@ -302,7 +302,7 @@ export default [
       description:
         "El Tiempo Contigo es una película de animación japonesa dirigida por Makoto Shinkai. La película se lanzó en el año 2019 y es conocida por su hermosa animación y su historia romántica y fantástica. La trama sigue a un joven llamado Hodaka que se muda a Tokio y se encuentra con una chica llamada Hina, que tiene el poder de controlar el clima. Juntos, enfrentan desafíos y descubren el significado de la conexión humana en un mundo donde el clima es impredecible.",
       imageUrl:
-        "https://fesapusewebsite.blob.core.windows.net/fathom/wwy-6489619c29fb58fcfe879a5043a6ed35.jpg",
+        "https://nontheatrical.gkids.com/cdn/shop/products/WWY_Poster-EN_Web_V03-DUBCAST-121119_Small-550x805_360x.jpg?v=1596838818",
       facts: {
         year: 2019,
         genre: "Romance · Fantasía",
