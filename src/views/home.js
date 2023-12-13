@@ -7,14 +7,13 @@ export const Home = () => {
     const headerHome = section; //se asigna 
     const header = Header(); //se llama al componente
     headerHome.appendChild(header) //se agrega el componente a la sección
+    return Home
 }
 
-const Example = () => {
+export const Example = () => {
     const container = document.createElement('span');
     const tittle = document.createElement('h1')
     tittle.textContent='jajaja'
     container.append(tittle, buton())
     return container
 };
-
-export default Example;

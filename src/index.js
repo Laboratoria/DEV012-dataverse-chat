@@ -1,7 +1,7 @@
 import { setRootElement, setRoutes } from './router.js';
 import {Home} from './views/home.js'
 import { onURLChange } from './router.js';
-import Example from './views/example.js';
+import {Example} from './views/example.js';
 import {Error} from './views/error.js';
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 
