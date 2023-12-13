@@ -43,8 +43,10 @@ if (ROUTES[pathname]){
   
   export const navigateTo = (pathname, properties = {}) => {
     // update window history with pushState
-    const URLvisited = window.location.hostname + pathname; // our Hostname would be localhost:3000
-    history.pushState({}, "", URLvisited);
+    const URLvisited = pathname; // our Hostname would be localhost:3000
+    console.log (navigateTo);
+    history.pushState({}, "", URLvisited); 
+
     // render the view with the pathname and props
     renderView(pathname, properties);
   }
