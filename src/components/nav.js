@@ -1,13 +1,14 @@
-
-
 export const navBar = () => {
-    const htmlNav = `<nav>
+  const htmlNav = `<nav>
     <input
       id="inputFilter"
       name="searchButton"
       type="search"
       placeholder="Buscar película..."
     />
+
+    <box-icon name='menu'></box-icon>
+    
     <label for="genre"></label>
     <select id="genre" data-testid="select-filter" name="genre">
       <option disabled selected value="">Genero</option>
@@ -23,6 +24,7 @@ export const navBar = () => {
       <option value="Romance">Romance</option>
       <option value="Thriller">Thriller</option>
     </select>
+
     <label for="studio"></label>
     <select id="studio" data-testid="select-studio" name="studio">
       <option disabled selected value="">Estudio</option>
@@ -39,6 +41,7 @@ export const navBar = () => {
       <option value="Why Not Productions">Why Not Productions</option>
       <option value="Wild Bunch">Wild Bunch</option>
     </select>
+
     <label for="year"></label>
     <select id="year" data-testid="select-año" name="year">
       <option disabled selected value="">Año de estreno</option>
@@ -58,20 +61,20 @@ export const navBar = () => {
       <option value="2020">2020</option>
       <option value="2022">2022</option>
     </select>
+
     <label for="orden-alfabetico"></label>
     <select id="orden-alfabetico" data-testid="select-sort" name="name">
       <option disabled selected value="">Ordenar</option>
       <option value="asc">Ascendente</option>
       <option value="desc">Descendente</option>
     </select>
+
     <button id="button" data-testid="button-clear">Limpiar</button>
+  
   </nav>`; //template string
-    const nodoNavB = document.createElement("nav");//Nodo 
-    nodoNavB.innerHTML = htmlNav;
-    nodoNavB.classList.add("navComponent");
+  const nodoNavB = document.createElement("nav"); //Nodo
+  nodoNavB.innerHTML = htmlNav;
+  nodoNavB.classList.add("navComponent");
 
-    return nodoNavB;
-}
-
-
-
+  return nodoNavB;
+};

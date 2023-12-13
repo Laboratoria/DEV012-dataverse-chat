@@ -1,16 +1,15 @@
-
-import {header} from "../components/header.js"  
-import {navBar} from "../components/nav.js" 
-import {footer} from "../components/footer.js" 
-import data from "/data/dataset.js"
-
+import { header } from "../components/header.js";
+import { navBar } from "../components/nav.js";
+import { footer } from "../components/footer.js";
+import data from "/data/dataset.js";
 
 // Crearlos como componente (opcional)
-const renderData = (data) => { //el ciclo es independiente del html 
+const renderData = (data) => {
+  //el ciclo es independiente del html
   let htmlCards = "";
-  const nodoCards = document.createElement("ul"); // Crea el Nodo 
+  const nodoCards = document.createElement("ul"); // Crea el Nodo
   data.forEach((items) => {
-  htmlCards += `<li itemscope itemtype="PeliculasAnimacionJaponesa" class="itemcontainer" data-id="${items.id}">
+    htmlCards += `<li itemscope itemtype="PeliculasAnimacionJaponesa" class="itemcontainer" data-id="${items.id}">
                 <dl itemscope itemtype="PeliculasAnimacionJaponesa">
                 <img src="${items.imageUrl}" alt="${items.name}"/>
                 <div class="texto">
@@ -23,20 +22,14 @@ const renderData = (data) => { //el ciclo es independiente del html
               </dl>
             </li>`; //template string
   });
-  nodoCards.innerHTML = htmlCards;// Convierte el string en un HTML
+  nodoCards.innerHTML = htmlCards; // Convierte el string en un HTML
   return nodoCards;
 };
 
 export const home = () => {
-  const section = document.createElement('section');
+  const section = document.createElement("section");
   section.appendChild(header());
   section.appendChild(navBar());
   section.appendChild(renderData(data));
   section.appendChild(footer());
- return section;
 };
-
-    //nodoCards.appendChild(data());
-    //nodoCards.classList.add("ul");
-    //nodoCards.appendChild(htmlCards);
-    //return nodoCards;
