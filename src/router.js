@@ -44,15 +44,16 @@ const renderView = (pathname, props={}) => {
   
   export const navigateTo = (pathname, props={}) => {
     // actualizar el historial del navegador a partir de las urls con pushState
-    const URLvisited= window.location.hostname + pathname; 
+    const URLvisited= window.location.origin + pathname; 
     history.pushState({},"", URLvisited);
     // render the view with the pathname and props
     renderView(pathname, props);
   }
   
   export const onURLChange = (location) => {
+    console.log(location,"location")
     // parse the location for the pathname and search params
     // convert the search params to an object
     // render the view with the pathname and object
-    renderView(location);
+    renderView(location.pathname);
 }

@@ -1,10 +1,7 @@
-export const footer = () => {
-    const htmlTemplate =
-    <p> Dev by Cami & Vane </p>
+export const Footer = () => {
+    const Footer = document.createElement("footer");
+    Footer.id = "footer"
+    Footer.innerHTML = `<footer> Dev by Cami & vane </footer>`;
 
-
-    const footer = document.createElement('footer');
-    footer.classList.add('container');
-    footer.innerHTML = htmlTemplate;
-    return footer;
-} 
+    return Footer
+}
