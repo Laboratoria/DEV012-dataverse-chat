@@ -1,11 +1,7 @@
 import { setRootElement, setRoutes } from './router.js';
 import {Home} from './views/home.js'
 import { onURLChange } from './router.js';
-<<<<<<< HEAD
-import {Example} from './views/example.js';
-=======
-import example from './views/example.js';
->>>>>>> ad3611e12ca26ab805a87ba616be557935e0d5d1
+//import {Example} from './views/example.js';
 import {Error} from './views/error.js';
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 
@@ -37,12 +33,8 @@ window.addEventListener('popstate', ({objetivo}) => {
  });
  */
 const routes = {
-<<<<<<< HEAD
-    "/":example,
-=======
-    "/":Home,
-    "/example":Example,
->>>>>>> 374008ea736d620ed24472e113b6f1be4d344bc3
+    "/": Home,
+    //"/example":Example,
     "/error": Error,
 };
 
@@ -53,6 +45,6 @@ setRootElement(viewContainer);
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed")
     console.log(event.target.location.pathname);
-    onURLChange(event.target.location.pathname);
+    onURLChange(event.target.location);
 })
 
