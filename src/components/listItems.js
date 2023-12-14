@@ -1,12 +1,10 @@
-import { navigateTo } from "../router.js";
-
 export const listItems= (data) => {
-
     const ul =document.createElement ('ul');
-    ul.classList.add("container");
+    ul.id = 'ul';
 
     data.forEach((item) => {
-        ul.innerHTML += `<li itemscope itemtype="card" class="cards">
+      const listCharacters = document.createElement('li');
+      ul.innerHTML += `<li itemscope itemtype="card" class="cards">
           <div class="cardContent">
             <dl itemscope itemtype="StarWarsCharacters">
               <strong><dt></dt><dd itemprop="name">${item.name}</dd></strong>
