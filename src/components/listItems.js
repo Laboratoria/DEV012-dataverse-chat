@@ -1,10 +1,9 @@
-export const listItems= (data) => {
-    const ul =document.createElement ('ul');
-    ul.id = 'ul';
-
-    data.forEach((item) => {
-      const listCharacters = document.createElement('li');
-      ul.innerHTML += `<li itemscope itemtype="card" class="cards">
+export const listItems = (data) => {
+  return data.map((item) => {
+    const listCharacters = document.createElement("li");
+    listCharacters.classList.add("cards");
+    listCharacters.setAttribute("itemtype", "card");
+    listCharacters.innerHTML += `
           <div class="cardContent">
             <dl itemscope itemtype="StarWarsCharacters">
               <strong><dt></dt><dd itemprop="name">${item.name}</dd></strong>
@@ -14,9 +13,7 @@ export const listItems= (data) => {
               <p><dt>Description:</dt><dd itemprop="description">${item.description}</dd></p>
             </dl>     
           </div>
-        </li>`;
-      });
-    
-      return ul;
-    };
-
+        `;
+    return listCharacters;
+  });
+};
