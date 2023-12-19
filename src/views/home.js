@@ -1,45 +1,78 @@
-
 import data from "../data/dataset.js";
-import { filterAffiliation, sortData, computeStats } from "../lib/dataFunctions.js";
-import {Footer} from "../components/footer.js"
+import {
+  filterAffiliation,
+  sortData,
+  computeStats,
+} from "../lib/dataFunctions.js";
+import { Footer } from "../components/footer.js";
 import { Header } from "../components/header.js";
 import { listItems } from "../components/listItems.js";
 import { NavBar } from "../components/navBar.js";
 
-
 export const Home = () => {
-    const divContainerHome = document.createElement('div'); //se crea una sección para contener Home
-    const ul =document.createElement('ul');
-    ul.id = 'ul';
-    const nodesCreated = listItems(data)
+  let currentData = data;
+  const divContainerHome = document.createElement("div"); //se crea una sección para contener Home
+  const ul = document.createElement("ul");
+  ul.id = "ul";
+  const nodesCreated = listItems(data);
 
-    nodesCreated.forEach(element => {
-      ul.append(element)
+  nodesCreated.forEach((element) => {
+    ul.append(element);
+  });
+
+  //se llaman componentes
+  //const headerComponent = Header();
+  //se reemplazan las const en la línea 16 que llaman a los componentes de listItems, Header y Footer. Se usa append, en lugar de appendChild para llamar a todos
+
+  //se agregan los componentes al contenedor de toda la vista Home
+  console.log(ul);
+  divContainerHome.append(Header(), NavBar(), ul, Footer());
+
+  //Filtrado
+  const optionFilter = divContainerHome.querySelector('[name="affiliation"]');
+  optionFilter.addEventListener("change", (event) => {
+    currentData = filterAffiliation(data, event.target.value);
+    const ul = divContainerHome.querySelector("#ul");
+    ul.innerHTML = "";
+    const nodesCreated = listItems(currentData);
+
+    nodesCreated.forEach((element) => {
+      ul.append(element);
     });
+    console.log(currentData.length);
+  });
 
-    //se llaman componentes
-        //const headerComponent = Header();
-    //se reemplazan las const en la línea 16 que llaman a los componentes de listItems, Header y Footer. Se usa append, en lugar de appendChild para llamar a todos
+  //Ordenamiento
 
-    //se agregan los componentes al contenedor de toda la vista Home
-    console.log(ul);
-    divContainerHome.append(Header(), NavBar(), ul, Footer()); 
+  //const optionSort = divContainerHome.querySelector('[name="sortAZ"]');
+  //optionSort.addEventListener("change",function(event) => {
+  //const sortedData = sortData (data, event.target.value);
 
-    //Filtrado
-    const optionFilter = divContainerHome.querySelector('[name="affiliation"]');
-    optionFilter.addEventListener("change", (event) => {
-      const dataFiltered=filterAffiliation(data, event.target.value);
-      const ul = divContainerHome.querySelector('#ul')
-      ul.innerHTML=''
-      const nodesCreated = listItems(dataFiltered)
+  //// Sección ordenar
+  const optionSort = divContainerHome.querySelector('[name="sortAZ"]');
 
-      nodesCreated.forEach(element => {
-        ul.append(element)
-      });
-      console.log(ul);
-    });
-    return divContainerHome
-}
+  // Evento para cambiar el orden
+  optionSort.addEventListener("change", function (event) {
+    const sortBy = event.target.value;
+console.log (sortBy," sortBy")
+    // ordena la data filtrada o la que ya se encuentra por default
+   // const dataToSort = selectedAffiliation
+   //   ? filterAffiliation(data, selectedAffiliation)
+   //   : data;
+    const sortedData = sortData(currentData, sortBy);
+    console.log (sortedData, "")
+    const nodesCreated = listItems(sortedData);
+    ul.innerHTML = "";
+
+  nodesCreated.forEach((element) => {
+    ul.append(element);
+    
+  });
+  });
+
+  return divContainerHome;
+};
+//sortBy = event.target.value;
 
 /*
 //Manipulación de eventos
