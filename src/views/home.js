@@ -1,9 +1,5 @@
 import data from "../data/dataset.js";
-import {
-  filterAffiliation,
-  sortData,
-  computeStats,
-} from "../lib/dataFunctions.js";
+import {filterAffiliation,  sortData, computeStats,} from "../lib/dataFunctions.js";
 import { Footer } from "../components/footer.js";
 import { Header } from "../components/header.js";
 import { listItems } from "../components/listItems.js";
@@ -70,8 +66,17 @@ console.log (sortBy," sortBy")
   });
   });
 
+  const clearButton = divContainerHome.querySelector('[data-testid="button-clear"]');
+  clearButton.addEventListener("click", () => {
+  //ul.innerHTML = "";
+  ul.innerHTML = listItems(data);
+});
+
   return divContainerHome;
+
+ 
 };
+
 //sortBy = event.target.value;
 
 /*
