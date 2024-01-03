@@ -34,7 +34,9 @@ export const Home = () => {
 
     nodesCreated.forEach((element) => {
       ul.append(element);
+      
     });
+
     console.log(currentData.length);
   });
 
@@ -66,10 +68,15 @@ console.log (sortBy," sortBy")
   });
   });
 
+
+
   const clearButton = divContainerHome.querySelector('[data-testid="button-clear"]');
   clearButton.addEventListener("click", () => {
-  //ul.innerHTML = "";
-  ul.innerHTML = listItems(data);
+  ul.innerHTML = "";
+  const nodesCreated = listItems(data);
+  nodesCreated.forEach((element) => {
+    ul.append(element);
+  });
 });
 
   return divContainerHome;
