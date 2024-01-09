@@ -72,7 +72,7 @@ h3 {
 p {
   display: flex;
   margin-top: 5px;
-  color: white;
+  color: yellow;
   font-family: "jura";
   font-size: larger;
   font-weight: 700;
@@ -80,7 +80,6 @@ p {
   text-indent: 5px;
   word-spacing: 3px;
   letter-spacing: 3px;
-  background-color: #091e78;
 }
 
 select {
@@ -271,4 +270,104 @@ footer {
   letter-spacing: 3px;
   font-family: "Star Jedi";
   justify-content: center;
+}
+/*APIKEY JS*/
+textarea[name="user-input"] {
+  align-items: center;
+  display: flex;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.70);
+  width: 700px;
+  height: 30px;
+  flex-shrink: 0;
+  padding: 10px;
+  font-family: "jura";
+  font-size: larger;
+  text-transform: uppercase;
+  text-align: center;
+  color: #FFF;
+ }
+
+ /*APIKEY JS*/
+
+.containerAll{
+  display: flex;
+  flex-direction: column;
+}
+
+ .message{
+  display: flex;
+  margin-top: 0px;
+  margin-left: 15px;
+  color: yellow;
+  font-family: "jura";
+  font-size: larger;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/*APIKEY JS*/
+.title {
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Star Jedi', sans-serif;
+  font-size: larger;
+  margin: 5%;
+  font-size: 80px;
+}
+
+/*APIKEY JS*/
+#buttonsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+/*APIKEY JS*/
+#confirmButton {
+  display: inline-flex;
+ color: #FFF;
+ align-items: center;
+ text-align: center;
+  font-family: "jura";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: medium;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 3px solid #FFF;
+  background:  #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-right: 15px;
+}
+
+/*APIKEY JS*/
+#returnButton {
+  display: inline-flex;
+ color: #FFF;
+ align-items: center;
+ text-align: center;
+  font-family: "jura";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: medium;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 3px solid #FFF;
+  background:  #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-left: 15px;
+}
+
+.customImage{
+
+  max-width: 50%;
+  align-items: center;
+  justify-content: center;
+  
 }
