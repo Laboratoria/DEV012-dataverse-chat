@@ -5,7 +5,7 @@ export const ApiKey = () => {
     const apiKeyView = document.createElement('div');
     const message = document.createElement('div');
     message.innerHTML = `
-        <div class="containerAll">
+        <section class="containerAll">
         <div class=message> Hi, Human! <br> 
             To unlock the full power of your galactic journey,<br>
             enter your API Key in the section below.<br>
@@ -16,10 +16,10 @@ export const ApiKey = () => {
             <br>
           <div id="buttonsContainer">
             <button id="confirmButton" data-testid="confirm-button">Confirm</button>
-            <button id="returnButton" data-testid="return-button">Return</button>
+            <button id="returnButton" data-testid="return-button">Back to home</button>
             </div>
-            <img class="customImage"src="images/apikey.png" alt="Image Description">
-        </div>
+            <img class="customImage"src="images/apikey.png" alt="Api key">
+        </section>
     `
 
     apiKeyView.append( Title(), message, Footer());
