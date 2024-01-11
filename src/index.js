@@ -4,6 +4,7 @@ import { onURLChange } from './router.js';
 //import {Example} from './views/example.js';
 import {Error} from './views/error.js';
 import { ApiKey } from './views/apiKey.js';
+import { CharacterChat } from './views/chat.js';
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 
 /*
@@ -37,6 +38,7 @@ const routes = {
     "/": Home,
     "/apikey": ApiKey,
     "/error": Error,
+    "/chat": CharacterChat,
 };
 
 const viewContainer= document.getElementById('root');

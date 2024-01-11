@@ -1,5 +1,5 @@
 export const buton = () =>{
     const button = document.createElement('button')
-    button.textContent='now click here'
+    button.textContent='Back to home'
     return button;
 }
