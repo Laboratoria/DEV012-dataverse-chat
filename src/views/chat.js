@@ -5,12 +5,10 @@ import { Footer } from "../components/footer.js";
 export const CharacterChat = () => {
     const chatView = document.createElement('body');
 
-    chatView.append(ReturnButton());
-    const nameCharacter = document.createElement('p');
-    nameCharacter.innerHTML = `Din Djarin (The Mandalorian)`
-    chatView.appendChild(nameCharacter);
+    //chatView.append();
+    //chatView.appendChild(nameCharacter);
 
-    chatView.append(ChatPanel(), Footer());
+    chatView.append(ChatPanel(), ReturnButton(), Footer());
 
     return chatView
 };

@@ -6,6 +6,9 @@ export const ChatPanel = () => {
     // Info personaje (Trabajar llamado desde el dataset)
     const characterInfoContainer = document.createElement('div');
     characterInfoContainer.classList.add('characterInfoContainer');
+    const nameCharacter = document.createElement('p');
+    nameCharacter.id = 'nameCharacter';
+    nameCharacter.innerHTML = `CHAT WITH Din Djarin (The Mandalorian)`
     const characterPhoto = document.createElement('figure');
     characterPhoto.classList.add('characterPhoto');
     characterPhoto.innerHTML = `<img src="https://th.bing.com/th/id/OIG.c3jlwCXOB8gc1DWYfx37?pid=ImgGn&w=1024&h=1024&rs=1", alt="Foto del personaje">`;
@@ -36,6 +39,7 @@ export const ChatPanel = () => {
     characterInfoContainer.appendChild(characterPhoto);
     characterInfoContainer.appendChild(characterDescription);
 
+    panelConversation.appendChild(nameCharacter)
     panelConversation.appendChild(chatWindow);
     panelConversation.appendChild(chatInput);
     chatInput.appendChild(messageInput);
