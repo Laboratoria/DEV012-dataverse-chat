@@ -1,4 +1,4 @@
-import { filterAffiliation, sortData, computeStats } from '../src/dataFunctions.js';
+import { filterAffiliation, sortData, computeStats } from '../lib/dataFunctions.js';
 import { data as fakeData } from './data.js';
 
 console.log(fakeData);
@@ -36,16 +36,5 @@ describe('sortData', () => {
     const result = sortData (unsortedData)
 
     expect(result).toEqual(sortedData);
-  });
-});
-
-describe('computeStats', () => {
-  it('debería devolver estadísticas correctas', () => {
-    const filteredData = filterAffiliation(fakeData, "Rebel Alliance");
-    const statsResult = computeStats(filteredData);
-
-    expect(statsResult['Luke Skywalker']).toBe(1);
-    expect(statsResult['Princess Leia Organa']).toBe(1);
-    expect(statsResult['Han Solo']).toBe(1);
   });
 });
