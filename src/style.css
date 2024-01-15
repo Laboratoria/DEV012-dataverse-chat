@@ -288,6 +288,7 @@ textarea[name="user-input"] {
   text-transform: uppercase;
   text-align: center;
   color: #FFF;
+  resize: none;
  }
 
  /*APIKEY JS*/

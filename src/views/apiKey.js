@@ -1,5 +1,6 @@
 import { Footer } from "../components/footer.js";
 import { Title } from "../components/title.js";
+import { saveApikey } from "../lib/apikey.js";
 
 export const ApiKey = () => {
     const apiKeyView = document.createElement('div');
@@ -21,6 +22,17 @@ export const ApiKey = () => {
             <img class="customImage"src="images/apikey.png" alt="Api key">
         </section>
     `
+    // Seleccionar el boton
+    // console.log(message.querySelector('button#confirmButton'))
+    // Añadir manejador de eventos al boton
+    message.querySelector('button#confirmButton').addEventListener('click', ()=>{
+    // Capturar el valor del text area
+    // console.log(message.querySelector('textarea[name="user-input"]').value);
+    // mostramos el valor del textarea en consola
+    const apikeyValue = message.querySelector('textarea[name="user-input"]').value
+    saveApikey(apikeyValue) // argumento
+    })
+   
 
     apiKeyView.append( Title(), message, Footer());
 
