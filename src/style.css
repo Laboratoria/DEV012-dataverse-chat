@@ -1,0 +1,483 @@
+@import url("https://fonts.googleapis.com/css?family=Jura");
+@import url("https://fonts.googleapis.com/css?family=Days+One");
+@import url("https://db.onlinewebfonts.com/c/cc3019aa6439ef893839b8a0d6d0391d?family=Star+Jedi");
+/*@import url("https://fonts.cdnfonts.com/css/star-wars");*/
+@import url("https://db.onlinewebfonts.com/c/636d3dac53dffe0023a68f90abacf4c1?family=JuraLight");
+@import url("https://db.onlinewebfonts.com/c/a575960e7b96141e7ec34bc95aa772e2?family=SF+Atarian+System+Extended+V2+V1");
+@import url("https://db.onlinewebfonts.com/c/28cac7a2ebb776327ddf96d71c30fe9b?family=SF+Atarian+System+Extended+Bold+V2+V1");
+
+* {
+  padding: 0%;
+  margin: 0%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+  background-color: black;
+  background-image: url(images/header.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-size: large;
+  font-family: 'Star Jedi', sans-serif;
+  width: 100%;
+  height: 150px;
+}
+
+body {
+  background-image: url(https://cdn.wallpapersafari.com/38/0/tNfnSd.png);
+  align-content: baseline;
+}
+
+h1 {
+  color: transparent;
+  padding-top: 0px;
+  text-align: center;
+  font-family: 'Star Jedi', sans-serif;
+  -webkit-text-stroke: 2px yellow;
+  font-size: 60px;
+}
+
+h1:hover {
+  text-shadow: 0 0 30px rgb(232, 232, 101);
+}
+
+h2 {
+  color: aliceblue;
+  text-align: center;
+  font-family: "jura";
+}
+
+h2:hover {
+  text-shadow: 0 0 25px yellow;
+}
+
+h3 {
+  color: yellow;
+  background-color: black;
+  text-align: center;
+  font-family: "JuraLight";
+  font-size: larger;
+  margin-top: 2%;
+}
+
+.statistic {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+p {
+  display: flex;
+  margin-top: 5px;
+  color: white;
+  font-family: "jura";
+  font-size: larger;
+  font-weight: 700;
+  line-height: 40px;
+  text-indent: 5px;
+  word-spacing: 3px;
+  letter-spacing: 3px;
+  background-color: #091e78;
+}
+
+select {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navBar {
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: space-around;
+}
+
+#naviBar {
+  display: flex;
+  font-family: "jura";
+  font-weight: 700;
+  color: #f0f0f0;
+}
+
+#affiliation {
+  max-width: 250px;
+}
+
+#affiliation {
+  display: inline-flex;
+  margin-left: 3px;
+  margin-right: 10px;
+  width: 187px;
+  cursor: pointer;
+  padding: 7px 10px;
+  height: 42px;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background: #f8f6f6;
+  color: #faf5f5;
+  font-size: 1em;
+  font-weight: 900;
+  color: #070707;
+  font-family: "jura";
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+#affiliation:hover {
+  box-shadow: 0 0 15px rgb(212, 168, 213);
+}
+
+#sortAZ {
+  max-width: 250px;
+}
+
+#sortAZ {
+  display: inline-flex;
+  margin-left: 3px;
+  margin-right: 10px;
+  width: 159px;
+  transition: 0.3s;
+  cursor: pointer;
+  padding: 7px 10px;
+  height: 42px;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background: #f0f0f0;
+  color: #1a1919;
+  font-size: 1em;
+  font-weight: 900;
+  color: #060606;
+  font-family: "jura";
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  position: relative;
+}
+
+#sortAZ:hover {
+  box-shadow: 0 0 15px rgb(212, 168, 213);
+}
+
+#clearBtn {
+  display: inline-flex;
+  font-family: "jura";
+  font-weight: 900;
+  font-size: medium;
+  padding: 10px 20px;
+  background-color: yellow;
+  color: rgb(12, 12, 12);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#clearBtn:hover {
+  box-shadow: 0 0 15px #f0f06e;
+}
+
+#clearBtn:active {
+  background-color: black;
+  color: yellow;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: space-around;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  background-color: #f2eee9;
+  background-image: url(https://www.creativefabrica.com/wp-content/uploads/2023/05/01/Rich-Galaxy-Background-Ultra-HD-Detail-Black-And-White-Colors-68559297-1-580x1031.png);
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px;
+  transition: 0.3s;
+}
+
+.cards:hover {
+  box-shadow: 0 0 20px rgb(212, 168, 213);
+  transform: scale(1.1);
+}
+
+strong {
+  display: flex;
+  justify-content: center;
+  font-family: "SF Atarian System Extended Bold V2 V1";
+  font-size: 20px;
+  font-weight: 100;
+  padding-top: 4%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+span {
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+}
+
+dl {
+  font: 1rem "days one", sans-serif;
+  text-align: center;
+  font-weight: 100;
+}
+
+dd {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+#root ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .cards {
+    width: 40vh;
+  }
+}
+
+footer {
+  display: flex;
+  color: yellow;
+  letter-spacing: 3px;
+  font-family: "Star Jedi";
+  justify-content: center;
+}
+
+/*APIKEY JS*/
+textarea[name="user-input"] {
+  align-items: center;
+  display: flex;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.70);
+  width: 700px;
+  height: 30px;
+  flex-shrink: 0;
+  padding: 10px;
+  font-family: "jura";
+  font-size: larger;
+  text-transform: uppercase;
+  text-align: center;
+  color: #FFF;
+  resize: none;
+ }
+
+ /*APIKEY JS*/
+.containerAll{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ /*APIKEY JS*/
+ .message{
+  display: flex;
+  margin-top: 0px;
+  margin-left: 15px;
+  color: yellow;
+  font-family: "jura";
+  font-size: larger;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/*APIKEY JS*/
+.title {
+  color: white;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-family: 'Star Jedi', sans-serif;
+  font-size: larger;
+  margin: 5%;
+  font-size: 80px;
+}
+
+/*APIKEY JS*/
+#buttonsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+/*APIKEY JS*/
+#confirmButton {
+  display: inline-flex;
+ color: #FFF;
+ align-items: center;
+ text-align: center;
+  font-family: "jura";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: medium;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 3px solid #FFF;
+  background:  #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-right: 15px;
+}
+
+/*APIKEY JS*/
+#returnButton {
+  display: inline-flex;
+ color: #FFF;
+ text-align: center;
+  font-family: "jura";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: medium;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 3px solid #FFF;
+  background:  #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-left: 15px;
+}
+
+/*APIKEY JS*/
+.customImage{
+  max-width: 50%;
+
+  
+}
+
+ /*error JS*/
+.customError{
+  max-width: 70%;
+}
+
+ /*error JS*/
+ .errorMessage{
+  display: flex;
+  margin-top: 0px;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-family: "jura";
+  font-size: larger;
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+ /*error JS*/
+.errorContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+}
+
+/* #returnButton {
+  position: relative;
+  left: 520px;
+} */
+
+/* CHAT*/
+.chatContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-bottom: 0px;
+  border: 5px solid yellow;
+  border-radius: 8px;
+  background-image: url(https://www.creativefabrica.com/wp-content/uploads/2023/05/01/Rich-Galaxy-Background-Ultra-HD-Detail-Black-And-White-Colors-68559297-1-580x1031.png);
+  background-repeat: no-repeat;
+}
+
+.characterInfoContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#nameCharacter {
+  color: yellow;
+  font-family: 'Star Jedi', sans-serif;
+  background-color: transparent;
+}
+
+.characterPhoto {
+  justify-content: center;
+  width: 60%;
+  border-radius: 50%;
+}
+
+.characterDescription {
+  margin-top: 10px;
+  text-align: center;
+  background-color: #1a1919;
+}
+
+
+.panelConversation {
+  flex: 2;
+  margin-left: 20px; 
+}
+
+#chatTextarea {
+  width: 100%;
+  height: 400px;
+  resize: none; 
+  margin-bottom: 10px;
+}
+
+.chatInput {
+  display: flex;
+  align-items: center;
+}
+
+#messageInput {
+  flex: 1;
+  padding: 8px;
+}
+
+#sendMessageBtn {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#sendMessageBtn:hover {
+  background-color: #45a049;
+}
