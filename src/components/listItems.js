@@ -1,3 +1,6 @@
+import { navigateTo } from "../router.js";
+import { ChatPanel } from "./chatContainer.js";
+
 export const listItems = (data) => {
   return data.map((item) => {
     const listCharacters = document.createElement("li");
@@ -14,6 +17,12 @@ export const listItems = (data) => {
             </dl>     
           </div>
         `;
+        listCharacters.addEventListener('click', ()=>{
+          // console.log(item);
+          navigateTo(`/chat-${item.id}`, item)
+          ChatPanel(item)
+          
+         }) 
     return listCharacters;
   });
 };
