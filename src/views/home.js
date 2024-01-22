@@ -4,6 +4,7 @@ import { Footer } from "../components/footer.js";
 import { Header } from "../components/header.js";
 import { listItems } from "../components/listItems.js";
 import { NavBar } from "../components/navBar.js";
+import { navigateTo } from "../router.js";
 
 export const Home = () => {
   let currentData = data;
@@ -13,7 +14,10 @@ export const Home = () => {
   const nodesCreated = listItems(data);
 
   nodesCreated.forEach((element) => {
-    ul.append(element);
+  //  console.log(element);
+  
+   ul.append(element);
+ 
   });
 
   //se llaman componentes

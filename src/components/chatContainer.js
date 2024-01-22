@@ -1,4 +1,9 @@
-export const ChatPanel = () => {
+import data from "../data/dataset.js";
+export const ChatPanel = (item) => {
+    const id= window.location.pathname.replace("/chat-", "");
+  const element= data.find((personaje)=>personaje.id===id);
+
+    console.log(element);
     // Contenedor principal
     const chatContainer = document.createElement('div');
     chatContainer.classList.add('chatContainer');
@@ -8,13 +13,13 @@ export const ChatPanel = () => {
     characterInfoContainer.classList.add('characterInfoContainer');
     const nameCharacter = document.createElement('p');
     nameCharacter.id = 'nameCharacter';
-    nameCharacter.innerHTML = `CHAT WITH Din Djarin (The Mandalorian)`
+    nameCharacter.innerHTML = `CHAT WITH ${element.name}`
     const characterPhoto = document.createElement('figure');
     characterPhoto.classList.add('characterPhoto');
-    characterPhoto.innerHTML = `<img src="https://th.bing.com/th/id/OIG.c3jlwCXOB8gc1DWYfx37?pid=ImgGn&w=1024&h=1024&rs=1", alt="Foto del personaje">`;
+    characterPhoto.innerHTML = `<img src="${element.imageUrl}", alt="Foto del personaje">`;
     const characterDescription = document.createElement('div');
     characterDescription.classList.add('characterDescription');
-    characterDescription.innerHTML = '<p>Din Djarin, known as The Mandalorian, is a skilled bounty hunter and protector of the Child (Grogu) in the outer reaches of the galaxy.</p>';
+    characterDescription.innerHTML = `<p> ${element.description}</p>`;
 
     // Ventana chat
     const panelConversation = document.createElement('div');
