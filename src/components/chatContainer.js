@@ -1,5 +1,6 @@
 import data from "../data/dataset.js";
-export const ChatPanel = (item) => {
+import { chatCompletions } from "../lib/openIaAPI.js";
+export const ChatPanel = () => {
   const id = window.location.pathname.replace("/chat-", "");
   const element = data.find((personaje) => personaje.id === id);
 
@@ -24,7 +25,7 @@ export const ChatPanel = (item) => {
   // Ventana chat
   const panelConversation = document.createElement("div");
   panelConversation.classList.add("panelConversation");
-  const chatWindow = document.createElement("textarea");
+  const chatWindow = document.createElement("article");
   chatWindow.id = "chatTextarea";
 
   // Espacio para escribir y enviar
@@ -36,9 +37,25 @@ export const ChatPanel = (item) => {
   messageInput.id = "messageInput";
   messageInput.placeholder = "Starts an intergalactic chat...";
 
-  const sendMessageBtn = document.createElement("button");
-  sendMessageBtn.id = "sendMessageBtn";
-  sendMessageBtn.innerText = "Send";
+  const sendMessageBtn = document.createElement('button');
+  sendMessageBtn.addEventListener('click', ()=> {
+    messageInput.value
+    const messageUser = messageInput.value
+    chatCompletions(messageUser, element).then((data)=>{
+      const pQuestion = document.createElement('h5');
+      pQuestion.textContent = messageUser
+      const pAswer = document.createElement('h4')
+      pAswer.textContent = data.choices[0].message.content
+      chatWindow.append(pQuestion, pAswer)
+      messageInput.value = '';
+      //   console.log(data.choices[0].message.content);
+
+    })
+
+  }) ;
+
+  sendMessageBtn.id = 'sendMessageBtn';
+  sendMessageBtn.innerText = 'Send';
 
   // Llamado de los elemtos
   characterInfoContainer.appendChild(characterPhoto);
