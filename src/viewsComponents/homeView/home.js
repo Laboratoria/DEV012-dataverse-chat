@@ -100,7 +100,7 @@ const home = () => {
   container.appendChild(footer);
 
   const scriptPage = document.getElementById("pageScript")
-  console.log("🚀 ~ home ~ scriptPage:", scriptPage)
+  
   scriptPage.remove()
 
   

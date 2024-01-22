@@ -4,30 +4,11 @@ import { createCards } from "./createCards.js";
 import { renderInView } from "../../lib/dataFunctions.js";
 import { navigateTo } from "../../router.js";
 
-// Eventos del DOM para el home View
-
-// const urlSearchParams = new URLSearchParams(window.location.search);
-// console.log("🚀 ~ file: mainHome.js:9 ~ urlSearchParams:", urlSearchParams)
-// const itemClicked = urlSearchParams.get("item");
-// console.log("🚀 ~ file: mainHome.js:11 ~ itemClicked:", itemClicked)
-
-// const iconElement = document.querySelector(".chatGroup");
-
-// // Set the custom data-item attribute based on itemClicked
-// iconElement.setAttribute("data-item", itemClicked);
-
-// // Add click event listener to the icon
-// iconElement.addEventListener("click", () => {
-// // Read the custom data-item attribute
-//   const clickedItem = iconElement.getAttribute("data-item");
-// })
-
-console.log("main home");
 
 addEventListeners();
 document.querySelector("#containerCards").addEventListener("click", (e) => {
   const card = e.target.closest(".liClass");
-  console.log("🚀 ~ document.querySelector ~ card:", card)
+
   if (card) {
     e.preventDefault();
     e.stopPropagation();

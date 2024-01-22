@@ -1,8 +1,10 @@
-import {footer} from "../../staticsComponents/footer.js";
+import { footer } from "../../staticsComponents/footer.js";
 export const apiView = () => {
-
   const link = document.getElementById("pageStyles");
-  link.href = "./viewsComponents/apiView/stylesAPI.css";
+
+  if (link) {
+    link.href = "./viewsComponents/apiView/stylesAPI.css";
+  }
 
   const container = document.createElement("div");
   container.setAttribute("id", "apiView");
@@ -36,18 +38,16 @@ export const apiView = () => {
   document.body.appendChild(container);
   document.body.appendChild(footer);
 
-  const scriptPage = document.getElementById("pageScript")
-  console.log("🚀 ~ home ~ scriptPage:", scriptPage)
-  scriptPage.remove()
-  
+  const scriptPage = document.getElementById("pageScript");
+  if (scriptPage) {
+    scriptPage.remove();
+  }
+
   const script = document.createElement("script");
-  script.type="module";
+  script.type = "module";
   script.src = "./viewsComponents/apiView/mainApi.js";
-  script.id = "pageScript"
+  script.id = "pageScript";
   document.body.appendChild(script);
 
- 
-
   return container;
-  
 };

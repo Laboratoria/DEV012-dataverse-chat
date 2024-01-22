@@ -45,7 +45,7 @@ export const singleChatView = () => {
   document.body.appendChild(footer);
 
   const scriptPage = document.getElementById("pageScript")
-  console.log("🚀 ~ home ~ scriptPage:", scriptPage)
+  
   scriptPage.remove()
 
   const script = document.createElement("script");
