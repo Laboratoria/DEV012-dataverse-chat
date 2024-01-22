@@ -11,12 +11,12 @@ export const CharacterChat = () => {
 
     chatView.append(ChatPanel(), ReturnButton(), Footer());
 
-chatView.querySelector('button#sendMessageBtn').addEventListener('click', () =>{
+//chatView.querySelector('button#sendMessageBtn').addEventListener('click', () =>{
     // console.log('okbtn');
-    const msg = chatView.querySelector('input#messageInput').value
-    console.log(msg);
+  //  const msg = chatView.querySelector('input#messageInput').value
+    //console.log(msg);
     // chatCompletions(msg, personaje)
-})
+//})
     
 
     return chatView

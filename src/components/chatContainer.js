@@ -1,4 +1,5 @@
 import data from "../data/dataset.js";
+import { chatCompletions } from "../lib/openIaAPI.js";
 export const ChatPanel = (item) => {
     const id= window.location.pathname.replace("/chat-", "");
   const element= data.find((personaje)=>personaje.id===id);
@@ -37,6 +38,13 @@ export const ChatPanel = (item) => {
     messageInput.placeholder = 'Starts an intergalactic chat...';
 
     const sendMessageBtn = document.createElement('button');
+    sendMessageBtn.addEventListener('click', ()=> {
+      messageInput.value
+      const messageUser = messageInput.value
+      chatCompletions(messageUser, element);
+
+    }) ;
+
     sendMessageBtn.id = 'sendMessageBtn';
     sendMessageBtn.innerText = 'Send';
 

@@ -24,6 +24,7 @@ export const chatCompletions = ( ChatMessage, item) => {
     //       },
     //       body: JSON.stringify(data),
     //       })
+    //.then
 
     
         }
