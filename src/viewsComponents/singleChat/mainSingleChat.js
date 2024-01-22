@@ -3,6 +3,8 @@ import { renderInView } from "../../lib/dataFunctions.js";
 import { singleChatResponse } from "../../lib/Chat.Api.js";
 import { navigateTo } from "../../router.js";
 
+console.log("Se esta enderizao")
+
 //1 Traer la info de la card seleccionada de la session storage
 //2 Convertir toda la cadena de texto de la card seleccionada en un objeto
 const selectedCard = JSON.parse(sessionStorage.getItem("cartoonSelected"));

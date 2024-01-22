@@ -38,10 +38,10 @@ export const groupChatView = () => {
   document.body.appendChild(container);
   document.body.appendChild(footer);
 
-  const script = document.createElement("script");
+  const script = document.getElementById("pageScript");
+  
   script.src = "./viewsComponents/groupChat/mainGroup.js";
-  script.type = "module";
-  document.body.appendChild(script);
+  
 
   return container;
 };

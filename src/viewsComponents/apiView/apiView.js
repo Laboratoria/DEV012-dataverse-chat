@@ -1,40 +1,3 @@
-/*import { footer } from "../../staticsComponents/footer.js";
- export const apiView = () => {
-    //
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = './viewsComponents/apiView/stylesApi.css';
-    document.head.appendChild(link);
-
-    //Seleccionamos elemento padre que contendrá todos los nodos
-    const apiKeyView = document.querySelector('.all')
-    
-
-    //Creamos elementos
-    const apiH1 = document.querySelector("h1")
-    apiH1.innerHTML = `
-    <img id="cartoon">
-    <a href="http://localhost:3000/">
-    <img id="home">
-    </a>
-    `
-console.log(apiH1)
-    const apiRoot = document.getElementById('root')
-    apiRoot.innerHTML = `<input id ="password" type="password" >
-    <a href="http://localhost:3000/">
-    <button type="submit" id="button">Enviar</button>
-    </a>
-    <br>
-    <label for="password" id="phrase">Ingresa tu API key:</label>
-    `
-
-console.log(apiRoot);
-    //Agregamos los elementos con appendChild
-    apiKeyView.insertBefore(apiH1);
-   apiKeyView.appendChild(apiRoot);
-   apiKeyView.appendChild(footer);
-}  */
-
 import {footer} from "../../staticsComponents/footer.js";
 export const apiView = () => {
 
@@ -73,14 +36,18 @@ export const apiView = () => {
   document.body.appendChild(container);
   document.body.appendChild(footer);
 
-  const script = document.createElement("script");
-  script.src = "./viewsComponents/apiView/mainApi.js";
-  script.type= "module"
-
-  document.body.appendChild(script)
+  const scriptPage = document.getElementById("pageScript")
+  console.log("🚀 ~ home ~ scriptPage:", scriptPage)
+  scriptPage.remove()
   
+  const script = document.createElement("script");
+  script.type="module";
+  script.src = "./viewsComponents/apiView/mainApi.js";
+  script.id = "pageScript"
+  document.body.appendChild(script);
+
  
 
   return container;
-  //    document.body.insertAdjacentElement('beforeend', footer);
+  
 };

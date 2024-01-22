@@ -1,5 +1,7 @@
 import { navigateTo } from "../../router.js";
 
+console.log("main api");
+
 const apiKey = localStorage.getItem("apiKey");
 if (apiKey !== null) {
   const dataItemValue = localStorage.getItem("dataItem");

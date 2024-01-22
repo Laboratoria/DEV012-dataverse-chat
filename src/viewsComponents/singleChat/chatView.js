@@ -44,10 +44,16 @@ export const singleChatView = () => {
   document.body.appendChild(container);
   document.body.appendChild(footer);
 
+  const scriptPage = document.getElementById("pageScript")
+  console.log("🚀 ~ home ~ scriptPage:", scriptPage)
+  scriptPage.remove()
+
   const script = document.createElement("script");
   script.src = "./viewsComponents/singleChat/mainSingleChat.js";
-  script.type = "module";
+  script.type = 'module';
+  script.id = "pageScript"
   document.body.appendChild(script);
+
 
   return container;
 };

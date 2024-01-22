@@ -99,10 +99,15 @@ const home = () => {
   container.insertAdjacentElement("beforeend", containerCards);
   container.appendChild(footer);
 
-  const script = document.createElement("script");
+  const scriptPage = document.getElementById("pageScript")
+  console.log("🚀 ~ home ~ scriptPage:", scriptPage)
+  scriptPage.remove()
+
   
+  const script = document.createElement("script");
+  script.type = 'module';
   script.src = "./viewsComponents/homeView/mainHome.js";
-  script.type = "module";
+  script.id = "pageScript"
   document.body.appendChild(script);
 
   return container;

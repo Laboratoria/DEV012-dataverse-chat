@@ -22,9 +22,12 @@ import { navigateTo } from "../../router.js";
 //   const clickedItem = iconElement.getAttribute("data-item");
 // })
 
+console.log("main home");
+
 addEventListeners();
 document.querySelector("#containerCards").addEventListener("click", (e) => {
   const card = e.target.closest(".liClass");
+  console.log("🚀 ~ document.querySelector ~ card:", card)
   if (card) {
     e.preventDefault();
     e.stopPropagation();
