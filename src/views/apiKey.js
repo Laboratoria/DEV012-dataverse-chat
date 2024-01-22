@@ -3,9 +3,9 @@ import { Title } from "../components/title.js";
 import { saveApikey } from "../lib/apikey.js";
 
 export const ApiKey = () => {
-    const apiKeyView = document.createElement('div');
-    const message = document.createElement('div');
-    message.innerHTML = `
+  const apiKeyView = document.createElement("div");
+  const message = document.createElement("div");
+  message.innerHTML = `
         <section class="containerAll">
         <div class=message> Hi, Human! <br> 
             To unlock the full power of your galactic journey,<br>
@@ -21,20 +21,23 @@ export const ApiKey = () => {
             </div>
             <img class="customImage"src="images/apikey.png" alt="Api key">
         </section>
-    `
-    // Seleccionar el boton
-    // console.log(message.querySelector('button#confirmButton'))
-    // Añadir manejador de eventos al boton
-    message.querySelector('button#confirmButton').addEventListener('click', ()=>{
-    // Capturar el valor del text area
-    // console.log(message.querySelector('textarea[name="user-input"]').value);
-    // mostramos el valor del textarea en consola
-    const apikeyValue = message.querySelector('textarea[name="user-input"]').value
-    saveApikey(apikeyValue) // argumento
-    })
-   
+    `;
+  // Seleccionar el boton
+  // console.log(message.querySelector('button#confirmButton'))
+  // Añadir manejador de eventos al boton
+  message
+    .querySelector("button#confirmButton")
+    .addEventListener("click", () => {
+      // Capturar el valor del text area
+      // console.log(message.querySelector('textarea[name="user-input"]').value);
+      // mostramos el valor del textarea en consola
+      const apikeyValue = message.querySelector(
+        'textarea[name="user-input"]'
+      ).value;
+      saveApikey(apikeyValue); // argumento
+    });
 
-    apiKeyView.append( Title(), message, Footer());
+  apiKeyView.append(Title(), message, Footer());
 
-    return apiKeyView
+  return apiKeyView;
 };
