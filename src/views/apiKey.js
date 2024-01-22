@@ -21,19 +21,21 @@ export const ApiKey = () => {
             </div>
             <img class="customImage"src="images/apikey.png" alt="Api key">
         </section>
-    `;
+    `
   // Seleccionar el boton
   // console.log(message.querySelector('button#confirmButton'))
   // Añadir manejador de eventos al boton
   message
     .querySelector("button#confirmButton")
     .addEventListener("click", () => {
-      // Capturar el valor del text area
+      // Capturar el valor del text
+
       // console.log(message.querySelector('textarea[name="user-input"]').value);
       // mostramos el valor del textarea en consola
       const apikeyValue = message.querySelector(
         'textarea[name="user-input"]'
       ).value;
+      alert(apikeyValue);
       saveApikey(apikeyValue); // argumento
     });
 

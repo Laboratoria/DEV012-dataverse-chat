@@ -5,6 +5,7 @@ import { onURLChange } from './router.js';
 import {Error} from './views/error.js';
 import { ApiKey } from './views/apiKey.js';
 import { CharacterChat } from './views/chat.js';
+import dataset from './data/dataset.js';
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 
 /*
@@ -40,7 +41,11 @@ const routes = {
     "/error": Error,
     "/chat": CharacterChat,
 };
-
+// importar la data
+// recorrer la data 
+dataset.forEach((elem)=>{
+    routes[`/chat-${elem.id}`] = CharacterChat
+})
 const viewContainer= document.getElementById('root');
 setRoutes(routes);
 setRootElement(viewContainer);
@@ -48,6 +53,6 @@ setRootElement(viewContainer);
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM fully loaded and parsed")
     console.log(event.target.location.pathname);
-    onURLChange(event.target.location);
+    onURLChange(event.target.location.pathname);
 })
 
