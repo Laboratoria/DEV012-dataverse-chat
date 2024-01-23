@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Jura");
 @import url("https://fonts.googleapis.com/css?family=Days+One");
 @import url("https://db.onlinewebfonts.com/c/cc3019aa6439ef893839b8a0d6d0391d?family=Star+Jedi");
-/*@import url("https://fonts.cdnfonts.com/css/star-wars");*/
 @import url("https://db.onlinewebfonts.com/c/636d3dac53dffe0023a68f90abacf4c1?family=JuraLight");
 @import url("https://db.onlinewebfonts.com/c/a575960e7b96141e7ec34bc95aa772e2?family=SF+Atarian+System+Extended+V2+V1");
 @import url("https://db.onlinewebfonts.com/c/28cac7a2ebb776327ddf96d71c30fe9b?family=SF+Atarian+System+Extended+Bold+V2+V1");
+@import url("https://db.onlinewebfonts.com/c/eabe4d47369871a62f7c564584b1a402?family=Star+Jedi+Outline");
+@import url("https://db.onlinewebfonts.com/c/dcb5cf864bdbede594c7d31a204dee8d?family=Star+Jedi+Hollow");
 
 * {
   padding: 0%;
@@ -69,7 +70,7 @@ h3 {
   margin-top: 20px;
 }
 
-p {
+/* p {
   display: flex;
   margin-top: 5px;
   color: white;
@@ -81,7 +82,7 @@ p {
   word-spacing: 3px;
   letter-spacing: 3px;
   background-color: #091e78;
-}
+} */
 
 select {
   display: flex;
@@ -409,42 +410,49 @@ textarea[name="user-input"] {
 /* CHAT*/
 .chatContainer {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin-top: 30px;
-  margin-left: 150px;
-  margin-right: 150px;
-  margin-bottom: 0px;
-  border: 5px solid yellow;
-  border-radius: 8px;
-  background-image: url(https://www.creativefabrica.com/wp-content/uploads/2023/05/01/Rich-Galaxy-Background-Ultra-HD-Detail-Black-And-White-Colors-68559297-1-580x1031.png);
-  background-repeat: no-repeat;
+  margin-top: 100px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 100px;
+  border: 3px solid yellow;
+  border-radius: 20px;
 }
 
 .characterInfoContainer {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 #nameCharacter {
-  color: yellow;
+  text-align: center;
   font-family: 'Star Jedi', sans-serif;
+  -webkit-text-stroke: 2px yellow;
+  font-size: 60px;
   background-color: transparent;
 }
 
 .characterPhoto {
   justify-content: center;
-  width: 60%;
+  width: 40%;
   border-radius: 50%;
 }
 
 .characterDescription {
   margin-top: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
   text-align: center;
-  background-color: #1a1919;
+  color: white;
+  font-family: "jura";
+  font-size: large;
+  line-height: 40px;
+  text-indent: 5px;
+  word-spacing: 3px;
+  letter-spacing: 3px;
 }
-
 
 .panelConversation {
   flex: 2;
@@ -452,33 +460,82 @@ textarea[name="user-input"] {
 }
 
 #chatTextarea {
-  width: 100%;
+  width: 840px;
   height: 400px;
   resize: none; 
-  margin-bottom: 10px;
+}
+
+article {
+  background: linear-gradient(#3c3c3d, #edeeee);
+  opacity: 90%;
+  margin-top: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 15px;
 }
 
 .chatInput {
+  width: 900px;
+  height: 100px;
   display: flex;
   align-items: center;
 }
 
 #messageInput {
-  flex: 1;
+  width: 650px;
+  height: 35px;
   padding: 8px;
+  margin-left: 20px;
+  color: #000;
+  background-color: #edeeee;
+  border: 2px solid yellow;
+  border-radius: 10px;
+  opacity: 70%;
+}
+
+/*User*/
+h5 {
+  text-align: right;
+  color: white;
+  font-family: "jura";
+  font-size: larger;
+  font-weight: 700;
+  line-height: 40px;
+  text-indent: 5px;
+  word-spacing: 3px;
+  letter-spacing: 3px;
+  background-color: #091e78;
+}
+
+/*AI*/
+h4 {
+  text-align: left;
+  color: white;
+  font-family: "jura";
+  font-size: larger;
+  font-weight: 700;
+  line-height: 40px;
+  text-indent: 5px;
+  word-spacing: 3px;
+  letter-spacing: 3px;
+  background-color: #091e78;
 }
 
 #sendMessageBtn {
-  margin-left: 10px;
-  padding: 8px 16px;
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+  width: 160px;
+  height: 55px;
+  margin-left: 5px;
+  padding: 5px;
+  background-color: #3e3e3e;
+  opacity: 70%;
+  color: white;
+  border: 2px solid yellow;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 #sendMessageBtn:hover {
+<<<<<<< HEAD
   background-color: #45a049;
 }
 
@@ -531,3 +588,12 @@ textarea[name="user-input"] {
 #apiKeyButton:hover {
   box-shadow: 0 0 15px #f0f06e;
 }
+=======
+  box-shadow: 0 0 15px #f0f06e;
+}
+
+#sendMessageBtn:active {
+  background-color: black;
+  color: yellow;
+}
+>>>>>>> 1e070db90590ee36f3a26d1a5968844e8ac78dd3
