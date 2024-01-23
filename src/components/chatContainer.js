@@ -19,6 +19,7 @@ export const ChatPanel = () => {
   characterPhoto.classList.add("characterPhoto");
   characterPhoto.innerHTML = `<img src="${element.imageUrl}", alt="Foto del personaje">`;
   const characterDescription = document.createElement("div");
+  characterDescription.id = "characterDescription";
   characterDescription.classList.add("characterDescription");
   characterDescription.innerHTML = `<p> ${element.description}</p>`;
 
@@ -30,12 +31,12 @@ export const ChatPanel = () => {
 
   // Espacio para escribir y enviar
   const chatInput = document.createElement("div");
-  chatInput.classList.add("chat-input");
+  chatInput.classList.add("chatInput");
 
   const messageInput = document.createElement("input");
   messageInput.type = "text";
   messageInput.id = "messageInput";
-  messageInput.placeholder = "Starts an intergalactic chat...";
+  messageInput.placeholder = "TYPE YOUR MESSAGE";
 
   const sendMessageBtn = document.createElement('button');
   sendMessageBtn.addEventListener('click', ()=> {
@@ -55,15 +56,17 @@ export const ChatPanel = () => {
   }) ;
 
   sendMessageBtn.id = 'sendMessageBtn';
-  sendMessageBtn.innerText = 'Send';
+  sendMessageBtn.innerText = 'SEND';
 
   // Llamado de los elemtos
+  characterInfoContainer.appendChild(nameCharacter);
   characterInfoContainer.appendChild(characterPhoto);
   characterInfoContainer.appendChild(characterDescription);
 
-  panelConversation.appendChild(nameCharacter);
+  //panelConversation.appendChild(nameCharacter);
   panelConversation.appendChild(chatWindow);
   panelConversation.appendChild(chatInput);
+
   chatInput.appendChild(messageInput);
   chatInput.appendChild(sendMessageBtn);
 
