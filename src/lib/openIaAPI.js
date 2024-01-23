@@ -23,7 +23,7 @@ export const chatCompletions = ( ChatMessage, item) => {
       Authorization: `Bearer ${APIKEY}`,
     },
     body: JSON.stringify(data),
-  }).then((res)=> res.json())
+  }).then((response)=> response.json())
 
 
     
