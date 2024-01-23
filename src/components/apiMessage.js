@@ -1,4 +1,4 @@
-
+//import { navigateTo } from "../router";
 export  const apiKeyModal = () => {
 
 
@@ -21,5 +21,11 @@ const apiKeyModal = document.createElement("div");
             <button id="apiKeyButton">API KEY</button>
         </section>
     `
+    //const apiKeyButton = document.createElement ('button')
+      //  apiKeyButton.addEventListener('click', ()=>{
+        //    navigateTo(`/apikey`, item)
+
+        //})
+
     return apiKeyModal
 }
