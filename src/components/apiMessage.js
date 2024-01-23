@@ -1,15 +1,7 @@
-<<<<<<< HEAD
-//import { navigateTo } from "../router";
-export  const apiKeyModal = () => {
-
-
-const apiKeyModal = document.createElement("div");
-=======
 import { navigateTo } from "../router.js";
 
 export const apiKeyModal = () => {
   const apiKeyModal = document.createElement("div");
->>>>>>> 5aa76669dea8b3d9a423ff1996a01501721739ef
   apiKeyModal.innerHTML = `
         <section class="containerModal">
         <div class=messageModal> Greetings, Star Wars Enthusiast!<br>
@@ -27,21 +19,9 @@ export const apiKeyModal = () => {
           <div id="buttonsContainer">
             <button id="apiKeyButton">API KEY</button>
         </section>
-<<<<<<< HEAD
-    `
-    //const apiKeyButton = document.createElement ('button')
-      //  apiKeyButton.addEventListener('click', ()=>{
-        //    navigateTo(`/apikey`, item)
-
-        //})
-
-    return apiKeyModal
-}
-=======
     `;
     apiKeyModal.querySelector("button#apiKeyButton").addEventListener("click", () => {
       navigateTo('/apikey')
     });
   return apiKeyModal;
 };
->>>>>>> 5aa76669dea8b3d9a423ff1996a01501721739ef

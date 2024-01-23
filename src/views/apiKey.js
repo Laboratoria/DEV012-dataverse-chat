@@ -1,4 +1,5 @@
 import { Footer } from "../components/footer.js";
+import { ReturnButton } from "../components/returnButton.js";
 import { Title } from "../components/title.js";
 import { saveApikey } from "../lib/apikey.js";
 
@@ -17,7 +18,6 @@ export const ApiKey = () => {
             <br>
           <div id="buttonsContainer">
             <button id="confirmButton" data-testid="confirm-button">Confirm</button>
-            <button id="returnButton" data-testid="return-button">Back to home</button>
             </div>
             <img class="customImage"src="images/apikey.png" alt="Api key">
         </section>
@@ -39,7 +39,7 @@ export const ApiKey = () => {
       saveApikey(apikeyValue); // argumento
     });
 
-  apiKeyView.append(Title(), message, Footer());
+  apiKeyView.append(Title(), message, ReturnButton(), Footer());
 
   return apiKeyView;
 };
