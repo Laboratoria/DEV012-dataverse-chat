@@ -5,6 +5,7 @@ import { Header } from "../components/header.js";
 import { listItems } from "../components/listItems.js";
 import { NavBar } from "../components/navBar.js";
 import { navigateTo } from "../router.js";
+import { apiKeyModal } from "../components/apiMessage.js";
 
 export const Home = () => {
   let currentData = data;
@@ -26,7 +27,7 @@ export const Home = () => {
 
   //se agregan los componentes al contenedor de toda la vista Home
   console.log(ul);
-  divContainerHome.append(Header(), NavBar(), ul, Footer());
+  divContainerHome.append(Header(),apiKeyModal(), NavBar(), ul, Footer());
 
   //Filtrado
   const optionFilter = divContainerHome.querySelector('[name="affiliation"]');

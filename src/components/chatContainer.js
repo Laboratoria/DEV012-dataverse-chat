@@ -14,7 +14,7 @@ export const ChatPanel = () => {
   characterInfoContainer.classList.add("characterInfoContainer");
   const nameCharacter = document.createElement("p");
   nameCharacter.id = "nameCharacter";
-  nameCharacter.innerHTML = `CHAT WITH ${element.name}`;
+  nameCharacter.innerHTML = `CHAT WITH <br> ${element.name}`;
   const characterPhoto = document.createElement("figure");
   characterPhoto.classList.add("characterPhoto");
   characterPhoto.innerHTML = `<img src="${element.imageUrl}", alt="Foto del personaje">`;

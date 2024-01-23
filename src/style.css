@@ -6,6 +6,7 @@
 @import url("https://db.onlinewebfonts.com/c/28cac7a2ebb776327ddf96d71c30fe9b?family=SF+Atarian+System+Extended+Bold+V2+V1");
 @import url("https://db.onlinewebfonts.com/c/eabe4d47369871a62f7c564584b1a402?family=Star+Jedi+Outline");
 @import url("https://db.onlinewebfonts.com/c/dcb5cf864bdbede594c7d31a204dee8d?family=Star+Jedi+Hollow");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
 
 * {
   padding: 0%;
@@ -412,6 +413,7 @@ textarea[name="user-input"] {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  text-transform: uppercase;
   margin-top: 100px;
   margin-left: 50px;
   margin-right: 50px;
@@ -428,8 +430,12 @@ textarea[name="user-input"] {
 
 #nameCharacter {
   text-align: center;
-  font-family: 'Star Jedi', sans-serif;
-  -webkit-text-stroke: 2px yellow;
+  font-family: Raleway;
+  font-size: 50px;
+  font-style: normal;
+  color: yellow ;
+  font-weight: 900;
+  /*-webkit-text-stroke: 2px yellow;*/
   font-size: 60px;
   background-color: transparent;
 }
@@ -448,6 +454,7 @@ textarea[name="user-input"] {
   color: white;
   font-family: "jura";
   font-size: large;
+  font-weight: 900;
   line-height: 40px;
   text-indent: 5px;
   word-spacing: 3px;
@@ -535,10 +542,55 @@ h4 {
 }
 
 #sendMessageBtn:hover {
-  box-shadow: 0 0 15px #f0f06e;
+  background-color: #45a049;
 }
 
-#sendMessageBtn:active {
-  background-color: black;
-  color: yellow;
+/*apikey Modal*/
+.containerModal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 950px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.055);
+    padding: 20px;
+    border: 4px solid yellow;
+    border-radius: 15px;
+    text-align: center;
+}
+/*apikey Modal*/
+.messageModal{
+  font-size: 2rem;
+    color: white;
+    margin-bottom: 10px;
+    display: flex;
+    margin-top: 0px;
+    margin-left: 15px;
+    font-family: "jura";
+    font-weight: 200;
+    font-size: 22px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/*apikey Modal*/
+#apiKeyButton {
+  display: inline-flex;
+ color: #FFF;
+ align-items: center;
+ text-align: center;
+  font-family: "jura";
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: medium;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 3px solid #FFF;
+  background:  #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-right: 15px;
+}
+
+#apiKeyButton:hover {
+  box-shadow: 0 0 15px #f0f06e;
 }
