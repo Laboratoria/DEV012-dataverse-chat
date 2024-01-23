@@ -1,8 +1,7 @@
+import { navigateTo } from "../router.js";
 
-export  const apiKeyModal = () => {
-
-
-const apiKeyModal = document.createElement("div");
+export const apiKeyModal = () => {
+  const apiKeyModal = document.createElement("div");
   apiKeyModal.innerHTML = `
         <section class="containerModal">
         <div class=messageModal> Greetings, Star Wars Enthusiast!<br>
@@ -20,6 +19,9 @@ const apiKeyModal = document.createElement("div");
           <div id="buttonsContainer">
             <button id="apiKeyButton">API KEY</button>
         </section>
-    `
-    return apiKeyModal
-}
+    `;
+    apiKeyModal.querySelector("button#apiKeyButton").addEventListener("click", () => {
+      navigateTo('/apikey')
+    });
+  return apiKeyModal;
+};

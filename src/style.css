@@ -4,8 +4,6 @@
 @import url("https://db.onlinewebfonts.com/c/636d3dac53dffe0023a68f90abacf4c1?family=JuraLight");
 @import url("https://db.onlinewebfonts.com/c/a575960e7b96141e7ec34bc95aa772e2?family=SF+Atarian+System+Extended+V2+V1");
 @import url("https://db.onlinewebfonts.com/c/28cac7a2ebb776327ddf96d71c30fe9b?family=SF+Atarian+System+Extended+Bold+V2+V1");
-@import url("https://db.onlinewebfonts.com/c/eabe4d47369871a62f7c564584b1a402?family=Star+Jedi+Outline");
-@import url("https://db.onlinewebfonts.com/c/dcb5cf864bdbede594c7d31a204dee8d?family=Star+Jedi+Hollow");
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
 
 * {
@@ -447,6 +445,7 @@ textarea[name="user-input"] {
 }
 
 .characterDescription {
+  justify-content: center;
   margin-top: 10px;
   margin-left: 100px;
   margin-right: 100px;
@@ -461,18 +460,21 @@ textarea[name="user-input"] {
   letter-spacing: 3px;
 }
 
-.panelConversation {
-  flex: 2;
-  margin-left: 20px; 
-}
+/* .panelConversation {
+
+  margin-left: 10px; 
+} */
 
 #chatTextarea {
-  width: 840px;
+  display: flex;
+  width: 830px;
   height: 400px;
   resize: none; 
 }
 
 article {
+  display: flex;
+  justify-content: center;
   background: linear-gradient(#3c3c3d, #edeeee);
   opacity: 90%;
   margin-top: 70px;
@@ -482,7 +484,7 @@ article {
 }
 
 .chatInput {
-  width: 900px;
+  width: 860px;
   height: 100px;
   display: flex;
   align-items: center;
@@ -529,7 +531,7 @@ h4 {
 }
 
 #sendMessageBtn {
-  width: 160px;
+  width: 155px;
   height: 55px;
   margin-left: 5px;
   padding: 5px;
@@ -542,7 +544,12 @@ h4 {
 }
 
 #sendMessageBtn:hover {
-  background-color: #45a049;
+  box-shadow: 0 0 15px #f0f06e;
+}
+
+#sendMessageBtn:active {
+  background-color: black;
+  color: yellow;
 }
 
 /*apikey Modal*/
