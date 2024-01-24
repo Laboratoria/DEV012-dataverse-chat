@@ -350,6 +350,16 @@ textarea[name="user-input"] {
   margin-right: 15px;
 }
 
+#confirmButton:hover {
+  box-shadow: 0 0 15px #f0f06e;
+}
+
+#confirmButton:active {
+  background-color: black;
+  color: yellow;
+}
+
+
 /*APIKEY JS*/
 #returnButton {
   display: inline-flex;
@@ -365,6 +375,15 @@ textarea[name="user-input"] {
   background:  #000;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-left: 15px;
+}
+
+#returnButton:hover {
+  box-shadow: 0 0 15px #f0f06e;
+}
+
+#returnButton:active {
+  background-color: black;
+  color: yellow;
 }
 
 /*APIKEY JS*/
@@ -469,12 +488,13 @@ textarea[name="user-input"] {
   display: flex;
   width: 830px;
   height: 400px;
-  resize: none; 
+  resize: none;
+  overflow-y: auto;
 }
 
 article {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   background: linear-gradient(#3c3c3d, #edeeee);
   opacity: 90%;
   margin-top: 70px;
@@ -513,7 +533,7 @@ h5 {
   text-indent: 5px;
   word-spacing: 3px;
   letter-spacing: 3px;
-  background-color: #091e78;
+  background-color: #240dd5;
 }
 
 /*AI*/
@@ -527,7 +547,7 @@ h4 {
   text-indent: 5px;
   word-spacing: 3px;
   letter-spacing: 3px;
-  background-color: #091e78;
+  background-color: #425cdf;
 }
 
 #sendMessageBtn {
