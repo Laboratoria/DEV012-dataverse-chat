@@ -86,12 +86,6 @@ export const Home = () => {
   });
 
   return divContainerHome;
-<<<<<<< HEAD
-=======
-
-
- 
->>>>>>> 7cadda57c4788d770513bff4092ece10821fda65
 };
 
 //sortBy = event.target.value;
