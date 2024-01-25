@@ -16,19 +16,12 @@
 
 ## 1. Preámbulo
 
-En nuestro día a día, las aplicaciones web son como amigas
-inseparables. Desde las redes sociales hasta las herramientas de
-trabajo, las usamos todo el tiempo. Pero lo que hace que este
-momento sea realmente especial es que estas aplicaciones nos pueden
-abrir una puerta a algo asombroso: la interacción con inteligencia
-artificial.
+Warsipedia es una plataforma web diseñada con la premisa de ofrecer una experiencia inmersiva sobre los personajes del universo Star Wars, Warsipedia permite a los usuarios explorar de manera interactiva un extenso conjunto de datos sobre sus personajes favoritos de la saga. Siguiendo el modelo de Single Page Application (SPA) y aprovechando la potencia de la inteligencia artificial desarrollada por OpenAI, Warsipedia permite interactuar con los personajes de Star Wars a través de un innovador sistema de chat. Para acceder a esta función, los usuarios utilizan una API key que facilita la conexión con la interfaz de OpenAI, permitiendo así conversaciones individuales con cada personaje.
 
-¿Qué tal si pudiéramos conversar con alguien que vivió hace más de
-cien años o incluso con los personajes de nuestras series y
-películas favoritas o con entidades que normalmente no pueden hablar
-como por ejemplo planetas o animales? La inteligencia artificial nos
-puede ayudar a entender el pasado y a conectarnos con figuras
-históricas, así como a sumergirnos en mundos ficticios.
+Las tarjetas interactivas de Warsipedia proporcionan detalles clave de cada personaje, como su nombre, afiliación y una breve descripción. Al hacer clic en una tarjeta específica, los usuarios pueden sumergirse aún más en la experiencia al acceder a un chat exclusivo con el personaje seleccionado. Este chat proporciona una plataforma única para dialogar con los héroes y villanos icónicos de Star Wars, permitiendo a los usuarios explorar sus historias, motivaciones y obtener respuestas a preguntas específicas.
+
+Con la combinación de la tecnología de OpenAI y la riqueza de información proporcionada, Warsipedia se presenta como la plataforma definitiva para los fanáticos de Star Wars que buscan explorar y comprender a fondo el universo que tanto aman.
+
 
 ![Preview app](https://github-production-user-asset-6210df.s3.amazonaws.com/123121338/271433237-2bd1477b-15ef-49d4-9fcb-226b3263c46a.png)
 
