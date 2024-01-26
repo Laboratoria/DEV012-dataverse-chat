@@ -1,10 +1,14 @@
 import data from "../data/dataset.js";
-import {filterAffiliation,  sortData, computeStats,} from "../lib/dataFunctions.js";
+import {
+  filterAffiliation,
+  sortData,
+  //computeStats,
+} from "../lib/dataFunctions.js";
 import { Footer } from "../components/footer.js";
 import { Header } from "../components/header.js";
 import { listItems } from "../components/listItems.js";
 import { NavBar } from "../components/navBar.js";
-import { navigateTo } from "../router.js";
+//import { navigateTo } from "../router.js";
 import { apiKeyModal } from "../components/apiMessage.js";
 
 export const Home = () => {
@@ -15,10 +19,9 @@ export const Home = () => {
   const nodesCreated = listItems(data);
 
   nodesCreated.forEach((element) => {
-  //  console.log(element);
-  
-   ul.append(element);
- 
+    //  console.log(element);
+
+    ul.append(element);
   });
 
   //se llaman componentes
@@ -27,7 +30,7 @@ export const Home = () => {
 
   //se agregan los componentes al contenedor de toda la vista Home
   console.log(ul);
-  divContainerHome.append(Header(),apiKeyModal(), NavBar(), ul, Footer());
+  divContainerHome.append(Header(), apiKeyModal(), NavBar(), ul, Footer());
 
   //Filtrado
   const optionFilter = divContainerHome.querySelector('[name="affiliation"]');
@@ -39,7 +42,6 @@ export const Home = () => {
 
     nodesCreated.forEach((element) => {
       ul.append(element);
-      
     });
 
     console.log(currentData.length);
@@ -57,37 +59,33 @@ export const Home = () => {
   // Evento para cambiar el orden
   optionSort.addEventListener("change", function (event) {
     const sortBy = event.target.value;
-console.log (sortBy," sortBy")
+    console.log(sortBy, " sortBy");
     // ordena la data filtrada o la que ya se encuentra por default
-   // const dataToSort = selectedAffiliation
-   //   ? filterAffiliation(data, selectedAffiliation)
-   //   : data;
+    // const dataToSort = selectedAffiliation
+    //   ? filterAffiliation(data, selectedAffiliation)
+    //   : data;
     const sortedData = sortData(currentData, sortBy);
-    console.log (sortedData, "")
+    console.log(sortedData, "");
     const nodesCreated = listItems(sortedData);
     ul.innerHTML = "";
 
-  nodesCreated.forEach((element) => {
-    ul.append(element);
-    
+    nodesCreated.forEach((element) => {
+      ul.append(element);
+    });
   });
-  });
 
-
-
-  const clearButton = divContainerHome.querySelector('[data-testid="button-clear"]');
+  const clearButton = divContainerHome.querySelector(
+    '[data-testid="button-clear"]'
+  );
   clearButton.addEventListener("click", () => {
-  ul.innerHTML = "";
-  const nodesCreated = listItems(data);
-  nodesCreated.forEach((element) => {
-    ul.append(element);
+    ul.innerHTML = "";
+    const nodesCreated = listItems(data);
+    nodesCreated.forEach((element) => {
+      ul.append(element);
+    });
   });
-});
 
   return divContainerHome;
-
-
- 
 };
 
 //sortBy = event.target.value;

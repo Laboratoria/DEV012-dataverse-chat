@@ -17,12 +17,11 @@ export const listItems = (data) => {
             </dl>     
           </div>
         `;
-        listCharacters.addEventListener('click', ()=>{
-          // console.log(item);
-          navigateTo(`/chat-${item.id}`, item)
-          ChatPanel(item)
-          
-         }) 
+    listCharacters.addEventListener("click", () => {
+      // console.log(item);
+      navigateTo(`/chat-${item.id}`, item);
+      ChatPanel(item);
+    });
     return listCharacters;
   });
 };
