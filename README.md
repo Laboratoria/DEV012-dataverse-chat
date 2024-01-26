@@ -2,7 +2,7 @@
 
 ## 1. Preámbulo
 
-Warsiepedia es una plataforma web diseñada con la premisa de ofrecer una experiencia inmersiva sobre los personajes del universo Star Wars, Warsiepedia permite a los usuarios explorar de manera interactiva un extenso conjunto de datos sobre sus personajes favoritos de la saga. Siguiendo el modelo de Single Page Application (SPA) y aprovechando la potencia de la inteligencia artificial desarrollada por OpenAI, Warsiepedia permite interactuar con los personajes de Star Wars a través de un innovador sistema de chat. Para acceder a esta función, los usuarios utilizan una API key que facilita la conexión con la interfaz de OpenAI, permitiendo así conversaciones individuales con cada personaje.
+Warsiepedia es una plataforma web diseñada con la premisa de ofrecer una experiencia inmersiva sobre los personajes del universo Star Wars, permite a los usuarios explorar de manera interactiva un extenso conjunto de datos sobre sus personajes favoritos de la saga. Siguiendo el modelo de Single Page Application (SPA) y aprovechando la potencia de la inteligencia artificial desarrollada por OpenAI y permite interactuar con los personajes de Star Wars a través de un innovador sistema de chat, para acceder a esta función, los usuarios utilizan una API key que facilita la conexión con la interfaz de OpenAI, permitiendo así conversaciones individuales con cada personaje.
 
 Las tarjetas interactivas de Warsipedia proporcionan detalles clave de cada personaje, como su nombre, afiliación y una breve descripción. Al hacer clic en una tarjeta específica, los usuarios pueden sumergirse aún más en la experiencia al acceder a un chat exclusivo con el personaje seleccionado. Este chat proporciona una plataforma única para dialogar con los héroes y villanos icónicos de Star Wars, permitiendo a los usuarios explorar sus historias, motivaciones y obtener respuestas a preguntas específicas.
 
@@ -83,3 +83,5 @@ En la implementación de la interfaz de usuario de Warsipedia, tras el diseño e
 Adicionalmente, abordamos aspectos de enrutamiento para garantizar una navegación fluida dentro de la aplicación. La integración de la API de Open AI se logró mediante llamadas a la API, permitiendo la interacción del usuario con los personajes a través de un sistema de chat personalizado.
 
 Para asegurar la calidad del código, realizamos exhaustivas pruebas unitarias de testeo utilizando Jest. Estas pruebas validaron la funcionalidad de diversas partes de la aplicación, incluyendo las funciones de filtrado y ordenamiento, contribuyendo así a la robustez del código y asegurando la estabilidad y confiabilidad de Warsipedia en todas sus funcionalidades.
+
+[![final.png](https://i.postimg.cc/NMnX42jL/final.png)](https://postimg.cc/0Mpr5Qmq)
