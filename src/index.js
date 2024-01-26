@@ -1,11 +1,11 @@
-import { setRootElement, setRoutes } from './router.js';
-import {Home} from './views/home.js'
-import { onURLChange } from './router.js';
+import { setRootElement, setRoutes } from "./router.js";
+import { Home } from "./views/home.js";
+import { onURLChange } from "./router.js";
 //import {Example} from './views/example.js';
-import {Error} from './views/error.js';
-import { ApiKey } from './views/apiKey.js';
-import { CharacterChat } from './views/chat.js';
-import dataset from './data/dataset.js';
+import { Error } from "./views/error.js";
+import { ApiKey } from "./views/apiKey.js";
+import { CharacterChat } from "./views/chat.js";
+import dataset from "./data/dataset.js";
 // En este archivo definirás tus rutas e importarás los componentes que vas a renderizar.
 
 /*
@@ -36,23 +36,22 @@ window.addEventListener('popstate', ({objetivo}) => {
  });
  */
 const routes = {
-    "/": Home,
-    "/apikey": ApiKey,
-    "/error": Error,
-    "/chat": CharacterChat,
+  "/": Home,
+  "/apikey": ApiKey,
+  "/error": Error,
+  "/chat": CharacterChat,
 };
 // importar la data
-// recorrer la data 
-dataset.forEach((elem)=>{
-    routes[`/chat-${elem.id}`] = CharacterChat
-})
-const viewContainer= document.getElementById('root');
+// recorrer la data
+dataset.forEach((elem) => {
+  routes[`/chat-${elem.id}`] = CharacterChat;
+});
+const viewContainer = document.getElementById("root");
 setRoutes(routes);
 setRootElement(viewContainer);
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    console.log("DOM fully loaded and parsed")
-    console.log(event.target.location.pathname);
-    onURLChange(event.target.location.pathname);
-})
-
+  console.log("DOM fully loaded and parsed");
+  console.log(event.target.location.pathname);
+  onURLChange(event.target.location.pathname);
+});

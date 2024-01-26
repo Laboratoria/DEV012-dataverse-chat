@@ -20,8 +20,10 @@ export const apiKeyModal = () => {
             <button id="apiKeyButton">API KEY</button>
         </section>
     `;
-    apiKeyModal.querySelector("button#apiKeyButton").addEventListener("click", () => {
-      navigateTo('/apikey')
+  apiKeyModal
+    .querySelector("button#apiKeyButton")
+    .addEventListener("click", () => {
+      navigateTo("/apikey");
     });
   return apiKeyModal;
 };

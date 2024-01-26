@@ -4,7 +4,7 @@
 @import url("https://db.onlinewebfonts.com/c/636d3dac53dffe0023a68f90abacf4c1?family=JuraLight");
 @import url("https://db.onlinewebfonts.com/c/a575960e7b96141e7ec34bc95aa772e2?family=SF+Atarian+System+Extended+V2+V1");
 @import url("https://db.onlinewebfonts.com/c/28cac7a2ebb776327ddf96d71c30fe9b?family=SF+Atarian+System+Extended+Bold+V2+V1");
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap");
 
 * {
   padding: 0%;
@@ -21,7 +21,7 @@ header {
   background-repeat: no-repeat;
   background-size: 100%;
   font-size: large;
-  font-family: 'Star Jedi', sans-serif;
+  font-family: "Star Jedi", sans-serif;
   width: 100%;
   height: 150px;
 }
@@ -35,7 +35,7 @@ h1 {
   color: transparent;
   padding-top: 0px;
   text-align: center;
-  font-family: 'Star Jedi', sans-serif;
+  font-family: "Star Jedi", sans-serif;
   -webkit-text-stroke: 2px yellow;
   font-size: 60px;
 }
@@ -278,7 +278,7 @@ textarea[name="user-input"] {
   align-items: center;
   display: flex;
   border-radius: 25px;
-  background: rgba(255, 255, 255, 0.70);
+  background: rgba(255, 255, 255, 0.7);
   width: 700px;
   height: 30px;
   flex-shrink: 0;
@@ -287,19 +287,19 @@ textarea[name="user-input"] {
   font-size: larger;
   text-transform: uppercase;
   text-align: center;
-  color: #FFF;
+  color: #fff;
   resize: none;
- }
+}
 
- /*APIKEY JS*/
-.containerAll{
+/*APIKEY JS*/
+.containerAll {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
- /*APIKEY JS*/
- .message{
+/*APIKEY JS*/
+.message {
   display: flex;
   margin-top: 0px;
   margin-left: 15px;
@@ -320,7 +320,7 @@ textarea[name="user-input"] {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-family: 'Star Jedi', sans-serif;
+  font-family: "Star Jedi", sans-serif;
   font-size: larger;
   margin: 5%;
   font-size: 80px;
@@ -335,17 +335,17 @@ textarea[name="user-input"] {
 /*APIKEY JS*/
 #confirmButton {
   display: inline-flex;
- color: #FFF;
- align-items: center;
- text-align: center;
+  color: #fff;
+  align-items: center;
+  text-align: center;
   font-family: "jura";
   font-weight: 900;
   text-transform: uppercase;
   font-size: medium;
   padding: 10px 20px;
   border-radius: 25px;
-  border: 3px solid #FFF;
-  background:  #000;
+  border: 3px solid #fff;
+  background: #000;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-right: 15px;
 }
@@ -359,20 +359,19 @@ textarea[name="user-input"] {
   color: yellow;
 }
 
-
 /*APIKEY JS*/
 #returnButton {
   display: inline-flex;
- color: #FFF;
- text-align: center;
+  color: #fff;
+  text-align: center;
   font-family: "jura";
   font-weight: 900;
   text-transform: uppercase;
   font-size: medium;
   padding: 10px 20px;
   border-radius: 25px;
-  border: 3px solid #FFF;
-  background:  #000;
+  border: 3px solid #fff;
+  background: #000;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-left: 15px;
 }
@@ -387,19 +386,17 @@ textarea[name="user-input"] {
 }
 
 /*APIKEY JS*/
-.customImage{
+.customImage {
   max-width: 50%;
-
-  
 }
 
- /*error JS*/
-.customError{
+/*error JS*/
+.customError {
   max-width: 70%;
 }
 
- /*error JS*/
- .errorMessage{
+/*error JS*/
+.errorMessage {
   display: flex;
   margin-top: 0px;
   align-items: center;
@@ -411,13 +408,12 @@ textarea[name="user-input"] {
   text-align: center;
   padding-bottom: 20px;
 }
- /*error JS*/
+/*error JS*/
 .errorContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* #returnButton {
@@ -572,48 +568,295 @@ h4 {
   color: yellow;
 }
 
+/*Responsive CHAT TABLET*/
+@media (min-width: 690px) and (max-width: 1039px) {
+  body {
+    /* CHAT*/
+    .chatContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 30px;
+      margin-left: 100px;
+      margin-right: 100px;
+      margin-bottom: 40px;
+      border: 3px solid yellow;
+      border-radius: 20px;
+    }
+
+    .characterInfoContainer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #nameCharacter {
+      display: flex;
+      text-align: center;
+      font-family: Raleway;
+      font-size: 40px;
+      font-style: normal;
+      color: yellow;
+      font-weight: 900;
+      /*-webkit-text-stroke: 2px yellow;*/
+      background-color: transparent;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    
+    .characterPhoto {
+      display: flex;
+      justify-content: center;
+      width: 40%;
+      border-radius: 50%;
+    }
+
+    .characterDescription {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      margin-left: 100px;
+      margin-right: 100px;
+      text-align: center;
+      color: white;
+      font-family: "jura";
+      font-size: large;
+      font-weight: 900;
+      line-height: 40px;
+      text-indent: 5px;
+      word-spacing: 3px;
+      letter-spacing: 3px;
+      background-color: black;
+    }
+
+    #chatTextarea {
+      display: flex;
+      justify-content: center;
+      width: 700px;
+      height: 200px;
+      resize: none;
+      overflow-y: auto;
+    }
+    
+    article {
+      display: flex;
+      justify-content: center;
+      background: linear-gradient(#3c3c3d, #edeeee);
+      opacity: 90%;
+      margin-top: 10px;
+      margin-left: 40px;
+      margin-right: 40px;
+      border-radius: 15px;
+    }
+
+    .chatInput {
+      width: 740px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+    }
+
+
+    #messageInput {
+      padding: 8px;
+      margin-left: 40px;
+      color: #000;
+      background-color: #edeeee;
+      border: 2px solid yellow;
+      border-radius: 10px;
+      opacity: 70%;
+    }
+
+    #sendMessageBtn {
+      width: 150px;
+      height: 55px;
+      margin-left: 5px;
+      padding: 5px;
+      background-color: #3e3e3e;
+      opacity: 70%;
+      color: white;
+      border: 2px solid yellow;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #sendMessageBtn:hover {
+      box-shadow: 0 0 15px #f0f06e;
+    }
+
+    #sendMessageBtn:active {
+      background-color: black;
+      color: yellow;
+    }
+  }
+}
+
+/* CHAT DESKTOP*/
+@media (min-width: 1040px)  {
+  body {
+    /* CHAT*/
+    .chatContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 30px;
+      margin-left: 100px;
+      margin-right: 100px;
+      margin-bottom: 40px;
+      border: 3px solid rgb(206, 30, 215);
+      border-radius: 20px;
+    }
+
+    .characterInfoContainer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #nameCharacter {
+      display: flex;
+      text-align: center;
+      font-family: Raleway;
+      font-size: 40px;
+      font-style: normal;
+      color: yellow;
+      font-weight: 900;
+      /*-webkit-text-stroke: 2px yellow;*/
+      background-color: transparent;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    
+    .characterPhoto {
+      display: flex;
+      justify-content: center;
+      width: 40%;
+      border-radius: 50%;
+    }
+
+    .characterDescription {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      margin-left: 100px;
+      margin-right: 100px;
+      text-align: center;
+      color: white;
+      font-family: "jura";
+      font-size: large;
+      font-weight: 900;
+      line-height: 40px;
+      text-indent: 5px;
+      word-spacing: 3px;
+      letter-spacing: 3px;
+      background-color: black;
+    }
+
+    #chatTextarea {
+      display: flex;
+      justify-content: center;
+      width: 700px;
+      height: 200px;
+      resize: none;
+      overflow-y: auto;
+    }
+    
+    article {
+      display: flex;
+      justify-content: center;
+      background: linear-gradient(#3c3c3d, #edeeee);
+      opacity: 90%;
+      margin-top: 10px;
+      margin-left: 40px;
+      margin-right: 40px;
+      border-radius: 15px;
+    }
+
+    .chatInput {
+      width: 740px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+    }
+
+    #messageInput {
+      padding: 8px;
+      margin-left: 40px;
+      color: #000;
+      background-color: #edeeee;
+      border: 2px solid yellow;
+      border-radius: 10px;
+      opacity: 70%;
+    }
+
+    #sendMessageBtn {
+      width: 150px;
+      height: 55px;
+      margin-left: 5px;
+      padding: 5px;
+      background-color: #3e3e3e;
+      opacity: 70%;
+      color: white;
+      border: 2px solid yellow;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #sendMessageBtn:hover {
+      box-shadow: 0 0 15px #f0f06e;
+    }
+
+    #sendMessageBtn:active {
+      background-color: black;
+      color: yellow;
+    }
+  }
+}
+
 /*apikey Modal*/
-.containerModal{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 950px;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.055);
-    padding: 20px;
-    border: 4px solid yellow;
-    border-radius: 15px;
-    text-align: center;
+.containerModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 950px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.055);
+  padding: 20px;
+  border: 4px solid yellow;
+  border-radius: 15px;
+  text-align: center;
 }
 /*apikey Modal*/
-.messageModal{
+.messageModal {
   font-size: 2rem;
-    color: white;
-    margin-bottom: 10px;
-    display: flex;
-    margin-top: 0px;
-    margin-left: 15px;
-    font-family: "jura";
-    font-weight: 200;
-    font-size: 22px;
-    text-align: center;
-    padding-bottom: 20px;
+  color: white;
+  margin-bottom: 10px;
+  display: flex;
+  margin-top: 0px;
+  margin-left: 15px;
+  font-family: "jura";
+  font-weight: 200;
+  font-size: 22px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 /*apikey Modal*/
 #apiKeyButton {
   display: inline-flex;
- color: #FFF;
- align-items: center;
- text-align: center;
+  color: #fff;
+  align-items: center;
+  text-align: center;
   font-family: "jura";
   font-weight: 900;
   text-transform: uppercase;
   font-size: medium;
   padding: 10px 20px;
   border-radius: 25px;
-  border: 3px solid #FFF;
-  background:  #000;
+  border: 3px solid #fff;
+  background: #000;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-right: 15px;
 }

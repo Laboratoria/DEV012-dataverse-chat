@@ -2,13 +2,13 @@ import data from "../data/dataset.js";
 import {
   filterAffiliation,
   sortData,
-  computeStats,
+  //computeStats,
 } from "../lib/dataFunctions.js";
 import { Footer } from "../components/footer.js";
 import { Header } from "../components/header.js";
 import { listItems } from "../components/listItems.js";
 import { NavBar } from "../components/navBar.js";
-import { navigateTo } from "../router.js";
+//import { navigateTo } from "../router.js";
 import { apiKeyModal } from "../components/apiMessage.js";
 
 export const Home = () => {
