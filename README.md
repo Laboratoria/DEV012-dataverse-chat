@@ -1,19 +1,5 @@
 # Dataverse Chat
 
-## Índice
-
-* [1. Preámbulo](#1-preámbulo)
-* [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Consideraciones generales](#3-consideraciones-generales)
-* [4. Funcionalidades](#4-funcionalidades)
-* [5. Consideraciones técnicas](#5-consideraciones-técnicas)
-* [6. Criterios de aceptación mínimos del proyecto](#6-criterios-de-aceptación-mínimos-del-proyecto)
-* [7. Objetivos de aprendizaje](#7-objetivos-de-aprendizaje)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
-* [9. Consideraciones para pedir tu Project Feedback](#9-consideraciones-para-pedir-tu-project-feedback)
-
-***
-
 ## 1. Preámbulo
 
 Warsiepedia es una plataforma web diseñada con la premisa de ofrecer una experiencia inmersiva sobre los personajes del universo Star Wars, Warsiepedia permite a los usuarios explorar de manera interactiva un extenso conjunto de datos sobre sus personajes favoritos de la saga. Siguiendo el modelo de Single Page Application (SPA) y aprovechando la potencia de la inteligencia artificial desarrollada por OpenAI, Warsiepedia permite interactuar con los personajes de Star Wars a través de un innovador sistema de chat. Para acceder a esta función, los usuarios utilizan una API key que facilita la conexión con la interfaz de OpenAI, permitiendo así conversaciones individuales con cada personaje.
